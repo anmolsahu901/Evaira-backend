@@ -3,12 +3,23 @@ package com.ai.evaira_backend.dto;
 import lombok.Data;
 
 @Data
+// For JSON from https://fakestoreapi.com/products
 public class ProductDto {
+    private Long id;
     private String title;
-    private String description;
-    private String imageUrl;
     private Double price;
-    private String deeplinkUrl;
+    private String description;
+    private String category;
+    private String image;
+    private Rating rating;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -16,22 +27,6 @@ public class ProductDto {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
     }
 
     public Double getPrice() {
@@ -42,13 +37,58 @@ public class ProductDto {
         this.price = price;
     }
 
-    public String getDeeplinkUrl() {
-        return deeplinkUrl;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDeeplinkUrl(String deeplinkUrl) {
-        this.deeplinkUrl = deeplinkUrl;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-// Getters and setters
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Rating getRating() {
+        return rating;
+    }
+
+    public void setRating(Rating rating) {
+        this.rating = rating;
+    }
+
+    public static class Rating {
+        private Double rate;
+        private Integer count;
+        // getters/setters
+
+        public Double getRate() {
+            return rate;
+        }
+
+        public void setRate(Double rate) {
+            this.rate = rate;
+        }
+
+        public Integer getCount() {
+            return count;
+        }
+
+        public void setCount(Integer count) {
+            this.count = count;
+        }
+    }
+    // getters/setters
 }

@@ -8,21 +8,26 @@ import java.io.Serializable;
 @Data
 @Entity
 @Table(name = "products")
-public class Product implements Serializable {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id;            // your DB id
+
+    private String externalId;  // id from FakeStore (e.g. "2")
 
     private String title;
-
-    @Column(length = 1000)
-    private String description;
-
-    private String imageUrl;
-
     private Double price;
 
-    private String deeplinkUrl;
+    @Column(length = 2000)
+    private String description;
+
+    private String category;
+    private String imageUrl;
+
+    private Double rating;
+    private Integer ratingCount;
+
+    // getters/setters
 
     public Long getId() {
         return id;
@@ -30,6 +35,14 @@ public class Product implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getExternalId() {
+        return externalId;
+    }
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
     public String getTitle() {
@@ -40,12 +53,28 @@ public class Product implements Serializable {
         this.title = title;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getImageUrl() {
@@ -56,22 +85,21 @@ public class Product implements Serializable {
         this.imageUrl = imageUrl;
     }
 
-    public Double getPrice() {
-        return price;
+    public Double getRating() {
+        return rating;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setRating(Double rating) {
+        this.rating = rating;
     }
 
-    public String getDeeplinkUrl() {
-        return deeplinkUrl;
+    public Integer getRatingCount() {
+        return ratingCount;
     }
 
-    public void setDeeplinkUrl(String deeplinkUrl) {
-        this.deeplinkUrl = deeplinkUrl;
+    public void setRatingCount(Integer ratingCount) {
+        this.ratingCount = ratingCount;
     }
-
-// Getters and setters
 }
+
 
