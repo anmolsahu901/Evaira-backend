@@ -13,7 +13,9 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;            // your DB id
 
-    private String externalId;  // id from FakeStore (e.g. "2")
+    private String externalId;// id from FakeStore (e.g. "2")
+    @Column(length = 2000)
+    private String deeplinkUrl;
 
     private String title;
     private Double price;
@@ -26,8 +28,15 @@ public class Product {
 
     private Double rating;
     private Integer ratingCount;
+//
+    public String getDeeplinkUrl() {
+        return deeplinkUrl;
+    }
 
-    // getters/setters
+    public void setDeeplinkUrl(String deeplinkUrl) {
+        this.deeplinkUrl = deeplinkUrl;
+    }
+// getters/setters
 
     public Long getId() {
         return id;

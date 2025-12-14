@@ -54,5 +54,11 @@ public class UserProfileService {
 
         userRepository.save(user); // cascades and saves preferences
     }
+
+    public User findUserByEmail(String email){
+       return userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+    }
+
 }
 
