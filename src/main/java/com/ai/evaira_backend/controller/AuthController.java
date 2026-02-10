@@ -54,6 +54,7 @@ public class AuthController {
         }
     }
 
+    //// Step-1:  for new user
     @PostMapping("/send-otp")  // for login/register
     public ResponseEntity<String> sendOtp(@RequestBody SendOtpRequest request) {
         log.info("+++++++++ sendOtp: ");
@@ -62,6 +63,7 @@ public class AuthController {
         return ResponseEntity.ok("OTP sent.");
     }
 
+    // Step-2: for user
     @PostMapping("/verify-otp") // to verify OTP then check user exist or not
     public ResponseEntity<?> verifyOtp(@RequestBody VerifyOtpRequest request) {
         if (!otpService.validateOtp(request.email, request.otp)) {
