@@ -28,7 +28,18 @@ public class Product {
 
     private Double rating;
     private Integer ratingCount;
-//
+
+    @Column(nullable = false)
+    private Long likesCount =0L;
+
+    public Long getLikesCount() {
+        return likesCount;
+    }
+
+    public void setLikesCount(Long likesCount) {
+        this.likesCount = likesCount;
+    }
+
     public String getDeeplinkUrl() {
         return deeplinkUrl;
     }

@@ -12,6 +12,15 @@ public class ProductDto {
     private String category;
     private String image;
     private Rating rating;
+    private Integer likesCount;
+
+    public Integer getLikesCount() {
+        return likesCount;
+    }
+
+    public void setLikesCount(Integer likesCount) {
+        this.likesCount = likesCount;
+    }
 
     public Long getId() {
         return id;

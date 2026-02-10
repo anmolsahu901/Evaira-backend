@@ -46,7 +46,7 @@ public class ProductController {
     }
 
     // 2) Read products from your DB
-    @GetMapping
+    @GetMapping("/getAllProducts")
     public ResponseEntity<List<Product>> getAll() {
         return ResponseEntity.ok(productService.getAllFromDb());
     }

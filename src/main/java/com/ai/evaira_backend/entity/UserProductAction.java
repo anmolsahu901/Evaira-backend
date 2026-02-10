@@ -2,11 +2,11 @@ package com.ai.evaira_backend.entity;
 
 import com.ai.evaira_backend.dto.ProductActionType;
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Entity
-@Table(name = "product_actions")
-public class ProductAction {
+@Table(name = "user_product_actions")
+public class UserProductAction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +22,8 @@ public class ProductAction {
     @Column(nullable = false)
     private ProductActionType actionType;
 
-    private LocalDateTime createdAt = LocalDateTime.now();
+    @Column(nullable = false)
+    private Instant createdAt = Instant.now();
 
     public Long getId() {
         return id;
@@ -56,11 +57,11 @@ public class ProductAction {
         this.actionType = actionType;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public Instant getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Instant createdAt) {
         this.createdAt = createdAt;
     }
 

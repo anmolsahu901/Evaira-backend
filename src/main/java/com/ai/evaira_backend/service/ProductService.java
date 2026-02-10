@@ -56,8 +56,6 @@ public class ProductService {
     public String getProductDeepLinkById(Long productId){
         return productRepository.findDeeplinkById(productId)
                 .orElseThrow(() -> new RuntimeException("Product not found"));
-
-
     }
 }
 

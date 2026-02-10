@@ -30,11 +30,6 @@ public class AuthController {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private UserProfileService profileService;
-
-
-
     // DTOs for requests/responses
     public static class SendOtpRequest {
         public String email;
@@ -72,7 +67,7 @@ public class AuthController {
         if (!otpService.validateOtp(request.email, request.otp)) {
             return ResponseEntity.badRequest().body("Invalid OTP.");
         }
-
+        log.info("inside verify OTP");
         User user = userRepository.findByEmail(request.email).orElse(null);
         boolean isNew = false;
 
@@ -83,26 +78,13 @@ public class AuthController {
             isNew = true;
         }
 
-        String token = jwtUtil.generateToken(request.email);
+        String token = jwtUtil.generateToken(user.getId(), user.getEmail());;
         AuthResponse response = new AuthResponse(token, isNew, user.getId(), user.getEmail());
+        log.info("otp verified and sending response :{} ", "new user: " + response.isNewUser + "  token: "+ response.token +"   email: "+response.email+ "  id : "+response.userId );
         return ResponseEntity.ok(response);
     }
 
-    @PostMapping("/profile")
-    public ResponseEntity<String> createProfile(
-            @RequestHeader("Authorization") String authHeader,
-            @RequestBody ProfileDto dto) {
 
-        String token = authHeader.replace("Bearer ", "");
-        String email = jwtUtil.extractUsername(token); // subject = email
-
-        User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("User not found"));
-
-        profileService.saveProfile(user, dto);
-
-        return ResponseEntity.ok("Profile created/updated");
-    }
 }
 
 
