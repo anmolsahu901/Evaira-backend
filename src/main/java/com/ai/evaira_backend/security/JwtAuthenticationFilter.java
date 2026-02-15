@@ -1,6 +1,5 @@
 package com.ai.evaira_backend.security;
 
-
 import com.ai.evaira_backend.entity.User;
 import com.ai.evaira_backend.repository.UserRepository;
 
@@ -28,46 +27,48 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         this.userRepository = userRepository;
     }
 
-//    @Override
-//    protected void doFilterInternal(HttpServletRequest request,
-//                                    HttpServletResponse response,
-//                                    FilterChain filterChain) throws ServletException, IOException {
-//
-//        String authHeader = request.getHeader("Authorization");
-//
-//        if (authHeader != null && authHeader.startsWith("Bearer ")) {
-//            String token = authHeader.substring(7);
-//
-//            try {
-//                String email = jwtUtil.extractUsername(token);
-//                Long userId = jwtUtil.extractUserId(token);
-//
-//                if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-//                    User user = userRepository.findById(userId)
-//                            .orElse(null);
-//
-//                    if (user != null) {
-//                        UsernamePasswordAuthenticationToken authToken =
-//                                new UsernamePasswordAuthenticationToken(userId, null, Collections.emptyList());
-//                        SecurityContextHolder.getContext().setAuthentication(authToken);
-//                    }
-//                }
-//            } catch (Exception e) {
-//                // Invalid token - continue
-//            }
-//        }
-//
-//        filterChain.doFilter(request, response);
-//    }
+    // @Override
+    // protected void doFilterInternal(HttpServletRequest request,
+    // HttpServletResponse response,
+    // FilterChain filterChain) throws ServletException, IOException {
+    //
+    // String authHeader = request.getHeader("Authorization");
+    //
+    // if (authHeader != null && authHeader.startsWith("Bearer ")) {
+    // String token = authHeader.substring(7);
+    //
+    // try {
+    // String email = jwtUtil.extractUsername(token);
+    // Long userId = jwtUtil.extractUserId(token);
+    //
+    // if (email != null && SecurityContextHolder.getContext().getAuthentication()
+    // == null) {
+    // User user = userRepository.findById(userId)
+    // .orElse(null);
+    //
+    // if (user != null) {
+    // UsernamePasswordAuthenticationToken authToken =
+    // new UsernamePasswordAuthenticationToken(userId, null,
+    // Collections.emptyList());
+    // SecurityContextHolder.getContext().setAuthentication(authToken);
+    // }
+    // }
+    // } catch (Exception e) {
+    // // Invalid token - continue
+    // }
+    // }
+    //
+    // filterChain.doFilter(request, response);
+    // }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
-                                    HttpServletResponse response,
-                                    FilterChain filterChain) throws ServletException, IOException {
+            HttpServletResponse response,
+            FilterChain filterChain) throws ServletException, IOException {
         System.out.println("🔍 Request: " + request.getRequestURI());
         String authHeader = request.getHeader("Authorization");
 
-        if (authHeader != null ) {
+        if (authHeader != null) {
             String token = authHeader;
 
             try {
@@ -85,12 +86,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                         return;
                     }
 
-                    UsernamePasswordAuthenticationToken authToken =
-                            new UsernamePasswordAuthenticationToken(
-                                    userId,           // principal = userId
-                                    null,
-                                    Collections.emptyList()
-                            );
+                    UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
+                            userId, // principal = userId
+                            null,
+                            Collections.emptyList());
 
                     SecurityContextHolder.getContext().setAuthentication(authToken);
                 }

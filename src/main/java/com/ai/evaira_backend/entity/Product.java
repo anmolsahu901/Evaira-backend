@@ -13,7 +13,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;            // your DB id
 
-    private String externalId;// id from FakeStore (e.g. "2")
+    private String externalId;// id from Scrapping data (e.g. "2")
     @Column(length = 2000)
     private String deeplinkUrl;
 
@@ -27,7 +27,8 @@ public class Product {
     private String imageUrl;
 
     private Double rating;
-    private Integer ratingCount;
+
+//    private Integer ratingCount;
 
     @Column(nullable = false)
     private Long likesCount =0L;
@@ -113,13 +114,13 @@ public class Product {
         this.rating = rating;
     }
 
-    public Integer getRatingCount() {
-        return ratingCount;
-    }
-
-    public void setRatingCount(Integer ratingCount) {
-        this.ratingCount = ratingCount;
-    }
+//    public Integer getRatingCount() {
+//        return ratingCount;
+//    }
+//
+//    public void setRatingCount(Integer ratingCount) {
+//        this.ratingCount = ratingCount;
+//    }
 }
 
 

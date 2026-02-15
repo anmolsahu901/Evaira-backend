@@ -6,19 +6,36 @@ import lombok.Data;
 // For JSON from https://fakestoreapi.com/products
 public class ProductDto {
     private Long id;
-    private String title;
+    private String title; //name
     private Double price;
     private String description;
     private String category;
-    private String image;
-    private Rating rating;
-    private Integer likesCount;
+    private String imageUrl;
+    private String deeplinkUrl;
+    private Double rating;
+    private Long likesCount;
 
-    public Integer getLikesCount() {
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getDeeplinkUrl() {
+        return deeplinkUrl;
+    }
+
+    public void setDeeplinkUrl(String deeplinkUrl) {
+        this.deeplinkUrl = deeplinkUrl;
+    }
+
+    public Long getLikesCount() {
         return likesCount;
     }
 
-    public void setLikesCount(Integer likesCount) {
+    public void setLikesCount(Long likesCount) {
         this.likesCount = likesCount;
     }
 
@@ -62,42 +79,36 @@ public class ProductDto {
         this.category = category;
     }
 
-    public String getImage() {
-        return image;
-    }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
 
-    public Rating getRating() {
+    public Double getRating() {
         return rating;
     }
 
-    public void setRating(Rating rating) {
+    public void setRating(Double rating) {
         this.rating = rating;
     }
 
-    public static class Rating {
-        private Double rate;
-        private Integer count;
-        // getters/setters
-
-        public Double getRate() {
-            return rate;
-        }
-
-        public void setRate(Double rate) {
-            this.rate = rate;
-        }
-
-        public Integer getCount() {
-            return count;
-        }
-
-        public void setCount(Integer count) {
-            this.count = count;
-        }
-    }
+//    public static class Rating {
+//        private Double rate;
+//        private Integer count;
+//        // getters/setters
+//
+//        public Double getRate() {
+//            return rate;
+//        }
+//
+//        public void setRate(Double rate) {
+//            this.rate = rate;
+//        }
+//
+//        public Integer getCount() {
+//            return count;
+//        }
+//
+//        public void setCount(Integer count) {
+//            this.count = count;
+//        }
+//    }
     // getters/setters
 }

@@ -38,13 +38,9 @@ public class ProductService {
         product.setPrice(dto.getPrice());
         product.setDescription(dto.getDescription());
         product.setCategory(dto.getCategory());
-        product.setImageUrl(dto.getImage());
-        product.setDeeplinkUrl("https://www.amazon.in/Lymio-Jackets-Lightweight-Outwear-J-06-Green-L/dp/B0FMDKS5JN/?_encoding=UTF8&pd_rd_w=NADwY&content-id=amzn1.sym.211684f4-ebe1-443f-8a4a-0773471e979f&pf_rd_p=211684f4-ebe1-443f-8a4a-0773471e979f&pf_rd_r=0A6TPDEXBTRCN1HGYCFB&pd_rd_wg=EyuBl&pd_rd_r=cc79f797-270f-47cf-898a-06160a73a280&ref_=pd_hp_d_btf_crs_zg_bs_1571271031&th=1&psc=1");
-
-        if (dto.getRating() != null) {
-            product.setRating(dto.getRating().getRate());
-            product.setRatingCount(dto.getRating().getCount());
-        }
+        product.setImageUrl(dto.getImageUrl());
+        product.setDeeplinkUrl(dto.getDeeplinkUrl());
+        product.setRating(dto.getRating());
 
         return productRepository.save(product);
     }

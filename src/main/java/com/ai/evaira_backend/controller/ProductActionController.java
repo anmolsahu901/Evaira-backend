@@ -4,12 +4,11 @@ package com.ai.evaira_backend.controller;
 import com.ai.evaira_backend.dto.ProductActionType;
 import com.ai.evaira_backend.dto.UserProductActionRequest;
 import com.ai.evaira_backend.dto.UserProductActionResponse;
-import com.ai.evaira_backend.entity.User;
 
+
+import com.ai.evaira_backend.security.SecurityUtil;
 import com.ai.evaira_backend.service.UserProductActionService;
-import com.ai.evaira_backend.service.ProductService;
-import com.ai.evaira_backend.service.UserProfileService;
-import com.ai.evaira_backend.utility.JwtUtil;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,25 +20,10 @@ import java.util.List;
 public class ProductActionController {
 
     private final UserProductActionService actionService;
-    private final JwtUtil jwtUtil;
-    private final UserProfileService userProfileService;
-    private final UserProductActionService productService;
 
     @Autowired
-    public ProductActionController(UserProductActionService actionService,
-                                   JwtUtil jwtUtil,
-                                   UserProfileService userProfileService,
-                                   UserProductActionService productService) {
+    public ProductActionController(UserProductActionService actionService) {
         this.actionService = actionService;
-        this.jwtUtil = jwtUtil;
-        this.userProfileService = userProfileService;
-        this.productService = productService;
-    }
-
-    private Long getUserFromToken(String authHeader) {
-        String token = authHeader.replace("Bearer ", "");
-        String email = jwtUtil.extractUsername(token);
-        return userProfileService.findUserByEmail(email).getId();
     }
 
     /**
@@ -47,84 +31,78 @@ public class ProductActionController {
      * Returns deeplinkUrl for OPEN/SHARE
      */
     @PostMapping
-    public ResponseEntity<UserProductActionResponse> performAction(@RequestHeader("Authorization") String authHeader,
+    public ResponseEntity<UserProductActionResponse> performAction(
             @RequestBody UserProductActionRequest request
     ) {
-        Long userId = getUserFromToken(authHeader);
+        Long userId = SecurityUtil.getCurrentUserId();
         request.setUserId(userId);
-        UserProductActionResponse response = actionService.performAction(request);
-        return ResponseEntity.ok(response);
+
+        actionService.performAction(request);
+        return ResponseEntity.ok().build();
     }
 
 
     /**
      * Remove LIKE (unlike via swipe left)
+     * DELETE /api/actions/like/{productId}
      */
-    @DeleteMapping("/like/{userId}/{productId}")
-    public ResponseEntity<Void> removeLike(
-            @PathVariable Long userId,
-            @PathVariable Long productId
-    ) {
+    @DeleteMapping("/like/{productId}")
+    public ResponseEntity<Void> removeLike(@PathVariable Long productId) {
+        Long userId = SecurityUtil.getCurrentUserId();
         actionService.removeLike(userId, productId);
         return ResponseEntity.noContent().build();
     }
 
     /**
      * Remove SAVE (unsave)
+     * DELETE /api/actions/save/{productId}
      */
-    @DeleteMapping("/save/{userId}/{productId}")
-    public ResponseEntity<Void> removeSave(
-            @PathVariable Long userId,
-            @PathVariable Long productId
-    ) {
+    @DeleteMapping("/save/{productId}")
+    public ResponseEntity<Void> removeSave(@PathVariable Long productId) {
+        Long userId = SecurityUtil.getCurrentUserId();
         actionService.removeSave(userId, productId);
         return ResponseEntity.noContent().build();
     }
 
-
     /**
-     * Get all liked/saved products for user
-     * GET /api/actions/user/123?type=LIKE → Liked products
-     * GET /api/actions/user/123?type=SAVE → Saved products
+     * Get liked/saved/open/shared actions for CURRENT user
+     * GET /api/actions/me?type=LIKE
+     * GET /api/actions/me?type=SAVE
      */
-    @GetMapping("/user/{userId}")
-    public ResponseEntity<List<UserProductActionResponse>> getActionsForUser(
-            @PathVariable Long userId,
+    @GetMapping("/me")
+    public ResponseEntity<List<UserProductActionResponse>> getActionsForMe(
             @RequestParam ProductActionType actionType
     ) {
-        List<UserProductActionResponse> responses =
-                actionService.getActionsForUser(userId, actionType);
+        Long userId = SecurityUtil.getCurrentUserId();
+        List<UserProductActionResponse> responses = actionService.getActionsForUser(userId, actionType);
         return ResponseEntity.ok(responses);
+    }
+
+    /**
+     * Check if CURRENT user did an action on a product (for icons)
+     * GET /api/actions/me/product/{productId}?type=LIKE
+     * GET /api/actions/me/product/{productId}?type=SAVE
+     */
+    @GetMapping("/me/product/{productId}")
+    public ResponseEntity<UserProductActionResponse> getMyProductAction(
+            @PathVariable Long productId,
+            @RequestParam ProductActionType actionType
+    ) {
+        Long userId = SecurityUtil.getCurrentUserId();
+        UserProductActionResponse response = actionService.getUserProductAction(userId, productId, actionType);
+        return response != null ? ResponseEntity.ok(response) : ResponseEntity.notFound().build();
     }
 
     /**
      * Get ALL actions for user (likes + saves + opens + shares)
      * For user profile/activity tab
      */
-//    @GetMapping("/user/{userId}/all")
-//    public ResponseEntity<List<UserProductActionResponse>> getAllUserActions(
-//            @PathVariable Long userId
-//    ) {
-//        List<UserProductActionResponse> responses =
-//                actionService.getAllUserActions(userId);
-//        return ResponseEntity.ok(responses);
-//    }
+    @GetMapping("/me/all")
+    public ResponseEntity<List<UserProductActionResponse>> getAllMyActions() {
+        Long userId = SecurityUtil.getCurrentUserId();
+        List<UserProductActionResponse> responses = actionService.getAllUserActions(userId);
+        return ResponseEntity.ok(responses);
+    }
 
-    /**
-     * Check if specific user liked/saved specific product
-     * Used for product card icons (isLiked, isSaved)
-     */
-//    @GetMapping("/user/{userId}/product/{productId}")
-//    public ResponseEntity<UserProductActionResponse> getUserProductAction(
-//            @PathVariable Long userId,
-//            @PathVariable Long productId,
-//            @RequestParam(required = false) ProductActionType actionType
-//    ) {
-//        UserProductActionResponse response =
-//                actionService.getUserProductAction(userId, productId, actionType);
-//        return response != null
-//                ? ResponseEntity.ok(response)
-//                : ResponseEntity.notFound().build();
-//    }
 }
 
