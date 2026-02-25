@@ -1,5 +1,6 @@
 package com.ai.evaira_backend.service;
 
+import com.ai.evaira_backend.controller.UserActivityController;
 import com.ai.evaira_backend.dto.ProductActionType;
 import com.ai.evaira_backend.dto.UserProductActionRequest;
 import com.ai.evaira_backend.dto.UserProductActionResponse;
@@ -9,6 +10,8 @@ import com.ai.evaira_backend.entity.UserProductAction;
 import com.ai.evaira_backend.repository.UserProductActionRepository;
 import com.ai.evaira_backend.repository.ProductRepository;
 import com.ai.evaira_backend.repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +24,8 @@ public class UserProductActionService {
     private final UserProductActionRepository actionRepository;
     private final ProductRepository productRepository;
     private final UserRepository userRepository;
+
+    private final Logger log =  LoggerFactory.getLogger(UserProductActionService.class);
 
     public UserProductActionService(UserProductActionRepository actionRepository,
             ProductRepository productRepository, UserRepository userRepository) {
@@ -41,25 +46,40 @@ public class UserProductActionService {
 
         switch (type) {
             case LIKE -> {
+                log.info("like hit by user: {}",user.getEmail());
                 handleLike(user, product);
                 return null;
             }
             case SAVE -> {
+                log.info("save hit by user: {}",user.getEmail());
                 handleSave(user, product);
                 return null;
             }
             case OPEN -> {
+                log.info("open hit by user: {}",user.getEmail());
                 handleOpen(user, product);
                 return null;
             }
             case SHARE -> {
+                log.info("share hit by user: {}",user.getEmail());
                 handleShare(user, product);
                 return null;
             }
             case DISLIKE -> {
+                log.info("dislike hit by user: {}",user.getEmail());
                 handleDislike(user, product);
                 return null;
             }
+            case UNLIKE -> {
+                removeLike(user.getId(),product.getId());
+                log.info("unlike hit by user: {}",user.getEmail());
+                return null;
+            } case UNSAVE -> {
+                removeSave(user.getId(),product.getId());
+                log.info("unsave hit by user: {}",user.getEmail());
+                return null;
+            }
+
             default -> throw new IllegalArgumentException("Unsupported action: " + type);
         }
     }
@@ -174,11 +194,12 @@ public class UserProductActionService {
         actionRepository.save(action);
     }
 
-    public List<UserProductActionResponse> getActionsForUser(Long userId, ProductActionType type) {
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> new IllegalArgumentException("User not found"));
+    public List<Product> getProductsByUserActions(Long userId,ProductActionType actionType) {
+        return actionRepository.findProductsByUserIdAndActionTypes(userId, actionType);
+    }
 
-        return actionRepository.findByUserAndActionType(user, type)
+    public List<UserProductActionResponse> getActionsForUser(Long userId, ProductActionType type) {
+        return actionRepository.findByUserIdAndActionType(userId, type)
                 .stream()
                 .map(this::mapToResponseWithDeeplink)
                 .toList();

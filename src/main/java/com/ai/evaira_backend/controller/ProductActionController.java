@@ -6,6 +6,7 @@ import com.ai.evaira_backend.dto.UserProductActionRequest;
 import com.ai.evaira_backend.dto.UserProductActionResponse;
 
 
+import com.ai.evaira_backend.entity.Product;
 import com.ai.evaira_backend.security.SecurityUtil;
 import com.ai.evaira_backend.service.UserProductActionService;
 
@@ -41,27 +42,12 @@ public class ProductActionController {
         return ResponseEntity.ok().build();
     }
 
-
-    /**
-     * Remove LIKE (unlike via swipe left)
-     * DELETE /api/actions/like/{productId}
-     */
-    @DeleteMapping("/like/{productId}")
-    public ResponseEntity<Void> removeLike(@PathVariable Long productId) {
+    @PostMapping("/getWishlistData")
+    public ResponseEntity<List<Product>> basedOnUserActions( @RequestBody UserProductActionRequest request){
         Long userId = SecurityUtil.getCurrentUserId();
-        actionService.removeLike(userId, productId);
-        return ResponseEntity.noContent().build();
-    }
 
-    /**
-     * Remove SAVE (unsave)
-     * DELETE /api/actions/save/{productId}
-     */
-    @DeleteMapping("/save/{productId}")
-    public ResponseEntity<Void> removeSave(@PathVariable Long productId) {
-        Long userId = SecurityUtil.getCurrentUserId();
-        actionService.removeSave(userId, productId);
-        return ResponseEntity.noContent().build();
+
+        return ResponseEntity.ok(actionService.getProductsByUserActions(userId,request.getActionType()));
     }
 
     /**
@@ -75,6 +61,7 @@ public class ProductActionController {
     ) {
         Long userId = SecurityUtil.getCurrentUserId();
         List<UserProductActionResponse> responses = actionService.getActionsForUser(userId, actionType);
+
         return ResponseEntity.ok(responses);
     }
 
