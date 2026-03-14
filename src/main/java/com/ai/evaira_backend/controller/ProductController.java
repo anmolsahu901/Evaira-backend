@@ -56,10 +56,10 @@ public class ProductController {
     }
 
     @PostMapping("/import")
-    public ResponseEntity<String> createProfile(@RequestBody List<ProductDto> products) {
+    public ResponseEntity<List<Product>> createProfile(@RequestBody List<ProductDto> products) {
 
         List<Product> saved = productService.saveExternalProducts(products);
-        return ResponseEntity.ok(saved.toString());
+        return ResponseEntity.ok(saved);
 
     }
 

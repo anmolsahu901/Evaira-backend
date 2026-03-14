@@ -2,18 +2,74 @@ package com.ai.evaira_backend.dto;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 // For JSON from https://fakestoreapi.com/products
 public class ProductDto {
-    private Long id;
-    private String title; //name
-    private Double price;
+
+
+    private String externalId;
+    private String title;
     private String description;
-    private String category;
     private String imageUrl;
     private String deeplinkUrl;
+    private Double price;
     private Double rating;
-    private Long likesCount;
+    private Integer likesCount;
+
+    private String gender;
+    private String category;
+    private String subCategory;
+    private String primaryColor;
+    private String fitType;
+    private String fabric;
+    private String styleType;
+    private String season;
+    private String priceBucket;
+    private List<String> occasionTags;
+    private List<String> styleVibe;
+    private List<String> colorFamily;
+
+    public List<String> getStyleVibe() {
+        return styleVibe;
+    }
+
+    public void setStyleVibe(List<String> styleVibe) {
+        this.styleVibe = styleVibe;
+    }
+
+    public List<String> getColorFamily() {
+        return colorFamily;
+    }
+
+    public void setColorFamily(List<String> colorFamily) {
+        this.colorFamily = colorFamily;
+    }
+
+    public String getExternalId() {
+        return externalId;
+    }
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public String getImageUrl() {
         return imageUrl;
@@ -31,30 +87,6 @@ public class ProductDto {
         this.deeplinkUrl = deeplinkUrl;
     }
 
-    public Long getLikesCount() {
-        return likesCount;
-    }
-
-    public void setLikesCount(Long likesCount) {
-        this.likesCount = likesCount;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public Double getPrice() {
         return price;
     }
@@ -63,12 +95,28 @@ public class ProductDto {
         this.price = price;
     }
 
-    public String getDescription() {
-        return description;
+    public Double getRating() {
+        return rating;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setRating(Double rating) {
+        this.rating = rating;
+    }
+
+    public Integer getLikesCount() {
+        return likesCount;
+    }
+
+    public void setLikesCount(Integer likesCount) {
+        this.likesCount = likesCount;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getCategory() {
@@ -79,36 +127,67 @@ public class ProductDto {
         this.category = category;
     }
 
-
-
-    public Double getRating() {
-        return rating;
+    public String getSubCategory() {
+        return subCategory;
     }
 
-    public void setRating(Double rating) {
-        this.rating = rating;
+    public void setSubCategory(String subCategory) {
+        this.subCategory = subCategory;
     }
 
-//    public static class Rating {
-//        private Double rate;
-//        private Integer count;
-//        // getters/setters
-//
-//        public Double getRate() {
-//            return rate;
-//        }
-//
-//        public void setRate(Double rate) {
-//            this.rate = rate;
-//        }
-//
-//        public Integer getCount() {
-//            return count;
-//        }
-//
-//        public void setCount(Integer count) {
-//            this.count = count;
-//        }
-//    }
-    // getters/setters
+    public String getPrimaryColor() {
+        return primaryColor;
+    }
+
+    public void setPrimaryColor(String primaryColor) {
+        this.primaryColor = primaryColor;
+    }
+
+    public String getFitType() {
+        return fitType;
+    }
+
+    public void setFitType(String fitType) {
+        this.fitType = fitType;
+    }
+
+    public String getFabric() {
+        return fabric;
+    }
+
+    public void setFabric(String fabric) {
+        this.fabric = fabric;
+    }
+
+    public String getStyleType() {
+        return styleType;
+    }
+
+    public void setStyleType(String styleType) {
+        this.styleType = styleType;
+    }
+
+    public String getSeason() {
+        return season;
+    }
+
+    public void setSeason(String season) {
+        this.season = season;
+    }
+
+    public String getPriceBucket() {
+        return priceBucket;
+    }
+
+    public void setPriceBucket(String priceBucket) {
+        this.priceBucket = priceBucket;
+    }
+
+    public List<String> getOccasionTags() {
+        return occasionTags;
+    }
+
+    public void setOccasionTags(List<String> occasionTags) {
+        this.occasionTags = occasionTags;
+    }
 }

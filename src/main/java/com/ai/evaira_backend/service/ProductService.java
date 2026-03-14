@@ -3,7 +3,9 @@ package com.ai.evaira_backend.service;
 import com.ai.evaira_backend.dto.ProductDto;
 import com.ai.evaira_backend.entity.Product;
 import com.ai.evaira_backend.repository.ProductRepository;
-import lombok.extern.slf4j.Slf4j;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -17,32 +19,58 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
-    public ProductService(ProductRepository productRepository) {
+
+    private final  ObjectMapper objectMapper;
+
+    public ProductService(ProductRepository productRepository,ObjectMapper objectMapper) {
         this.productRepository = productRepository;
+        this.objectMapper = objectMapper;
     }
 
+    @Transactional
     public List<Product> saveExternalProducts(List<ProductDto> products) {
-        log.info("Storing the products");
-        return products.stream()
-                .map(this::mapAndSave)
+
+        log.info("Storing {} products", products.size());
+
+        List<Product> entities = products.stream()
+                .map(this::mapToEntity)
                 .toList();
+
+        return productRepository.saveAll(entities);
     }
 
-    private Product mapAndSave(ProductDto dto) {
+    private Product mapToEntity(ProductDto dto) {
+
         Product product = productRepository
-                .findByExternalId(String.valueOf(dto.getId()))
+                .findByExternalId(dto.getExternalId())
                 .orElse(new Product());
 
-        product.setExternalId(String.valueOf(dto.getId()));
+        product.setExternalId(dto.getExternalId());
         product.setTitle(dto.getTitle());
         product.setPrice(dto.getPrice());
         product.setDescription(dto.getDescription());
         product.setCategory(dto.getCategory());
+        product.setSubCategory(dto.getSubCategory());
+        product.setGender(dto.getGender());
+        product.setPrimaryColor(dto.getPrimaryColor());
+        product.setFitType(dto.getFitType());
+        product.setFabric(dto.getFabric());
+        product.setStyleType(dto.getStyleType());
+        product.setSeason(dto.getSeason());
+        product.setPriceBucket(dto.getPriceBucket());
+
         product.setImageUrl(dto.getImageUrl());
         product.setDeeplinkUrl(dto.getDeeplinkUrl());
         product.setRating(dto.getRating());
+        product.setLikesCount(
+                (long) (dto.getLikesCount() != null ? dto.getLikesCount() : 0)
+        );
 
-        return productRepository.save(product);
+        product.setOccasionTags(dto.getOccasionTags());
+        product.setColorFamily(dto.getColorFamily());
+        product.setStyleVibe(dto.getStyleVibe());
+
+        return product;
     }
 
     public List<Product> getAllFromDb() {

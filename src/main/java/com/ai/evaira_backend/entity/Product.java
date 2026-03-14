@@ -1,9 +1,12 @@
 package com.ai.evaira_backend.entity;
 
+import com.vladmihalcea.hibernate.type.json.JsonType;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.Type;
 
-import java.io.Serializable;
+import java.util.List;
+
 
 @Data
 @Entity
@@ -11,44 +14,73 @@ import java.io.Serializable;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;            // your DB id
+    private Long id;   // DB ID
 
-    private String externalId;// id from Scrapping data (e.g. "2")
-    @Column(length = 2000)
-    private String deeplinkUrl;
+    @Column(nullable = false)
+    private String externalId;
 
     private String title;
-    private Double price;
 
-    @Column(length = 2000)
     private String description;
 
-    private String category;
     private String imageUrl;
 
+    private String deeplinkUrl;
+
+    private Double price;
     private Double rating;
 
-//    private Integer ratingCount;
+    private String gender;
+    private String category;
+    private String subCategory;
+    private String primaryColor;
+    private String fitType;
+    private String fabric;
+    private String styleType;
+    private String season;
+    private String priceBucket;
+
+
 
     @Column(nullable = false)
     private Long likesCount =0L;
 
-    public Long getLikesCount() {
-        return likesCount;
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private List<String> occasionTags;
+
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private List<String> colorFamily;
+
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private List<String> styleVibe;
+
+
+    public List<String> getOccasionTags() {
+        return occasionTags;
     }
 
-    public void setLikesCount(Long likesCount) {
-        this.likesCount = likesCount;
+    public void setOccasionTags(List<String> occasionTags) {
+        this.occasionTags = occasionTags;
     }
 
-    public String getDeeplinkUrl() {
-        return deeplinkUrl;
+    public List<String> getColorFamily() {
+        return colorFamily;
     }
 
-    public void setDeeplinkUrl(String deeplinkUrl) {
-        this.deeplinkUrl = deeplinkUrl;
+    public void setColorFamily(List<String> colorFamily) {
+        this.colorFamily = colorFamily;
     }
-// getters/setters
+
+    public List<String> getStyleVibe() {
+        return styleVibe;
+    }
+
+    public void setStyleVibe(List<String> styleVibe) {
+        this.styleVibe = styleVibe;
+    }
 
     public Long getId() {
         return id;
@@ -74,28 +106,12 @@ public class Product {
         this.title = title;
     }
 
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     public String getImageUrl() {
@@ -106,6 +122,22 @@ public class Product {
         this.imageUrl = imageUrl;
     }
 
+    public String getDeeplinkUrl() {
+        return deeplinkUrl;
+    }
+
+    public void setDeeplinkUrl(String deeplinkUrl) {
+        this.deeplinkUrl = deeplinkUrl;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
     public Double getRating() {
         return rating;
     }
@@ -114,13 +146,86 @@ public class Product {
         this.rating = rating;
     }
 
-//    public Integer getRatingCount() {
-//        return ratingCount;
-//    }
-//
-//    public void setRatingCount(Integer ratingCount) {
-//        this.ratingCount = ratingCount;
-//    }
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getSubCategory() {
+        return subCategory;
+    }
+
+    public void setSubCategory(String subCategory) {
+        this.subCategory = subCategory;
+    }
+
+    public String getPrimaryColor() {
+        return primaryColor;
+    }
+
+    public void setPrimaryColor(String primaryColor) {
+        this.primaryColor = primaryColor;
+    }
+
+    public String getFitType() {
+        return fitType;
+    }
+
+    public void setFitType(String fitType) {
+        this.fitType = fitType;
+    }
+
+    public String getFabric() {
+        return fabric;
+    }
+
+    public void setFabric(String fabric) {
+        this.fabric = fabric;
+    }
+
+    public String getStyleType() {
+        return styleType;
+    }
+
+    public void setStyleType(String styleType) {
+        this.styleType = styleType;
+    }
+
+    public String getSeason() {
+        return season;
+    }
+
+    public void setSeason(String season) {
+        this.season = season;
+    }
+
+    public String getPriceBucket() {
+        return priceBucket;
+    }
+
+    public void setPriceBucket(String priceBucket) {
+        this.priceBucket = priceBucket;
+    }
+
+
+    public Long getLikesCount() {
+        return likesCount;
+    }
+
+    public void setLikesCount(Long likesCount) {
+        this.likesCount = likesCount;
+    }
 }
 
 
