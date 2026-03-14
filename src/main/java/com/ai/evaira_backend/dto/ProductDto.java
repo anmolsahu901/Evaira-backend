@@ -27,17 +27,11 @@ public class ProductDto {
     private String styleType;
     private String season;
     private String priceBucket;
-    private List<String> occasionTags;
-    private List<String> styleVibe;
+    private List<OccasionTag> occasionTags;
+    private List<StyleVibe> styleVibe;
     private List<String> colorFamily;
 
-    public List<String> getStyleVibe() {
-        return styleVibe;
-    }
 
-    public void setStyleVibe(List<String> styleVibe) {
-        this.styleVibe = styleVibe;
-    }
 
     public List<String> getColorFamily() {
         return colorFamily;
@@ -183,11 +177,19 @@ public class ProductDto {
         this.priceBucket = priceBucket;
     }
 
-    public List<String> getOccasionTags() {
+    public List<OccasionTag> getOccasionTags() {
         return occasionTags;
     }
 
-    public void setOccasionTags(List<String> occasionTags) {
+    public void setOccasionTags(List<OccasionTag> occasionTags) {
         this.occasionTags = occasionTags;
+    }
+
+    public List<StyleVibe> getStyleVibe() {
+        return styleVibe;
+    }
+
+    public void setStyleVibe(List<StyleVibe> styleVibe) {
+        this.styleVibe = styleVibe;
     }
 }

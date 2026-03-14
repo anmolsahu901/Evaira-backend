@@ -20,11 +20,11 @@ public class ProductService {
     private final ProductRepository productRepository;
 
 
-    private final  ObjectMapper objectMapper;
 
-    public ProductService(ProductRepository productRepository,ObjectMapper objectMapper) {
+
+    public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
-        this.objectMapper = objectMapper;
+
     }
 
     @Transactional

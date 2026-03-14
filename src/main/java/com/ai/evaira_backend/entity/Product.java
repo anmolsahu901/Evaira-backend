@@ -1,10 +1,13 @@
 package com.ai.evaira_backend.entity;
 
+import com.ai.evaira_backend.dto.OccasionTag;
+import com.ai.evaira_backend.dto.StyleVibe;
 import com.vladmihalcea.hibernate.type.json.JsonType;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.Type;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -47,23 +50,30 @@ public class Product {
 
     @Type(JsonType.class)
     @Column(columnDefinition = "jsonb")
-    private List<String> occasionTags;
+    private List<OccasionTag> occasionTags = new ArrayList<>();
 
     @Type(JsonType.class)
     @Column(columnDefinition = "jsonb")
-    private List<String> colorFamily;
+    private List<String> colorFamily = new ArrayList<>();
 
     @Type(JsonType.class)
     @Column(columnDefinition = "jsonb")
-    private List<String> styleVibe;
+    private List<StyleVibe> styleVibe = new ArrayList<>();
 
-
-    public List<String> getOccasionTags() {
+    public List<OccasionTag> getOccasionTags() {
         return occasionTags;
     }
 
-    public void setOccasionTags(List<String> occasionTags) {
+    public void setOccasionTags(List<OccasionTag> occasionTags) {
         this.occasionTags = occasionTags;
+    }
+
+    public List<StyleVibe> getStyleVibe() {
+        return styleVibe;
+    }
+
+    public void setStyleVibe(List<StyleVibe> styleVibe) {
+        this.styleVibe = styleVibe;
     }
 
     public List<String> getColorFamily() {
@@ -72,14 +82,6 @@ public class Product {
 
     public void setColorFamily(List<String> colorFamily) {
         this.colorFamily = colorFamily;
-    }
-
-    public List<String> getStyleVibe() {
-        return styleVibe;
-    }
-
-    public void setStyleVibe(List<String> styleVibe) {
-        this.styleVibe = styleVibe;
     }
 
     public Long getId() {

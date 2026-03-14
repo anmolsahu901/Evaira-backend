@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.Random;
 
-//@Slf4j
 @Service
 public class OtpService {
     private Map<String, String> otpStore = new ConcurrentHashMap<>();
