@@ -1,7 +1,6 @@
-package com.ai.evaira_backend.dto;
+package com.ai.evaira_backend.dto.enums;
 
 public enum OccasionTag {
-
     OFFICE,
     COLLEGE,
     CASUAL_EVERYDAY,
@@ -12,5 +11,4 @@ public enum OccasionTag {
     PARTY,
     VACATION,
     WEEKEND
-
 }

@@ -1,8 +1,11 @@
 package com.ai.evaira_backend.entity;
 
 
+import com.ai.evaira_backend.dto.enums.*;
+import com.vladmihalcea.hibernate.type.json.JsonType;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.Type;
 
 
 import java.util.ArrayList;
@@ -19,15 +22,47 @@ public class User {
     private String email;
     private String name;
     private Integer age;
-    private String gender;
-    private String location;
-    private String bodyType;
-    private String faceShape;
+    @Enumerated(EnumType.STRING)
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<UserPreference> preferences = new ArrayList<>();
+    private Gender gender;
 
-    // getters/setters
+    private String location; // pincode
+
+    @Enumerated(EnumType.STRING)
+    private BodyType bodyType;
+
+    @Enumerated(EnumType.STRING)
+    private FaceShape faceShape;
+
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private List<StyleVibe> styleVibes = new ArrayList<>();
+
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private List<FitType> fitTypes = new ArrayList<>();
+
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private List<OccasionTag> preferredOccasions = new ArrayList<>();
+
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private List<OccasionTag> avoidOccasions; //optional
+
+    // Color preferences
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private List<String> favoriteColors = new ArrayList<>();
+
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private List<String> dislikedColors; //optional
+
+    // Budget preference
+    private Integer minBudget;
+
+    private Integer maxBudget; // optional
 
     public Long getId() {
         return id;
@@ -61,11 +96,11 @@ public class User {
         this.age = age;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
@@ -77,28 +112,84 @@ public class User {
         this.location = location;
     }
 
-    public String getBodyType() {
+    public BodyType getBodyType() {
         return bodyType;
     }
 
-    public void setBodyType(String bodyType) {
+    public void setBodyType(BodyType bodyType) {
         this.bodyType = bodyType;
     }
 
-    public String getFaceShape() {
+    public FaceShape getFaceShape() {
         return faceShape;
     }
 
-    public void setFaceShape(String faceShape) {
+    public void setFaceShape(FaceShape faceShape) {
         this.faceShape = faceShape;
     }
 
-    public List<UserPreference> getPreferences() {
-        return preferences;
+    public List<StyleVibe> getStyleVibes() {
+        return styleVibes;
     }
 
-    public void setPreferences(List<UserPreference> preferences) {
-        this.preferences = preferences;
+    public void setStyleVibes(List<StyleVibe> styleVibes) {
+        this.styleVibes = styleVibes;
+    }
+
+    public List<FitType> getFitTypes() {
+        return fitTypes;
+    }
+
+    public void setFitTypes(List<FitType> fitTypes) {
+        this.fitTypes = fitTypes;
+    }
+
+    public List<OccasionTag> getPreferredOccasions() {
+        return preferredOccasions;
+    }
+
+    public void setPreferredOccasions(List<OccasionTag> preferredOccasions) {
+        this.preferredOccasions = preferredOccasions;
+    }
+
+    public List<OccasionTag> getAvoidOccasions() {
+        return avoidOccasions;
+    }
+
+    public void setAvoidOccasions(List<OccasionTag> avoidOccasions) {
+        this.avoidOccasions = avoidOccasions;
+    }
+
+    public List<String> getFavoriteColors() {
+        return favoriteColors;
+    }
+
+    public void setFavoriteColors(List<String> favoriteColors) {
+        this.favoriteColors = favoriteColors;
+    }
+
+    public List<String> getDislikedColors() {
+        return dislikedColors;
+    }
+
+    public void setDislikedColors(List<String> dislikedColors) {
+        this.dislikedColors = dislikedColors;
+    }
+
+    public Integer getMinBudget() {
+        return minBudget;
+    }
+
+    public void setMinBudget(Integer minBudget) {
+        this.minBudget = minBudget;
+    }
+
+    public Integer getMaxBudget() {
+        return maxBudget;
+    }
+
+    public void setMaxBudget(Integer maxBudget) {
+        this.maxBudget = maxBudget;
     }
 }
 

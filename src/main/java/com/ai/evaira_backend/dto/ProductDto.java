@@ -1,5 +1,7 @@
 package com.ai.evaira_backend.dto;
 
+import com.ai.evaira_backend.dto.enums.OccasionTag;
+import com.ai.evaira_backend.dto.enums.StyleVibe;
 import lombok.Data;
 
 import java.util.List;
@@ -7,7 +9,6 @@ import java.util.List;
 @Data
 // For JSON from https://fakestoreapi.com/products
 public class ProductDto {
-
 
     private String externalId;
     private String title;
@@ -17,7 +18,6 @@ public class ProductDto {
     private Double price;
     private Double rating;
     private Integer likesCount;
-
     private String gender;
     private String category;
     private String subCategory;
@@ -30,7 +30,6 @@ public class ProductDto {
     private List<OccasionTag> occasionTags;
     private List<StyleVibe> styleVibe;
     private List<String> colorFamily;
-
 
 
     public List<String> getColorFamily() {

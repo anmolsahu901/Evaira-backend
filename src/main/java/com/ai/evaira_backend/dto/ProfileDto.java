@@ -1,6 +1,7 @@
 package com.ai.evaira_backend.dto;
 
 
+import com.ai.evaira_backend.dto.enums.*;
 import lombok.Data;
 
 import java.util.List;
@@ -8,20 +9,35 @@ import java.util.List;
 @Data
 public class ProfileDto {
     private String name;
+
     private Integer age;
-    private String gender;
+
+    private Gender gender;
+
     private String location; // pincode
 
-    // Body / face / style info
-    private String bodyType;          // e.g. "oval", "rectangle", "hourglass"
-    private String faceShape;         // optional, if you need for accessories later
+    // Body / face / physical attributes
+    private BodyType bodyType;      // rectangle, oval, athletic
+    private FaceShape faceShape;     // optional for accessories suggestions
 
     // Style preferences
-    private List<String> preferredOccasions; // e.g. ["ethnic", "indo-western", "party", "casual"]
-    private List<String> avoidOccasions;     // optional: things they don't like
+    private List<StyleVibe> styleVibes;
 
-    private List<String> favoriteColors;     // e.g. ["black", "blue"]
-    private List<String> dislikedColors;     // optional
+    private List<FitType> fitTypes;
+
+    private List<OccasionTag> preferredOccasions;
+
+    private List<OccasionTag> avoidOccasions; //optional
+
+    // Color preferences
+    private List<String> favoriteColors;
+
+    private List<String> dislikedColors; //optional
+
+    // Budget preference
+    private Integer minBudget;
+
+    private Integer maxBudget; // optional
 
     public String getName() {
         return name;
@@ -39,11 +55,11 @@ public class ProfileDto {
         this.age = age;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
@@ -55,35 +71,51 @@ public class ProfileDto {
         this.location = location;
     }
 
-    public String getBodyType() {
+    public BodyType getBodyType() {
         return bodyType;
     }
 
-    public void setBodyType(String bodyType) {
+    public void setBodyType(BodyType bodyType) {
         this.bodyType = bodyType;
     }
 
-    public String getFaceShape() {
+    public FaceShape getFaceShape() {
         return faceShape;
     }
 
-    public void setFaceShape(String faceShape) {
+    public void setFaceShape(FaceShape faceShape) {
         this.faceShape = faceShape;
     }
 
-    public List<String> getPreferredOccasions() {
+    public List<StyleVibe> getStyleVibes() {
+        return styleVibes;
+    }
+
+    public void setStyleVibes(List<StyleVibe> styleVibes) {
+        this.styleVibes = styleVibes;
+    }
+
+    public List<FitType> getFitTypes() {
+        return fitTypes;
+    }
+
+    public void setFitTypes(List<FitType> fitTypes) {
+        this.fitTypes = fitTypes;
+    }
+
+    public List<OccasionTag> getPreferredOccasions() {
         return preferredOccasions;
     }
 
-    public void setPreferredOccasions(List<String> preferredOccasions) {
+    public void setPreferredOccasions(List<OccasionTag> preferredOccasions) {
         this.preferredOccasions = preferredOccasions;
     }
 
-    public List<String> getAvoidOccasions() {
+    public List<OccasionTag> getAvoidOccasions() {
         return avoidOccasions;
     }
 
-    public void setAvoidOccasions(List<String> avoidOccasions) {
+    public void setAvoidOccasions(List<OccasionTag> avoidOccasions) {
         this.avoidOccasions = avoidOccasions;
     }
 
@@ -103,6 +135,20 @@ public class ProfileDto {
         this.dislikedColors = dislikedColors;
     }
 
-// getters and setters
+    public Integer getMinBudget() {
+        return minBudget;
+    }
+
+    public void setMinBudget(Integer minBudget) {
+        this.minBudget = minBudget;
+    }
+
+    public Integer getMaxBudget() {
+        return maxBudget;
+    }
+
+    public void setMaxBudget(Integer maxBudget) {
+        this.maxBudget = maxBudget;
+    }
 }
 

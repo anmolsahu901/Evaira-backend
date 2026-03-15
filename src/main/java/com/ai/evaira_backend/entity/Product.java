@@ -1,7 +1,7 @@
 package com.ai.evaira_backend.entity;
 
-import com.ai.evaira_backend.dto.OccasionTag;
-import com.ai.evaira_backend.dto.StyleVibe;
+import com.ai.evaira_backend.dto.enums.OccasionTag;
+import com.ai.evaira_backend.dto.enums.StyleVibe;
 import com.vladmihalcea.hibernate.type.json.JsonType;
 import jakarta.persistence.*;
 import lombok.Data;

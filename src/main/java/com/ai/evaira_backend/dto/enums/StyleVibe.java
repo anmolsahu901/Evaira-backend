@@ -1,7 +1,6 @@
-package com.ai.evaira_backend.dto;
+package com.ai.evaira_backend.dto.enums;
 
 public enum StyleVibe {
-
     MINIMAL,
     STREETWEAR,
     CASUAL,
@@ -14,5 +13,4 @@ public enum StyleVibe {
     FORMAL,
     SUMMER_RESORT,
     PARTY
-
 }

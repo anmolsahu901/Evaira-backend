@@ -2,7 +2,6 @@ package com.ai.evaira_backend.service;
 
 import com.ai.evaira_backend.dto.ProfileDto;
 import com.ai.evaira_backend.entity.User;
-import com.ai.evaira_backend.entity.UserPreference;
 import com.ai.evaira_backend.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,40 +18,35 @@ public class UserProfileService {
 
     @Transactional
     public void saveProfile(User user, ProfileDto dto) {
-        // basic fields
+
+        // Basic info
         user.setName(dto.getName());
         user.setAge(dto.getAge());
         user.setGender(dto.getGender());
         user.setLocation(dto.getLocation());
+
+        // Body / face info
         user.setBodyType(dto.getBodyType());
         user.setFaceShape(dto.getFaceShape());
 
-        // clear old preferences (if any)
-        user.getPreferences().clear();
+        // Style preferences
+        user.setStyleVibes(dto.getStyleVibes());
+        user.setFitTypes(dto.getFitTypes());
 
-        // occasions
-        if (dto.getPreferredOccasions() != null) {
-            for (String occ : dto.getPreferredOccasions()) {
-                UserPreference p = new UserPreference();
-                p.setUser(user);
-                p.setType("OCCASION");
-                p.setValue(occ);
-                user.getPreferences().add(p);
-            }
-        }
+        // Occasion preferences
+        user.setPreferredOccasions(dto.getPreferredOccasions());
+        user.setAvoidOccasions(dto.getAvoidOccasions());
 
-        // colors
-        if (dto.getFavoriteColors() != null) {
-            for (String color : dto.getFavoriteColors()) {
-                UserPreference p = new UserPreference();
-                p.setUser(user);
-                p.setType("COLOR");
-                p.setValue(color);
-                user.getPreferences().add(p);
-            }
-        }
+        // Color preferences
+        user.setFavoriteColors(dto.getFavoriteColors());
+        user.setDislikedColors(dto.getDislikedColors());
 
-        userRepository.save(user); // cascades and saves preferences
+        // Budget
+        user.setMinBudget(dto.getMinBudget());
+        user.setMaxBudget(dto.getMaxBudget());
+
+        // Save user
+        userRepository.save(user);
     }
 
     public User findUserByEmail(String email){
