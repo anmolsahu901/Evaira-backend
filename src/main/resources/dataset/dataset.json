@@ -72,7 +72,6 @@
       "CASUAL","STREETWEAR"
     ]
   },
-  [
     {
       "externalId": "JEAHGG55KEC4R3QE",
       "title": "NMConsultants Straight Fit Men Light Blue Jeans",
@@ -217,8 +216,7 @@
       "styleVibe": [
         "CASUAL"
       ]
-    }
-  ,
+    },
     {
       "externalId": "JEAHAW3DRHYHWYZ3",
       "title": "Hence Loose Fit Men Light Blue Jeans",
@@ -2555,5 +2553,128 @@
       "styleVibe": [
         "CLASSIC"
       ]
-    }
+    },
+  {
+    "externalId": "469576890_green",
+    "title": "The Indian Garage Co Men Striped Slim Fit Shirt",
+    "description": "Stylish green striped slim-fit casual shirt from The Indian Garage Co, made with cotton fabric. Perfect for office, college, and everyday casual looks with a modern edge.",
+    "imageUrl": "https://assets-jiocdn.ajio.com/medias/sys_master/root/20240603/y4VF/665de03316fd2c6e6a47b472/-473Wx593H-469576890-green-MODEL.jpg",
+    "deeplinkUrl": "https://www.ajio.com/the-indian-garage-co-men-striped-slim-fit-shirt/p/469576890_green",
+    "price": 624.0,
+    "rating": 4.0,
+    "likesCount": 0,
+    "gender": "male",
+    "category": "topwear",
+    "subCategory": "shirts",
+    "primaryColor": "green",
+    "fitType": "SLIM",
+    "fabric": "cotton",
+    "styleType": "casual",
+    "season": "all-season",
+    "occasionTags": [
+      "OFFICE",
+      "COLLEGE",
+      "CASUAL_EVERYDAY"
+    ],
+    "priceBucket": "budget",
+    "colorFamily": [
+      "green"
+    ],
+    "styleVibe": [
+      "MINIMAL",
+      "CLASSIC"
+    ]
+  },
+  {
+    "externalId": "700259297_grey",
+    "title": "Snitch Men Checks Slim Fit Shirt",
+    "description": "Modern grey checked slim-fit shirt from Snitch, crafted for a sharp casual look. Ideal for office meetings, college events, dates, and everyday styling with contemporary vibe.",
+    "imageUrl": "https://assets-jiocdn.ajio.com/medias/sys_master/root/20250404/MfIC/67efc0a17a6cd4182fa736b2/-473Wx593H-700259297-grey-MODEL.jpg",
+    "deeplinkUrl": "https://www.ajio.com/snitch-men-checks-slim-fit-shirt/p/700259297_grey",
+    "price": 1499.0,
+    "rating": 4.3,
+    "likesCount": 0,
+    "gender": "male",
+    "category": "topwear",
+    "subCategory": "shirts",
+    "primaryColor": "grey",
+    "fitType": "SLIM",
+    "fabric": "cotton blend",
+    "styleType": "casual",
+    "season": "all-season",
+    "occasionTags": [
+      "OFFICE",
+      "COLLEGE",
+      "DATE_NIGHT"
+    ],
+    "priceBucket": "mid-range",
+    "colorFamily": [
+      "grey",
+      "neutral"
+    ],
+    "styleVibe": [
+      "MINIMAL",
+      "CLASSIC"
+    ]
+  },{
+  "externalId": "700817648_multi",
+  "title": "Campus Sutra Men Oversized Checked Casual Shirt",
+  "description": "Trendy multi-color checked oversized casual shirt from Campus Sutra, designed for relaxed street style and comfort. Great for college hangs, weekends, parties, and casual vibes.",
+  "imageUrl": "https://assets-jiocdn.ajio.com/medias/sys_master/root/20241128/x8uR/67482fd10f47f80c87b28fdd/-473Wx593H-700817648-multi-MODEL.jpg",
+  "deeplinkUrl": "https://www.ajio.com/campus-sutra-men-oversized-checked-casual-shirt/p/700817648_multi",
+  "price": 999.0,
+  "rating": 4.1,
+  "likesCount": 0,
+  "gender": "male",
+  "category": "topwear",
+  "subCategory": "shirts",
+  "primaryColor": "multi",
+  "fitType": "OVERSIZED",
+  "fabric": "cotton",
+  "styleType": "casual",
+  "season": "all-season",
+  "occasionTags": [
+    "COLLEGE",
+    "WEEKEND",
+    "PARTY"
+  ],
+  "priceBucket": "budget",
+  "colorFamily": [
+    "multi"
+  ],
+  "styleVibe": [
+    "STREETWEAR",
+    "CASUAL"
+  ]
+},
+  {
+    "externalId": "469626019_blue",
+    "title": "U.S. Polo Assn. Men Checked Tailored Fit Shirt",
+    "description": "Premium blue checked tailored-fit shirt from U.S. Polo Assn., offering a polished smart-casual look. Perfect for office environments, formal casual events, and professional outings.",
+    "imageUrl": "https://assets-jiocdn.ajio.com/medias/sys_master/root/20240725/zmp9/66a20d906f60443f31b21ea8/-473Wx593H-469626019-blue-MODEL5.jpg",
+    "deeplinkUrl": "https://www.ajio.com/u-s-polo-assn-men-checked-tailored-fit-shirt/p/469626019_blue",
+    "price": 2199.0,
+    "rating": 4.4,
+    "likesCount": 0,
+    "gender": "male",
+    "category": "topwear",
+    "subCategory": "shirts",
+    "primaryColor": "blue",
+    "fitType": "REGULAR",
+    "fabric": "cotton",
+    "styleType": "formal casual",
+    "season": "all-season",
+    "occasionTags": [
+      "OFFICE",
+      "CASUAL_EVERYDAY"
+    ],
+    "priceBucket": "premium",
+    "colorFamily": [
+      "blue"
+    ],
+    "styleVibe": [
+      "CLASSIC",
+      "FORMAL"
+    ]
+  }
 ]
