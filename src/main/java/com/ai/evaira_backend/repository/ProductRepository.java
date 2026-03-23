@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
@@ -14,5 +15,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query("select p.deeplinkUrl from Product p where p.id = :id")
     Optional<String> findDeeplinkById(@Param("id") Long id);
 
+    List<Product> findByGender(String gender);
 
 }

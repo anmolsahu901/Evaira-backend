@@ -1,5 +1,6 @@
 package com.ai.evaira_backend.dto;
 
+import com.ai.evaira_backend.dto.enums.BudgetRange;
 import com.ai.evaira_backend.dto.enums.OccasionTag;
 import com.ai.evaira_backend.dto.enums.StyleVibe;
 import lombok.Data;
@@ -168,8 +169,8 @@ public class ProductDto {
         this.season = season;
     }
 
-    public String getPriceBucket() {
-        return priceBucket;
+    public BudgetRange getPriceBucket() {
+        return BudgetRange.valueOf(priceBucket);
     }
 
     public void setPriceBucket(String priceBucket) {
