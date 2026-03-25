@@ -1,6 +1,7 @@
 package com.ai.evaira_backend.service;
 
 import com.ai.evaira_backend.dto.ProductDto;
+import com.ai.evaira_backend.dto.enums.ProductColor;
 import com.ai.evaira_backend.entity.Product;
 import com.ai.evaira_backend.repository.ProductRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -58,7 +59,7 @@ public class ProductService {
         product.setStyleType(dto.getStyleType());
         product.setSeason(dto.getSeason());
         product.setPriceBucket(dto.getPriceBucket());
-
+        product.setColor(ProductColor.fromValue(dto.getPrimaryColor()));
         product.setImageUrl(dto.getImageUrl());
         product.setDeeplinkUrl(dto.getDeeplinkUrl());
         product.setRating(dto.getRating());

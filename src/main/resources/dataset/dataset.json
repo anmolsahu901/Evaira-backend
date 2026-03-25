@@ -17,7 +17,7 @@
     "styleType": "casual",
     "season": "all-season",
     "occasionTags": ["CASUAL_EVERYDAY", "COLLEGE"],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": ["medium", "neutral"],
     "styleVibe": ["CASUAL", "MINIMAL"]
   },
@@ -30,17 +30,17 @@
     "price": 1671.0,
     "rating": 0.0,
     "likesCount": 0,
-    "gender": "MEN",
-    "category": "BOTTOMWEAR",
-    "subCategory": "JEANS",
-    "primaryColor": "BLUE",
+    "gender": "male",
+    "category": "bottomwear",
+    "subCategory": "jeans",
+    "primaryColor": "blue",
     "fitType": "SLIM",
-    "fabric": "COTTON_BLEND",
-    "styleType": "CASUAL",
-    "season": "ALL_SEASON",
+    "fabric": "cotton blend",
+    "styleType": "casual",
+    "season": "all-season",
     "occasionTags": ["CASUAL_EVERYDAY", "COLLEGE"],
-    "priceBucket": "MID_RANGE",
-    "colorFamily": ["MEDIUM", "COOL"],
+    "priceBucket": "MEDIUM",
+    "colorFamily": ["medium", "cool"],
     "styleVibe": ["CASUAL"]
   }
 ,
@@ -59,10 +59,10 @@
     "primaryColor": "blue",
     "fitType": "BOOT_LEG",
     "fabric": "cotton blend",
-    "styleType": "CASUAL",
+    "styleType": "casual",
     "season": "all-season",
     "occasionTags": ["CASUAL_EVERYDAY", "VACATION"],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": ["blue"],
     "styleVibe": ["CASUAL", "STREETWEAR"]
   }
@@ -82,10 +82,10 @@
     "primaryColor": "light blue",
     "fitType": "STRAIGHT",
     "fabric": "denim",
-    "styleType": "CASUAL",
+    "styleType": "casual",
     "season": "all-season",
     "occasionTags": ["CASUAL_EVERYDAY", "COLLEGE"],
-    "priceBucket": "budget",
+    "priceBucket": "MEDIUM",
     "colorFamily": ["light blue"],
     "styleVibe": ["CASUAL"]
   }
@@ -108,7 +108,7 @@
     "styleType": "casual",
     "season": "all-season",
     "occasionTags": ["CASUAL_EVERYDAY"],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": ["black"],
     "styleVibe": ["CASUAL", "STREETWEAR"]
   },
@@ -132,7 +132,7 @@
       "occasionTags": [
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "grey"
       ],
@@ -161,7 +161,7 @@
       "occasionTags": [
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "mid-range",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "black"
       ],
@@ -190,7 +190,7 @@
       "occasionTags": [
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "beige",
         "neutral"
@@ -220,7 +220,7 @@
       "occasionTags": [
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "mid-range",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "light blue"
       ],
@@ -249,7 +249,7 @@
       "occasionTags": [
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "mid-range",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "black"
       ],
@@ -276,7 +276,7 @@
     "styleType": "casual",
     "season": "all-season",
     "occasionTags": ["CASUAL_EVERYDAY"],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": ["dark grey"],
     "styleVibe": ["CASUAL", "STREETWEAR"]
   }
@@ -298,7 +298,7 @@
     "styleType": "casual",
     "season": "all-season",
     "occasionTags": ["CASUAL_EVERYDAY", "VACATION"],
-    "priceBucket": "budget",
+    "priceBucket": "MEDIUM",
     "colorFamily": ["light blue"],
     "styleVibe": ["CASUAL", "CLASSIC"]
   }
@@ -320,7 +320,7 @@
     "styleType": "casual",
     "season": "all-season",
     "occasionTags": ["CASUAL_EVERYDAY", "COLLEGE"],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": ["black"],
     "styleVibe": ["CASUAL", "CLASSIC"]
   }
@@ -342,7 +342,7 @@
     "styleType": "casual",
     "season": "all-season",
     "occasionTags": ["CASUAL_EVERYDAY", "COLLEGE"],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": ["black"],
     "styleVibe": ["CASUAL", "TRENDY"]
   }
@@ -364,7 +364,7 @@
     "styleType": "casual",
     "season": "all-season",
     "occasionTags": ["CASUAL_EVERYDAY"],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": ["black"],
     "styleVibe": ["CASUAL", "STREETWEAR"]
   },
@@ -389,7 +389,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "blue"
     ],
@@ -419,7 +419,7 @@
       "CASUAL_EVERYDAY",
       "VACATION"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "white"
     ],
@@ -449,7 +449,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "premium",
+    "priceBucket": "HIGH",
     "colorFamily": [
       "blue"
     ],
@@ -478,7 +478,7 @@
     "occasionTags": [
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "white"
     ],
@@ -508,7 +508,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "black"
     ],
@@ -536,7 +536,7 @@
       "styleType": "casual",
       "season": "all-season",
       "occasionTags": ["CASUAL_EVERYDAY", "COLLEGE"],
-      "priceBucket": "mid-range",
+      "priceBucket": "MEDIUM",
       "colorFamily": ["white"],
       "styleVibe": ["CASUAL", "CLASSIC"]
     },
@@ -558,7 +558,7 @@
       "styleType": "casual",
       "season": "all-season",
       "occasionTags": ["CASUAL_EVERYDAY", "COLLEGE"],
-      "priceBucket": "mid-range",
+      "priceBucket": "MEDIUM",
       "colorFamily": ["black"],
       "styleVibe": ["CASUAL", "CLASSIC"]
     },
@@ -580,7 +580,7 @@
       "styleType": "casual",
       "season": "all-season",
       "occasionTags": ["CASUAL_EVERYDAY", "COLLEGE"],
-      "priceBucket": "mid-range",
+      "priceBucket": "MEDIUM",
       "colorFamily": ["beige"],
       "styleVibe": ["CASUAL"]
     },
@@ -602,7 +602,7 @@
       "styleType": "casual",
       "season": "all-season",
       "occasionTags": ["CASUAL_EVERYDAY"],
-      "priceBucket": "mid-range",
+      "priceBucket": "MEDIUM",
       "colorFamily": ["beige"],
       "styleVibe": ["CASUAL"]
     },
@@ -624,7 +624,7 @@
       "styleType": "casual",
       "season": "all-season",
       "occasionTags": ["CASUAL_EVERYDAY"],
-      "priceBucket": "mid-range",
+      "priceBucket": "MEDIUM",
       "colorFamily": ["brown"],
       "styleVibe": ["CASUAL"]
     },
@@ -646,7 +646,7 @@
       "styleType": "casual",
       "season": "all-season",
       "occasionTags": ["CASUAL_EVERYDAY"],
-      "priceBucket": "mid-range",
+      "priceBucket": "MEDIUM",
       "colorFamily": ["grey"],
       "styleVibe": ["CASUAL"]
     },
@@ -668,7 +668,7 @@
     "styleType": "casual",
     "season": "all-season",
     "occasionTags": ["COLLEGE", "CASUAL_EVERYDAY"],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": ["black"],
     "styleVibe": ["CASUAL", "CLASSIC"]
   },
@@ -690,7 +690,7 @@
     "styleType": "casual",
     "season": "all-season",
     "occasionTags": ["CASUAL_EVERYDAY", "VACATION"],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": ["white"],
     "styleVibe": ["CASUAL", "MINIMAL"]
   },
@@ -712,7 +712,7 @@
     "styleType": "casual",
     "season": "all-season",
     "occasionTags": ["COLLEGE", "CASUAL_EVERYDAY"],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": ["light blue"],
     "styleVibe": ["CASUAL"]
   },
@@ -734,7 +734,7 @@
     "styleType": "casual",
     "season": "all-season",
     "occasionTags": ["COLLEGE", "CASUAL_EVERYDAY"],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": ["beige"],
     "styleVibe": ["CASUAL", "TRENDY"]
   },
@@ -756,7 +756,7 @@
     "styleType": "formal",
     "season": "all-season",
     "occasionTags": ["OFFICE"],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": ["grey"],
     "styleVibe": ["CLASSIC", "FORMAL"]
   },
@@ -778,7 +778,7 @@
     "styleType": "formal",
     "season": "all-season",
     "occasionTags": ["OFFICE"],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": ["cream"],
     "styleVibe": ["CLASSIC", "FORMAL"]
   },
@@ -800,7 +800,7 @@
     "styleType": "formal",
     "season": "all-season",
     "occasionTags": ["OFFICE"],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": ["black"],
     "styleVibe": ["CLASSIC", "FORMAL"]
   },
@@ -822,7 +822,7 @@
         "styleType": "formal",
         "season": "all-season",
         "occasionTags": ["OFFICE"],
-        "priceBucket": "mid-range",
+        "priceBucket": "MEDIUM",
         "colorFamily": ["grey"],
         "styleVibe": ["CLASSIC", "FORMAL"]
       },
@@ -844,7 +844,7 @@
         "styleType": "formal",
         "season": "all-season",
         "occasionTags": ["OFFICE"],
-        "priceBucket": "mid-range",
+        "priceBucket": "HIGH",
         "colorFamily": ["blue"],
         "styleVibe": ["CLASSIC", "FORMAL"]
       },
@@ -866,7 +866,7 @@
         "styleType": "formal",
         "season": "all-season",
         "occasionTags": ["OFFICE"],
-        "priceBucket": "mid-range",
+        "priceBucket": "MEDIUM",
         "colorFamily": ["grey"],
         "styleVibe": ["CLASSIC", "FORMAL"]
       },
@@ -888,7 +888,7 @@
         "styleType": "formal",
         "season": "all-season",
         "occasionTags": ["OFFICE"],
-        "priceBucket": "mid-range",
+        "priceBucket": "MEDIUM",
         "colorFamily": ["cream"],
         "styleVibe": ["CLASSIC", "FORMAL"]
       },
@@ -910,7 +910,7 @@
         "styleType": "formal",
         "season": "all-season",
         "occasionTags": ["OFFICE"],
-        "priceBucket": "mid-range",
+        "priceBucket": "MEDIUM",
         "colorFamily": ["black"],
         "styleVibe": ["CLASSIC", "FORMAL"]
       },
@@ -932,7 +932,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["grey"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -954,7 +954,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["cream"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -976,7 +976,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["brown"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -998,7 +998,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "premium",
+          "priceBucket": "HIGH",
           "colorFamily": ["grey"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1020,7 +1020,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "HIGH",
           "colorFamily": ["grey"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1042,7 +1042,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["light green"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1064,7 +1064,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "premium",
+          "priceBucket": "HIGH",
           "colorFamily": ["grey"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1086,7 +1086,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "HIGH",
           "colorFamily": ["grey"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1108,7 +1108,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["white"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1130,7 +1130,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["beige"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1152,7 +1152,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["blue"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1174,7 +1174,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "budget",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["maroon"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1196,7 +1196,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "budget",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["green"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1218,7 +1218,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "budget",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["grey"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1240,7 +1240,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "budget",
+          "priceBucket": "LOW",
           "colorFamily": ["brown"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1262,7 +1262,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "budget",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["dark green"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1284,7 +1284,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "budget",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["khaki"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1306,7 +1306,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["dark blue"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1328,7 +1328,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["grey"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1350,7 +1350,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["white"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1372,7 +1372,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["brown"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1394,7 +1394,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "budget",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["khaki"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1416,7 +1416,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["dark blue"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1438,7 +1438,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["grey"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1460,7 +1460,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["white"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1482,7 +1482,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["brown"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1504,7 +1504,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "budget",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["maroon"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1526,7 +1526,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "budget",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["light green"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1548,7 +1548,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["black"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1570,7 +1570,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["grey"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1592,7 +1592,7 @@
           "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["blue"],
           "styleVibe": ["CLASSIC", "FORMAL"]
         },
@@ -1614,7 +1614,7 @@
           "styleType": "casual",
           "season": "all-season",
           "occasionTags": ["CASUAL_EVERYDAY"],
-          "priceBucket": "budget",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["multicolor"],
           "styleVibe": ["CASUAL", "TRENDY"]
         },
@@ -1627,16 +1627,17 @@
           "price": 1299.0,
           "rating": 4.2,
           "likesCount": 0,
+          "likesCount": 0,
           "gender": "male",
           "category": "bottomwear",
           "subCategory": "trousers",
           "primaryColor": "brown",
           "fitType": "RELAXED",
           "fabric": "cotton blend",
-          "styleType": "formal casual",
+          "styleType": "formal",
           "season": "all-season",
           "occasionTags": ["OFFICE", "CASUAL_EVERYDAY"],
-          "priceBucket": "mid-range",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["brown", "earth tones"],
           "styleVibe": ["CLASSIC", "CASUAL"]
         },
@@ -1658,7 +1659,7 @@
           "styleType": "casual",
           "season": "all-season",
           "occasionTags": ["CASUAL_EVERYDAY", "VACATION"],
-          "priceBucket": "budget",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["black"],
           "styleVibe": ["STREETWEAR", "CASUAL"]
         },
@@ -1680,7 +1681,7 @@
           "styleType": "casual",
           "season": "all-season",
           "occasionTags": ["CASUAL_EVERYDAY", "VACATION"],
-          "priceBucket": "budget",
+          "priceBucket": "MEDIUM",
           "colorFamily": ["olive green"],
           "styleVibe": ["STREETWEAR", "CASUAL"]
         },
@@ -1702,7 +1703,7 @@
           "styleType": "casual",
           "season": "all-season",
           "occasionTags": ["CASUAL_EVERYDAY", "GYM_ACTIVE"],
-          "priceBucket": "budget",
+          "priceBucket": "LOW",
           "colorFamily": ["varies"],
           "styleVibe": ["STREETWEAR", "CASUAL"]
         }
@@ -1725,7 +1726,7 @@
             "styleType": "casual",
             "season": "all-season",
             "occasionTags": ["CASUAL_EVERYDAY", "VACATION"],
-            "priceBucket": "budget",
+            "priceBucket": "MEDIUM",
             "colorFamily": ["beige"],
             "styleVibe": ["STREETWEAR", "CASUAL"]
           },
@@ -1747,7 +1748,7 @@
             "styleType": "casual",
             "season": "all-season",
             "occasionTags": ["CASUAL_EVERYDAY", "VACATION"],
-            "priceBucket": "budget",
+            "priceBucket": "MEDIUM",
             "colorFamily": ["olive green"],
             "styleVibe": ["STREETWEAR", "CASUAL"]
           },
@@ -1769,7 +1770,7 @@
             "styleType": "casual",
             "season": "all-season",
             "occasionTags": ["CASUAL_EVERYDAY", "VACATION"],
-            "priceBucket": "budget",
+            "priceBucket": "MEDIUM",
             "colorFamily": ["beige"],
             "styleVibe": ["STREETWEAR", "CASUAL"]
           },
@@ -1791,7 +1792,7 @@
             "styleType": "casual",
             "season": "all-season",
             "occasionTags": ["CASUAL_EVERYDAY", "VACATION"],
-            "priceBucket": "budget",
+            "priceBucket": "MEDIUM",
             "colorFamily": ["olive green"],
             "styleVibe": ["STREETWEAR", "CASUAL"]
           },
@@ -1813,7 +1814,7 @@
             "styleType": "casual",
             "season": "all-season",
             "occasionTags": ["CASUAL_EVERYDAY", "VACATION"],
-            "priceBucket": "budget",
+            "priceBucket": "MEDIUM",
             "colorFamily": ["black"],
             "styleVibe": ["STREETWEAR", "CASUAL"]
           },
@@ -1835,7 +1836,7 @@
               "styleType": "casual",
               "season": "all-season",
               "occasionTags": ["CASUAL_EVERYDAY", "VACATION"],
-              "priceBucket": "budget",
+              "priceBucket": "MEDIUM",
               "colorFamily": ["olive green"],
               "styleVibe": ["STREETWEAR", "CASUAL"]
             },
@@ -1857,7 +1858,7 @@
               "styleType": "casual",
               "season": "all-season",
               "occasionTags": ["CASUAL_EVERYDAY", "VACATION"],
-              "priceBucket": "budget",
+              "priceBucket": "MEDIUM",
               "colorFamily": ["black"],
               "styleVibe": ["STREETWEAR", "CASUAL"]
             },
@@ -1879,7 +1880,7 @@
               "styleType": "casual",
               "season": "all-season",
               "occasionTags": ["CASUAL_EVERYDAY", "VACATION"],
-              "priceBucket": "budget",
+              "priceBucket": "MEDIUM",
               "colorFamily": ["olive green"],
               "styleVibe": ["STREETWEAR", "CASUAL"]
             },
@@ -1901,7 +1902,7 @@
               "styleType": "casual",
               "season": "all-season",
               "occasionTags": ["CASUAL_EVERYDAY", "VACATION"],
-              "priceBucket": "budget",
+              "priceBucket": "MEDIUM",
               "colorFamily": ["navy"],
               "styleVibe": ["STREETWEAR", "CASUAL"]
             },
@@ -1923,7 +1924,7 @@
               "styleType": "casual",
               "season": "all-season",
               "occasionTags": ["HOME_LOUNGE"],
-              "priceBucket": "budget",
+              "priceBucket": "LOW",
               "colorFamily": ["black"],
               "styleVibe": ["CASUAL", "MINIMAL"]
             },
@@ -1945,7 +1946,7 @@
               "styleType": "casual",
               "season": "all-season",
               "occasionTags": ["HOME_LOUNGE"],
-              "priceBucket": "budget",
+              "priceBucket": "LOW",
               "colorFamily": ["grey"],
               "styleVibe": ["MINIMAL", "CASUAL"]
             },
@@ -1967,7 +1968,7 @@
               "styleType": "casual",
               "season": "all-season",
               "occasionTags": ["HOME_LOUNGE"],
-              "priceBucket": "budget",
+              "priceBucket": "LOW",
               "colorFamily": ["blue"],
               "styleVibe": ["MINIMAL", "CASUAL"]
             },
@@ -1989,7 +1990,7 @@
               "styleType": "casual",
               "season": "all-season",
               "occasionTags": ["HOME_LOUNGE"],
-              "priceBucket": "mid-range",
+              "priceBucket": "LOW",
               "colorFamily": ["navy"],
               "styleVibe": ["MINIMAL", "CASUAL"]
             },
@@ -2011,7 +2012,7 @@
               "styleType": "casual",
               "season": "all-season",
               "occasionTags": ["HOME_LOUNGE"],
-              "priceBucket": "mid-range",
+              "priceBucket": "LOW",
               "colorFamily": ["grey"],
               "styleVibe": ["MINIMAL", "CASUAL"]
             },
@@ -2033,7 +2034,7 @@
               "styleType": "casual",
               "season": "all-season",
               "occasionTags": ["HOME_LOUNGE"],
-              "priceBucket": "budget",
+              "priceBucket": "LOW",
               "colorFamily": ["navy"],
               "styleVibe": ["MINIMAL"]
             },
@@ -2055,7 +2056,7 @@
               "styleType": "casual",
               "season": "all-season",
               "occasionTags": ["HOME_LOUNGE"],
-              "priceBucket": "mid-range",
+              "priceBucket": "LOW",
               "colorFamily": ["blue"],
               "styleVibe": ["MINIMAL"]
             },
@@ -2077,7 +2078,7 @@
               "styleType": "casual",
               "season": "all-season",
               "occasionTags": ["HOME_LOUNGE"],
-              "priceBucket": "budget",
+              "priceBucket": "LOW",
               "colorFamily": ["grey"],
               "styleVibe": ["MINIMAL"]
             },
@@ -2099,7 +2100,7 @@
               "styleType": "casual",
               "season": "all-season",
               "occasionTags": ["HOME_LOUNGE"],
-              "priceBucket": "budget",
+              "priceBucket": "LOW",
               "colorFamily": ["black"],
               "styleVibe": ["MINIMAL"]
             },
@@ -2121,7 +2122,7 @@
               "styleType": "ethnic",
               "season": "all-season",
               "occasionTags": ["FESTIVE"],
-              "priceBucket": "budget",
+              "priceBucket": "LOW",
               "colorFamily": ["white"],
               "styleVibe": ["CLASSIC"]
             },
@@ -2143,7 +2144,7 @@
               "styleType": "ethnic",
               "season": "all-season",
               "occasionTags": ["FESTIVE", "HOME_LOUNGE"],
-              "priceBucket": "budget",
+              "priceBucket": "LOW",
               "colorFamily": ["white"],
               "styleVibe": ["CLASSIC"]
             },
@@ -2165,7 +2166,7 @@
               "styleType": "ethnic",
               "season": "all-season",
               "occasionTags": ["FESTIVE", "HOME_LOUNGE"],
-              "priceBucket": "budget",
+              "priceBucket": "LOW",
               "colorFamily": ["white"],
               "styleVibe": ["CLASSIC"]
             },
@@ -2187,7 +2188,7 @@
               "styleType": "ethnic",
               "season": "all-season",
               "occasionTags": ["FESTIVE", "HOME_LOUNGE"],
-              "priceBucket": "budget",
+              "priceBucket": "LOW",
               "colorFamily": ["off white"],
               "styleVibe": ["CLASSIC"]
             },
@@ -2209,7 +2210,7 @@
               "styleType": "ethnic",
               "season": "all-season",
               "occasionTags": ["FESTIVE", "PARTY"],
-              "priceBucket": "budget",
+              "priceBucket": "LOW",
               "colorFamily": ["various"],
               "styleVibe": ["CLASSIC"]
             },
@@ -2231,7 +2232,7 @@
               "styleType": "ethnic",
               "season": "all-season",
               "occasionTags": ["HOME_LOUNGE", "FESTIVE"],
-              "priceBucket": "budget",
+              "priceBucket": "LOW",
               "colorFamily": ["off white"],
               "styleVibe": ["CLASSIC"]
             },
@@ -2253,7 +2254,7 @@
                 "styleType": "ethnic",
                 "season": "all-season",
                 "occasionTags": ["FESTIVE", "HOME_LOUNGE"],
-                "priceBucket": "budget",
+                "priceBucket": "LOW",
                 "colorFamily": ["white"],
                 "styleVibe": ["CLASSIC"]
               },
@@ -2275,7 +2276,7 @@
                 "styleType": "ethnic",
                 "season": "all-season",
                 "occasionTags": ["FESTIVE", "HOME_LOUNGE"],
-                "priceBucket": "budget",
+                "priceBucket": "LOW",
                 "colorFamily": ["white"],
                 "styleVibe": ["CLASSIC"]
               },
@@ -2297,7 +2298,7 @@
                 "styleType": "ethnic",
                 "season": "all-season",
                 "occasionTags": ["FESTIVE", "HOME_LOUNGE"],
-                "priceBucket": "budget",
+                "priceBucket": "LOW",
                 "colorFamily": ["white"],
                 "styleVibe": ["CLASSIC"]
               },
@@ -2319,7 +2320,7 @@
                 "styleType": "ethnic",
                 "season": "all-season",
                 "occasionTags": ["FESTIVE", "HOME_LOUNGE"],
-                "priceBucket": "budget",
+                "priceBucket": "LOW",
                 "colorFamily": ["white"],
                 "styleVibe": ["CLASSIC"]
               },
@@ -2341,7 +2342,7 @@
                 "styleType": "ethnic",
                 "season": "all-season",
                 "occasionTags": ["FESTIVE", "HOME_LOUNGE"],
-                "priceBucket": "budget",
+                "priceBucket": "LOW",
                 "colorFamily": ["white"],
                 "styleVibe": ["CLASSIC"]
               },
@@ -2363,7 +2364,7 @@
                   "styleType": "ethnic",
                   "season": "all-season",
                   "occasionTags": ["HOME_LOUNGE", "FESTIVE"],
-                  "priceBucket": "budget",
+                  "priceBucket": "LOW",
                   "colorFamily": ["white"],
                   "styleVibe": ["CLASSIC"]
                 },
@@ -2385,7 +2386,7 @@
                   "styleType": "ethnic",
                   "season": "all-season",
                   "occasionTags": ["FESTIVE", "PARTY"],
-                  "priceBucket": "budget",
+                  "priceBucket": "LOW",
                   "colorFamily": ["varies"],
                   "styleVibe": ["CLASSIC"]
                 },
@@ -2407,7 +2408,7 @@
                   "styleType": "casual",
                   "season": "all-season",
                   "occasionTags": ["OFFICE", "COLLEGE", "CASUAL_EVERYDAY"],
-                  "priceBucket": "budget",
+                  "priceBucket": "LOW",
                   "colorFamily": ["green"],
                   "styleVibe": ["MINIMAL", "CLASSIC"]
                 },
@@ -2429,7 +2430,7 @@
                   "styleType": "casual",
                   "season": "all-season",
                   "occasionTags": ["OFFICE", "COLLEGE"],
-                  "priceBucket": "mid-range",
+                  "priceBucket": "MEDIUM",
                   "colorFamily": ["grey", "neutral"],
                   "styleVibe": ["CLASSIC"]
                 },
@@ -2451,7 +2452,7 @@
                   "styleType": "casual",
                   "season": "all-season",
                   "occasionTags": ["COLLEGE", "CASUAL_EVERYDAY", "PARTY"],
-                  "priceBucket": "budget",
+                  "priceBucket": "LOW",
                   "colorFamily": ["multi"],
                   "styleVibe": ["STREETWEAR", "TRENDY"]
                 },
@@ -2470,12 +2471,12 @@
                   "primaryColor": "blue",
                   "fitType": "REGULAR",
                   "fabric": "cotton",
-                  "styleType": "formal casual",
+                  "styleType": "formal",
                   "season": "all-season",
                   "occasionTags": [
                     "OFFICE"
                   ],
-                  "priceBucket": "premium",
+                  "priceBucket": "MEDIUM",
                   "colorFamily": [
                     "blue"
                   ],
@@ -2499,13 +2500,13 @@
                   "primaryColor": "white",
                   "fitType": "SLIM",
                   "fabric": "cotton",
-                  "styleType": "formal casual",
+                  "styleType": "formal",
                   "season": "all-season",
                   "occasionTags": [
                     "OFFICE",
                     "COLLEGE"
                   ],
-                  "priceBucket": "mid-range",
+                  "priceBucket": "MEDIUM",
                   "colorFamily": [
                     "white",
                     "neutral"
@@ -2537,7 +2538,7 @@
                     "COLLEGE",
                     "CASUAL_EVERYDAY"
                   ],
-                  "priceBucket": "budget",
+                  "priceBucket": "LOW",
                   "colorFamily": [
                     "white",
                     "neutral"
@@ -2568,7 +2569,7 @@
                     "COLLEGE",
                     "CASUAL_EVERYDAY"
                   ],
-                  "priceBucket": "mid-range",
+                  "priceBucket": "MEDIUM",
                   "colorFamily": [
                     "orange",
                     "warm tones"
@@ -2593,12 +2594,12 @@
                   "primaryColor": "navy",
                   "fitType": "REGULAR",
                   "fabric": "cotton",
-                  "styleType": "formal casual",
+                  "styleType": "formal",
                   "season": "all-season",
                   "occasionTags": [
                     "OFFICE"
                   ],
-                  "priceBucket": "premium",
+                  "priceBucket": "MEDIUM",
                   "colorFamily": [
                     "navy",
                     "blue"
@@ -2630,7 +2631,7 @@
                     "COLLEGE",
                     "CASUAL_EVERYDAY"
                   ],
-                  "priceBucket": "mid-range",
+                  "priceBucket": "MEDIUM",
                   "colorFamily": [
                     "teal",
                     "blue green"
@@ -2655,13 +2656,13 @@
                   "primaryColor": "maroon",
                   "fitType": "SLIM",
                   "fabric": "cotton",
-                  "styleType": "formal casual",
+                  "styleType": "formal",
                   "season": "all-season",
                   "occasionTags": [
                     "OFFICE",
                     "PARTY"
                   ],
-                  "priceBucket": "premium",
+                  "priceBucket": "MEDIUM",
                   "colorFamily": [
                     "maroon",
                     "red"
@@ -2692,7 +2693,7 @@
                     "COLLEGE",
                     "CASUAL_EVERYDAY"
                   ],
-                  "priceBucket": "budget",
+                  "priceBucket": "LOW",
                   "colorFamily": [
                     "white",
                     "neutral"
@@ -2723,7 +2724,7 @@
                     "COLLEGE",
                     "PARTY"
                   ],
-                  "priceBucket": "mid-range",
+                  "priceBucket": "MEDIUM",
                   "colorFamily": [
                     "maroon",
                     "red"
@@ -2754,7 +2755,7 @@
                       "CASUAL_EVERYDAY",
                       "COLLEGE"
                     ],
-                    "priceBucket": "mid-range",
+                    "priceBucket": "MEDIUM",
                     "colorFamily": [
                       "grey",
                       "neutral"
@@ -2786,7 +2787,7 @@
                       "COLLEGE",
                       "CASUAL_EVERYDAY"
                     ],
-                    "priceBucket": "mid-range",
+                    "priceBucket": "MEDIUM",
                     "colorFamily": [
                       "blue"
                     ],
@@ -2817,7 +2818,7 @@
                       "COLLEGE",
                       "CASUAL_EVERYDAY"
                     ],
-                    "priceBucket": "mid-range",
+                    "priceBucket": "LOW",
                     "colorFamily": [
                       "cream"
                     ],
@@ -2848,7 +2849,7 @@
                       "COLLEGE",
                       "CASUAL_EVERYDAY"
                     ],
-                    "priceBucket": "budget",
+                    "priceBucket": "LOW",
                     "colorFamily": [
                       "green"
                     ],
@@ -2879,7 +2880,7 @@
                       "COLLEGE",
                       "CASUAL_EVERYDAY"
                     ],
-                    "priceBucket": "mid-range",
+                    "priceBucket": "LOW",
                     "colorFamily": [
                       "purple"
                     ],
@@ -2908,7 +2909,7 @@
                       "occasionTags": [
                         "OFFICE"
                       ],
-                      "priceBucket": "premium",
+                      "priceBucket": "HIGH",
                       "colorFamily": [
                         "multicolour"
                       ],
@@ -2938,7 +2939,7 @@
                         "COLLEGE",
                         "CASUAL_EVERYDAY"
                       ],
-                      "priceBucket": "budget",
+                      "priceBucket": "LOW",
                       "colorFamily": [
                         "green"
                       ],
@@ -2968,7 +2969,7 @@
                         "COLLEGE",
                         "CASUAL_EVERYDAY"
                       ],
-                      "priceBucket": "budget",
+                      "priceBucket": "LOW",
                       "colorFamily": [
                         "black"
                       ],
@@ -2998,7 +2999,7 @@
                         "COLLEGE",
                         "CASUAL_EVERYDAY"
                       ],
-                      "priceBucket": "budget",
+                      "priceBucket": "LOW",
                       "colorFamily": [
                         "brown"
                       ],
@@ -3028,7 +3029,7 @@
                         "COLLEGE",
                         "CASUAL_EVERYDAY"
                       ],
-                      "priceBucket": "budget",
+                      "priceBucket": "LOW",
                       "colorFamily": [
                         "pink"
                       ],
@@ -3059,7 +3060,7 @@
                         "COLLEGE",
                         "CASUAL_EVERYDAY"
                       ],
-                      "priceBucket": "mid-range",
+                      "priceBucket": "MEDIUM",
                       "colorFamily": [
                         "white"
                       ],
@@ -3090,7 +3091,7 @@
                         "COLLEGE",
                         "CASUAL_EVERYDAY"
                       ],
-                      "priceBucket": "mid-range",
+                      "priceBucket": "MEDIUM",
                       "colorFamily": [
                         "maroon"
                       ],
@@ -3120,7 +3121,7 @@
                         "COLLEGE",
                         "CASUAL_EVERYDAY"
                       ],
-                      "priceBucket": "budget",
+                      "priceBucket": "LOW",
                       "colorFamily": [
                         "coffee"
                       ],
@@ -3149,7 +3150,7 @@
                         "COLLEGE",
                         "CASUAL_EVERYDAY"
                       ],
-                      "priceBucket": "mid-range",
+                      "priceBucket": "MEDIUM",
                       "colorFamily": [
                         "navy"
                       ],
@@ -3180,7 +3181,7 @@
                         "COLLEGE",
                         "CASUAL_EVERYDAY"
                       ],
-                      "priceBucket": "premium",
+                      "priceBucket": "MEDIUM",
                       "colorFamily": [
                         "navy"
                       ],
@@ -3211,7 +3212,7 @@
         "COLLEGE",
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "green"
       ],
@@ -3242,7 +3243,7 @@
         "COLLEGE",
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "mid-range",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "navy"
       ],
@@ -3273,7 +3274,7 @@
         "COLLEGE",
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "mid-range",
+      "priceBucket": "LOW",
       "colorFamily": [
         "brown"
       ],
@@ -3304,7 +3305,7 @@
         "COLLEGE",
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "mid-range",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "blue"
       ],
@@ -3334,7 +3335,7 @@
       "COLLEGE",
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "multicolor"
     ],
@@ -3365,7 +3366,7 @@
       "COLLEGE",
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "multi"
     ],
@@ -3395,7 +3396,7 @@
     "COLLEGE",
     "CASUAL_EVERYDAY"
   ],
-  "priceBucket": "mid-range",
+  "priceBucket": "MEDIUM",
   "colorFamily": [
     "neutral"
   ],
@@ -3426,7 +3427,7 @@
       "COLLEGE",
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "premium",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "beige",
       "neutral"
@@ -3457,7 +3458,7 @@
       "COLLEGE",
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "green"
     ],
@@ -3486,7 +3487,7 @@
       "COLLEGE",
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "premium",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "green"
     ],
@@ -3517,7 +3518,7 @@
       "COLLEGE",
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "green"
     ],
@@ -3546,7 +3547,7 @@
     "occasionTags": [
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "brown"
     ],
@@ -3576,7 +3577,7 @@
       "CASUAL_EVERYDAY",
       "VACATION"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "multicolor",
       "tropical"
@@ -3607,7 +3608,7 @@
     "occasionTags": [
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "black"
     ],
@@ -3637,7 +3638,7 @@
       "OFFICE",
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "black"
     ],
@@ -3667,7 +3668,7 @@
     "occasionTags": [
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "brown"
     ],
@@ -3696,7 +3697,7 @@
     "occasionTags": [
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "olive",
       "green"
@@ -3727,7 +3728,7 @@
       "CASUAL_EVERYDAY",
       "PARTY"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "cream",
       "multicolor"
@@ -3757,7 +3758,7 @@
     "occasionTags": [
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "black"
     ],
@@ -3772,7 +3773,7 @@
     "description": "Rare Rabbit Neutrons brown plain regular fit formal shirt. Made of cotton fabric with collar neck, button fly closure, full sleeves. Suitable for formal occasions. Available on Nykaa Fashion.",
     "imageUrl": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/4/4/4438e46916956_1.jpg?rnd=20200526195200&tr=w-256",
     "deeplinkUrl": "https://www.nykaafashion.com/rare-rabbit-neutrons-brown-plain-regular-fit-shirt/p/20606562",
-    "price": 0.0,
+    "price": 3154.0,
     "rating": 0.0,
     "likesCount": 0,
     "gender": "male",
@@ -3786,7 +3787,7 @@
     "occasionTags": [
       "OFFICE"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "HIGH",
     "colorFamily": [
       "brown"
     ],
@@ -3816,7 +3817,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "green"
     ],
@@ -3831,7 +3832,7 @@
       "description": "Rare Rabbit Benedict primary brown solid shirt in cotton fabric. Collar neck, button fly, full sleeves, regular fit. Casual occasion shirt.",
       "imageUrl": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/3/a3df7aa906958_1.jpg?rnd=20200526195200&tr=w-256",
       "deeplinkUrl": "https://www.nykaafashion.com/rare-rabbit-benedict-primary-brown-solid-shirt/p/13029362",
-      "price": 0.0,
+      "price": 3154.0,
       "rating": 0.0,
       "likesCount": 0,
       "gender": "male",
@@ -3846,7 +3847,7 @@
         "CASUAL_EVERYDAY",
         "OFFICE"
       ],
-      "priceBucket": "mid-range",
+      "priceBucket": "HIGH",
       "colorFamily": [
         "brown"
       ],
@@ -3861,7 +3862,7 @@
       "description": "Campus Sutra men ash green breezy-weave shirt in polycotton. Collar neck, button fly, full sleeves, regular fit, textured pattern. Casual.",
       "imageUrl": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/4/e/4e79964SS25CSMSSRT8301_1.jpg?rnd=20200526195200&tr=w-256",
       "deeplinkUrl": "https://www.nykaafashion.com/campus-sutra-men-ash-green-breezy-weave-shirt/p/19584724",
-      "price": 0.0,
+      "price": 950.0,
       "rating": 0.0,
       "likesCount": 0,
       "gender": "male",
@@ -3876,7 +3877,7 @@
         "CASUAL_EVERYDAY",
         "COLLEGE"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "green"
       ],
@@ -3891,7 +3892,7 @@
       "description": "The Souled Store TSS Originals dark paisley holiday shirt in rayon. Collar neck, button fly, half sleeves, regular fit. Casual patterned shirt.",
       "imageUrl": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/8/a8bffd6MD263632_1.jpg?rnd=20200526195200&tr=w-2566",
       "deeplinkUrl": "https://www.nykaafashion.com/the-souled-store-tss-originals-dark-paisley-holiday-shirt/p/16418436",
-      "price": 0.0,
+      "price": 1599.0,
       "rating": 0.0,
       "likesCount": 0,
       "gender": "male",
@@ -3907,7 +3908,7 @@
         "PARTY",
         "VACATION"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "multicolor"
       ],
@@ -3922,7 +3923,7 @@
       "description": "Showoff mens olive striped Cuban collar relaxed fit shirt in cotton. Button fly, half sleeves. Casual striped shirt.",
       "imageUrl": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/1/1/116872fOSHOWO00096962_1.jpg?rnd=20200526195200&tr=w-256",
       "deeplinkUrl": "https://www.nykaafashion.com/showoff-mens-olive-striped-cuban-collar-relaxed-fit-shirt/p/18673084",
-      "price": 0.0,
+      "price": 1599.0,
       "rating": 0.0,
       "likesCount": 0,
       "gender": "male",
@@ -3936,7 +3937,7 @@
       "occasionTags": [
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "green"
       ],
@@ -3966,7 +3967,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "blue"
     ],
@@ -3995,7 +3996,7 @@
     "occasionTags": [
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "blue",
       "red"
@@ -4025,7 +4026,7 @@
     "occasionTags": [
       "OFFICE"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "blue"
     ],
@@ -4055,7 +4056,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "purple"
     ],
@@ -4085,7 +4086,7 @@
       "CASUAL_EVERYDAY",
       "OFFICE"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "purple"
     ],
@@ -4115,7 +4116,7 @@
       "CASUAL_EVERYDAY",
       "VACATION"
     ],
-    "priceBucket": "premium",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "orange"
     ],
@@ -4146,7 +4147,7 @@
         "CASUAL_EVERYDAY",
         "VACATION"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "multi"
       ],
@@ -4175,7 +4176,7 @@
       "occasionTags": [
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "green"
       ],
@@ -4204,7 +4205,7 @@
       "occasionTags": [
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "black",
         "blue",
@@ -4236,7 +4237,7 @@
         "CASUAL_EVERYDAY",
         "VACATION"
       ],
-      "priceBucket": "mid-range",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "green"
       ],
@@ -4251,7 +4252,7 @@
       "description": "Campus Sutra blue crew neck t-shirt in polycotton fabric. Solid plain pattern, regular fit, half sleeves. Casual occasion for everyday wear. Available on Nykaa Fashion.",
       "imageUrl": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/a/2/a2f5c8dSSM24CSMSSTS7244_1.jpg?rnd=20200526195200&tr=w-256",
       "deeplinkUrl": "https://www.nykaafashion.com/campus-sutra-men-s-blue-crew-neck-t-shirt/p/18356038",
-      "price": 0.0,
+      "price": 850.0,
       "rating": 0.0,
       "likesCount": 0,
       "gender": "male",
@@ -4266,7 +4267,7 @@
         "CASUAL_EVERYDAY",
         "COLLEGE"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "blue"
       ],
@@ -4296,7 +4297,7 @@
         "CASUAL_EVERYDAY",
         "COLLEGE"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "orange"
       ],
@@ -4311,7 +4312,7 @@
       "description": "Bullmer black denim effect oversized crew neck t-shirt for men. Cotton blend fabric, graphic pattern, half sleeves. Casual trendy style. Available on Nykaa Fashion.",
       "imageUrl": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/7/2/728cd8aMDBUL25BDSPBLD_1.jpg?rnd=20200526195200&tr=w-256",
       "deeplinkUrl": "https://www.nykaafashion.com/bullmer-trendy-denim-black-half-sleeve-oversized-crew-neck-t-shirt-for-men/p/21673039",
-      "price": 0.0,
+      "price": 699.0,
       "rating": 0.0,
       "likesCount": 0,
       "gender": "male",
@@ -4325,7 +4326,7 @@
       "occasionTags": [
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "black"
       ],
@@ -4354,7 +4355,7 @@
       "occasionTags": [
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "blue"
       ],
@@ -4369,7 +4370,7 @@
       "description": "Dillinger beige oversized short sleeve acid washed t-shirt. Textured wash effect for trendy casual look. Suitable for everyday wear. Available on Nykaa Fashion.",
       "imageUrl": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/0/d/0d6e410DLMOV399BZB_1.jpg?rnd=20200526195200&tr=w-256",
       "deeplinkUrl": "https://www.nykaafashion.com/dillinger-mens-beige-oversized-short-sleeve-acid-washed-t-shirt/p/21692550",
-      "price": 0.0,
+      "price": 630.0,
       "rating": 0.0,
       "likesCount": 0,
       "gender": "male",
@@ -4383,7 +4384,7 @@
       "occasionTags": [
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "beige"
       ],
@@ -4412,7 +4413,7 @@
       "occasionTags": [
         "GYM_ACTIVE"
       ],
-      "priceBucket": "mid-range",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "black"
       ],
@@ -4441,7 +4442,7 @@
       "occasionTags": [
         "GYM_ACTIVE"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "black"
       ],
@@ -4470,7 +4471,7 @@
         "CASUAL_EVERYDAY",
         "COLLEGE"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "white"
       ],
@@ -4500,7 +4501,7 @@
         "CASUAL_EVERYDAY",
         "VACATION"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "multi"
       ],
@@ -4529,7 +4530,7 @@
       "occasionTags": [
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "white",
         "multi"
@@ -4560,7 +4561,7 @@
         "CASUAL_EVERYDAY",
         "COLLEGE"
       ],
-      "priceBucket": "premium",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "white"
       ],
@@ -4589,7 +4590,7 @@
       "occasionTags": [
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "mid-range",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "green"
       ],
@@ -4604,7 +4605,7 @@
       "description": "U.S. Polo Assn. multi-colour block slim fit casual T-shirt in cotton. Round neck, half sleeves, pull-on closure. Casual occasion. Positive reviews for fit and quality.",
       "imageUrl": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/6/e/6e5a80dUSTSHF0311_1.jpg?rnd=20200526195200&tr=w-256",
       "deeplinkUrl": "https://www.nykaafashion.com/u-s-polo-assn-colour-block-slim-fit-t-shirt/p/14360611",
-      "price": 0.0,
+      "price": 858.0,
       "rating": 0.0,
       "likesCount": 0,
       "gender": "male",
@@ -4619,7 +4620,7 @@
         "CASUAL_EVERYDAY",
         "COLLEGE"
       ],
-      "priceBucket": "mid-range",
+      "priceBucket": "LOW",
       "colorFamily": [
         "multi"
       ],
@@ -4634,7 +4635,7 @@
       "description": "Tommy Hilfiger logo regular fit cotton T-shirt. Premium casual style with brand logo. Round neck, short sleeves.",
       "imageUrl": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/b/6/b631efbS26HMKT376_1.jpg?rnd=20200526195200&tr=w-256",
       "deeplinkUrl": "https://www.nykaafashion.com/tommy-hilfiger-logo-regular-fit-cotton-t-shirt/p/24380905",
-      "price": 0.0,
+      "price": 1826.0,
       "rating": 0.0,
       "likesCount": 0,
       "gender": "male",
@@ -4648,7 +4649,7 @@
       "occasionTags": [
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "premium",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "white"
       ],
@@ -4663,7 +4664,7 @@
       "description": "H&M pink loose fit boxy style casual T-shirt. Relaxed silhouette, round neck, short sleeves. Casual everyday wear.",
       "imageUrl": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/b/e/be9155d1295418004_1.jpg?rnd=20200526195200&tr=w-256",
       "deeplinkUrl": "https://www.nykaafashion.com/h-m-loose-fit-boxy-style-t-shirt-pink/p/23074199",
-      "price": 0.0,
+      "price": 1399.0,
       "rating": 0.0,
       "likesCount": 0,
       "gender": "male",
@@ -4677,7 +4678,7 @@
       "occasionTags": [
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "pink"
       ],
@@ -4692,7 +4693,7 @@
       "description": "Puma men's logo T-shirt in dryCELL fabric for moisture-wicking. Regular fit, crew neck, short sleeves. Sporty casual style.",
       "imageUrl": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/3/4/344292e68253602_1.jpg?rnd=20200526195200&tr=w-256",
       "deeplinkUrl": "https://www.nykaafashion.com/puma-men-s-logo-t-shirt/p/24830036",
-      "price": 0.0,
+      "price": 980.0,
       "rating": 0.0,
       "likesCount": 0,
       "gender": "male",
@@ -4707,7 +4708,7 @@
         "CASUAL_EVERYDAY",
         "GYM_ACTIVE"
       ],
-      "priceBucket": "mid-range",
+      "priceBucket": "LOW",
       "colorFamily": [
         "black"
       ],
@@ -4721,7 +4722,7 @@
       "description": "The Souled Store Originals Kurukshetra printed super oversized black T-shirt in pure cotton. Round neck, half sleeves, pull-on. Casual graphic tee with fandom print.",
       "imageUrl": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/0/4/04fe8eb290499_1.jpg?rnd=20200526195200&tr=w-256",
       "deeplinkUrl": "https://www.nykaafashion.com/the-souled-store-originals-kurukshetra-men-super-oversized-black-t-shirt/p/20736860",
-      "price": 0.0,
+      "price": 1799.0,
       "rating": 0.0,
       "likesCount": 0,
       "gender": "male",
@@ -4736,7 +4737,7 @@
         "CASUAL_EVERYDAY",
         "COLLEGE"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "MEDIUM",
       "colorFamily": [
         "black"
       ],
@@ -4765,7 +4766,7 @@
     "occasionTags": [
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "navy"
     ],
@@ -4795,7 +4796,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "multi"
     ],
@@ -4825,7 +4826,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "black"
     ],
@@ -4855,7 +4856,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "white"
     ],
@@ -4885,7 +4886,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "blue"
     ],
@@ -4914,7 +4915,7 @@
     "occasionTags": [
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "beige"
     ],
@@ -4944,7 +4945,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "beige"
     ],
@@ -4973,7 +4974,7 @@
     "occasionTags": [
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "beige"
     ],
@@ -5003,7 +5004,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "beige",
       "white"
@@ -5033,7 +5034,7 @@
     "occasionTags": [
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "green"
     ],
@@ -5063,7 +5064,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "pink",
       "white"
@@ -5094,7 +5095,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "purple"
     ],
@@ -5123,7 +5124,7 @@
     "occasionTags": [
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "green"
     ],
@@ -5153,7 +5154,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "green"
     ],
@@ -5183,7 +5184,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "LOW",
     "colorFamily": [
       "white"
     ],
@@ -5213,7 +5214,7 @@
       "CASUAL_EVERYDAY",
       "GYM_ACTIVE"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "LOW",
     "colorFamily": [
       "black"
     ],
@@ -5243,7 +5244,7 @@
       "CASUAL_EVERYDAY",
       "GYM_ACTIVE"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "blue"
     ],
@@ -5273,7 +5274,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "maroon",
       "red"
@@ -5305,7 +5306,7 @@
       "COLLEGE",
       "VACATION"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "orange"
     ],
@@ -5335,7 +5336,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "yellow"
     ],
@@ -5365,7 +5366,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "blue"
     ],
@@ -5395,7 +5396,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "brown"
     ],
@@ -5425,7 +5426,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "maroon"
     ],
@@ -5455,7 +5456,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "blue"
     ],
@@ -5485,7 +5486,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "black"
     ],
@@ -5515,7 +5516,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "black",
       "grey"
@@ -5546,7 +5547,7 @@
       "CASUAL_EVERYDAY",
       "COLLEGE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "multicolor"
     ],
@@ -5577,7 +5578,7 @@
         "CASUAL_EVERYDAY",
         "COLLEGE"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "white"
       ],
@@ -5606,7 +5607,7 @@
       "occasionTags": [
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "blue"
       ],
@@ -5636,7 +5637,7 @@
         "CASUAL_EVERYDAY",
         "COLLEGE"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "purple"
       ],
@@ -5667,7 +5668,7 @@
         "COLLEGE",
         "PARTY"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "multicolor"
       ],
@@ -5696,7 +5697,7 @@
     "occasionTags": [
       "FESTIVE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "navy blue",
       "multi-color"
@@ -5725,7 +5726,7 @@
     "occasionTags": [
       "FESTIVE","PARTY"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "navy blue"
     ],
@@ -5754,7 +5755,7 @@
       "FESTIVE",
       "PARTY"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "green"
     ],
@@ -5783,7 +5784,7 @@
       "FESTIVE",
       "PARTY"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "green"
     ],
@@ -5813,7 +5814,7 @@
       "CASUAL_EVERYDAY",
       "FESTIVE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "maroon"
     ],
@@ -5843,7 +5844,7 @@
       "CASUAL_EVERYDAY",
       "FESTIVE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "multicolor"
     ],
@@ -5873,7 +5874,7 @@
       "CASUAL_EVERYDAY",
       "FESTIVE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "multicolor"
     ],
@@ -5885,7 +5886,7 @@
   {
     "externalId": "KTAH4B7CHCG3TGFQ",
     "title": "Vebnor Men Solid Straight Kurta",
-    "description": "Solid purple jacquard straight kurta from Vebnor, full sleeve regular style for casual ethnic occasions. Simple solid pattern, budget option on Flipkart.",
+    "description": "Solid purple jacquard straight kurta from Vebnor, full sleeve regular style for casual ethnic occasions. Simple solid pattern, PREMIUM option on Flipkart.",
     "imageUrl": "https://rukminim2.flixcart.com/image/1280/1280/xif0q/kurta/k/y/b/xxl-pkt402-vebnor-original-imahja5yb5hzszqa.jpeg?q=90",
     "deeplinkUrl": "https://www.flipkart.com/vebnor-men-solid-straight-kurta/p/itm597b4013eb30f?pid=KTAH4B7CHCG3TGFQ",
     "price": 299.0,
@@ -5902,7 +5903,7 @@
     "occasionTags": [
       "CASUAL_EVERYDAY","FESTIVE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "purple"
     ],
@@ -5932,7 +5933,7 @@
       "CASUAL_EVERYDAY",
       "FESTIVE"
     ],
-    "priceBucket": "budget",
+    "priceBucket": "LOW",
     "colorFamily": [
       "multicolor"
     ],
@@ -5962,7 +5963,7 @@
         "CASUAL_EVERYDAY",
         "FESTIVE"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "multi"
       ],
@@ -5992,7 +5993,7 @@
         "FESTIVE",
         "CASUAL_EVERYDAY"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "white"
       ],
@@ -6022,7 +6023,7 @@
         "CASUAL_EVERYDAY",
         "FESTIVE"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "green"
       ],
@@ -6052,7 +6053,7 @@
         "CASUAL_EVERYDAY",
         "FESTIVE"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "multi"
       ],
@@ -6082,7 +6083,7 @@
         "CASUAL_EVERYDAY",
         "FESTIVE"
       ],
-      "priceBucket": "budget",
+      "priceBucket": "LOW",
       "colorFamily": [
         "blue"
       ],
@@ -6112,7 +6113,7 @@
       "FESTIVE",
       "CASUAL_EVERYDAY"
     ],
-    "priceBucket": "mid-range",
+    "priceBucket": "MEDIUM",
     "colorFamily": [
       "multicolor"
     ],

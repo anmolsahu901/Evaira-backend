@@ -27,7 +27,6 @@ public class RecommendationService {
         // - sort by score desc,
         // - limit top 20
         return products.stream()
-                .filter(p -> p.getSizes().contains(user.getSize()))                    // size filter
                 .filter(p -> filterByBudget(p, user))                                   // budget filter
                 .map(p -> {
                     p.setScore(calculateScore(p, user));                               // calculate & attach score
@@ -65,7 +64,7 @@ public class RecommendationService {
         }
 
         if (p.getColor() != null && u.getColor() != null
-                && p.getColor().equalsIgnoreCase(u.getColor().name())) {
+                && p.getColor().equals(u.getColor())) {
             score += 10;
         }
 

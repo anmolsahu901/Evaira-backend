@@ -27,49 +27,18 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         this.userRepository = userRepository;
     }
 
-    // @Override
-    // protected void doFilterInternal(HttpServletRequest request,
-    // HttpServletResponse response,
-    // FilterChain filterChain) throws ServletException, IOException {
-    //
-    // String authHeader = request.getHeader("Authorization");
-    //
-    // if (authHeader != null && authHeader.startsWith("Bearer ")) {
-    // String token = authHeader.substring(7);
-    //
-    // try {
-    // String email = jwtUtil.extractUsername(token);
-    // Long userId = jwtUtil.extractUserId(token);
-    //
-    // if (email != null && SecurityContextHolder.getContext().getAuthentication()
-    // == null) {
-    // User user = userRepository.findById(userId)
-    // .orElse(null);
-    //
-    // if (user != null) {
-    // UsernamePasswordAuthenticationToken authToken =
-    // new UsernamePasswordAuthenticationToken(userId, null,
-    // Collections.emptyList());
-    // SecurityContextHolder.getContext().setAuthentication(authToken);
-    // }
-    // }
-    // } catch (Exception e) {
-    // // Invalid token - continue
-    // }
-    // }
-    //
-    // filterChain.doFilter(request, response);
-    // }
-
     @Override
     protected void doFilterInternal(HttpServletRequest request,
-            HttpServletResponse response,
-            FilterChain filterChain) throws ServletException, IOException {
+                                    HttpServletResponse response,
+                                    FilterChain filterChain)
+            throws ServletException, IOException {
+
         System.out.println("🔍 Request: " + request.getRequestURI());
         String authHeader = request.getHeader("Authorization");
 
-        if (authHeader != null) {
-            String token = authHeader;
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+
+            String token = authHeader.substring(7); // remove "Bearer "
 
             try {
                 String email = jwtUtil.extractUsername(token);
@@ -78,27 +47,24 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 if (email != null && userId != null &&
                         SecurityContextHolder.getContext().getAuthentication() == null) {
 
-                    // ✅ FIX: Verify user still exists in database
                     User user = userRepository.findById(userId).orElse(null);
-                    if (user == null) {
-                        System.out.println("⚠️  User not found in database. Token rejected.");
-                        filterChain.doFilter(request, response);
-                        return;
+
+                    if (user != null) {
+                        UsernamePasswordAuthenticationToken authToken =
+                                new UsernamePasswordAuthenticationToken(
+                                        userId,
+                                        null,
+                                        Collections.emptyList());
+
+                        SecurityContextHolder.getContext().setAuthentication(authToken);
                     }
-
-                    UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
-                            userId, // principal = userId
-                            null,
-                            Collections.emptyList());
-
-                    SecurityContextHolder.getContext().setAuthentication(authToken);
                 }
             } catch (Exception e) {
-                // Invalid token – ignore, request will be treated as unauthenticated
+                // ignore invalid token
             }
         }
 
+        // ✅ THIS LINE WAS MISSING
         filterChain.doFilter(request, response);
     }
-
 }

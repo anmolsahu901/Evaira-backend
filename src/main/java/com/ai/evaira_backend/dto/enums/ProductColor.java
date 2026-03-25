@@ -1,19 +1,17 @@
 package com.ai.evaira_backend.dto.enums;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-
 public enum ProductColor {
-    BLACK, WHITE, GREY, RED, BLUE, GREEN, YELLOW, ORANGE, PURPLE, PINK,
-    BROWN, BEIGE, CREAM, MAROON, NAVY, OLIVE, TEAL, TURQUOISE,
-    GOLD, SILVER, MULTICOLOR, OTHER, UNKNOWN;
+    BLACK, WHITE, GREY, RED, BLUE, GREEN, YELLOW, ORANGE,
+    PURPLE, PINK, BROWN, BEIGE, CREAM, MAROON, NAVY,
+    OLIVE, TEAL, TURQUOISE, GOLD, SILVER, MULTICOLOR, OTHER, UNKNOWN;
 
-    @JsonCreator
     public static ProductColor fromValue(String value) {
+        if (value == null) return UNKNOWN;
+
         try {
-            return ProductColor.valueOf(value.toUpperCase());
+            return ProductColor.valueOf(value.trim().toUpperCase());
         } catch (Exception e) {
             return UNKNOWN;
         }
-
     }
 }

@@ -2,11 +2,11 @@ package com.ai.evaira_backend.entity;
 
 import com.ai.evaira_backend.dto.enums.BudgetRange;
 import com.ai.evaira_backend.dto.enums.OccasionTag;
+import com.ai.evaira_backend.dto.enums.ProductColor;
 import com.ai.evaira_backend.dto.enums.StyleVibe;
 import com.vladmihalcea.hibernate.type.json.JsonType;
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
 
 import java.util.ArrayList;
@@ -170,11 +170,11 @@ public class Product {
         this.sizes = sizes;
     }
 
-    public String getColor() {
+    public ProductColor getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(ProductColor color) {
         this.color = color;
     }
 
@@ -237,8 +237,9 @@ public class Product {
     private String styleType;
     private String season;
     private List<String> sizes;
-    private String color;
-
+    @Enumerated(EnumType.STRING)
+    @Column(name = "color")
+    private ProductColor color;
     @Enumerated(EnumType.STRING)
     private BudgetRange priceBucket;
     @Column(nullable = false)

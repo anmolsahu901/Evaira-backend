@@ -10,7 +10,6 @@ import java.util.List;
 public class UserRequest {
 
     private String gender;
-    private String size;
     private BudgetRange budget;
     private String fitType;
     private List<OccasionTag> occasion;
@@ -24,7 +23,6 @@ public class UserRequest {
                        String fitType, List<OccasionTag> occasion,
                        String styleVibe, ProductColor color) {
         this.gender = gender;
-        this.size = size;
         this.budget = budget;
         this.fitType = fitType;
         this.occasion = occasion;
@@ -34,7 +32,6 @@ public class UserRequest {
 
     // Getters
     public String getGender() { return gender; }
-    public String getSize() { return size; }
     public BudgetRange getBudget() { return budget; }
     public String getFitType() { return fitType; }
     public List<OccasionTag> getOccasion() { return occasion; }
@@ -43,7 +40,6 @@ public class UserRequest {
 
     // Setters (optional; you can skip if only receiving from JSON)
     public void setGender(String gender) { this.gender = gender; }
-    public void setSize(String size) { this.size = size; }
     public void setBudget(BudgetRange budget) { this.budget = budget; }
     public void setFitType(String fitType) { this.fitType = fitType; }
     public void setOccasion(List<OccasionTag> occasion) { this.occasion = occasion; }

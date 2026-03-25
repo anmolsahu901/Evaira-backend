@@ -170,9 +170,19 @@ public class ProductDto {
     }
 
     public BudgetRange getPriceBucket() {
-        return BudgetRange.valueOf(priceBucket);
-    }
+        if (priceBucket == null) return BudgetRange.MEDIUM;
 
+        String value = priceBucket.trim().toUpperCase();
+
+        switch (value) {
+            case "LOW": return BudgetRange.LOW;
+            case "MEDIUM": return BudgetRange.MEDIUM;
+            case "HIGH": return BudgetRange.HIGH;
+            default:
+                System.out.println(" Invalid priceBucket: " + value);
+                return BudgetRange.MEDIUM;
+        }
+    }
     public void setPriceBucket(String priceBucket) {
         this.priceBucket = priceBucket;
     }

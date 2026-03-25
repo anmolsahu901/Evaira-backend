@@ -11,20 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-//@RestController
-//@RequestMapping("/api/products")
-//public class RecommendationController {
-//
-//    private final RecommendationService service;
-//
-//    public RecommendationController(RecommendationService service) {
-//        this.service = service;
-//    }
-//
-//    @PostMapping("/recomend")
-//    public List<Product> recommend(@RequestBody UserRequest request) {
-//        return service.recommend(request);
-//    }
+
 @RestController
 @RequestMapping("/api/products")
 public class RecommendationController {
