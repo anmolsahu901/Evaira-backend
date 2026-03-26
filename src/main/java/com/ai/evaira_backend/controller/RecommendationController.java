@@ -34,3 +34,11 @@ public class RecommendationController {
         return ResponseEntity.ok(recommendations);
     }
 }
+//{
+//        "gender": "male",
+//        "budget": "HIGH",
+//        "fitType": "STRAIGHT",
+//        "occasion": ["CASUAL_EVERYDAY", "COLLEGE"],
+//        "styleVibe": "CASUAL"
+//
+//        }
