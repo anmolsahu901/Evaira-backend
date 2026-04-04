@@ -5,10 +5,8 @@ public enum OccasionTag {
     COLLEGE,
     CASUAL_EVERYDAY,
     GYM_ACTIVE,
-    DATE_NIGHT,
-    TRAVEL,
     HOME_LOUNGE,
     PARTY,
     VACATION,
-    WEEKEND
+    FESTIVE
 }

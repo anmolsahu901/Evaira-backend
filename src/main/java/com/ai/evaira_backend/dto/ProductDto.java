@@ -1,6 +1,7 @@
 package com.ai.evaira_backend.dto;
 
 import com.ai.evaira_backend.dto.enums.OccasionTag;
+import com.ai.evaira_backend.dto.enums.PriceBucket;
 import com.ai.evaira_backend.dto.enums.StyleVibe;
 import lombok.Data;
 
@@ -26,7 +27,7 @@ public class ProductDto {
     private String fabric;
     private String styleType;
     private String season;
-    private String priceBucket;
+    private PriceBucket priceBucket;
     private List<OccasionTag> occasionTags;
     private List<StyleVibe> styleVibe;
     private List<String> colorFamily;
@@ -168,11 +169,11 @@ public class ProductDto {
         this.season = season;
     }
 
-    public String getPriceBucket() {
+    public PriceBucket getPriceBucket() {
         return priceBucket;
     }
 
-    public void setPriceBucket(String priceBucket) {
+    public void setPriceBucket(PriceBucket priceBucket) {
         this.priceBucket = priceBucket;
     }
 

@@ -14,5 +14,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query("select p.deeplinkUrl from Product p where p.id = :id")
     Optional<String> findDeeplinkById(@Param("id") Long id);
 
+    //Optional<Product> getAllProduct();
 
 }

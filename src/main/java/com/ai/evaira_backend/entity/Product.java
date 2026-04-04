@@ -1,6 +1,7 @@
 package com.ai.evaira_backend.entity;
 
 import com.ai.evaira_backend.dto.enums.OccasionTag;
+import com.ai.evaira_backend.dto.enums.PriceBucket;
 import com.ai.evaira_backend.dto.enums.StyleVibe;
 import com.vladmihalcea.hibernate.type.json.JsonType;
 import jakarta.persistence.*;
@@ -41,7 +42,9 @@ public class Product {
     private String fabric;
     private String styleType;
     private String season;
-    private String priceBucket;
+
+    @Enumerated(EnumType.STRING)
+    private PriceBucket priceBucket;
 
 
 
@@ -212,14 +215,13 @@ public class Product {
         this.season = season;
     }
 
-    public String getPriceBucket() {
+    public PriceBucket getPriceBucket() {
         return priceBucket;
     }
 
-    public void setPriceBucket(String priceBucket) {
+    public void setPriceBucket(PriceBucket priceBucket) {
         this.priceBucket = priceBucket;
     }
-
 
     public Long getLikesCount() {
         return likesCount;

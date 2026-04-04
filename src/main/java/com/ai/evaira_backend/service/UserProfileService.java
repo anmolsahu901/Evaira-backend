@@ -42,8 +42,7 @@ public class UserProfileService {
         user.setDislikedColors(dto.getDislikedColors());
 
         // Budget
-        user.setMinBudget(dto.getMinBudget());
-        user.setMaxBudget(dto.getMaxBudget());
+        user.setPriceBucket(dto.getPriceBucket());
 
         // Save user
         userRepository.save(user);

@@ -59,10 +59,16 @@ public class User {
     @Column(columnDefinition = "jsonb")
     private List<String> dislikedColors; //optional
 
-    // Budget preference
-    private Integer minBudget;
+    @Enumerated(EnumType.STRING)
+    private PriceBucket priceBucket;
 
-    private Integer maxBudget; // optional
+    public PriceBucket getPriceBucket() {
+        return priceBucket;
+    }
+
+    public void setPriceBucket(PriceBucket priceBucket) {
+        this.priceBucket = priceBucket;
+    }
 
     public Long getId() {
         return id;
@@ -176,21 +182,7 @@ public class User {
         this.dislikedColors = dislikedColors;
     }
 
-    public Integer getMinBudget() {
-        return minBudget;
-    }
 
-    public void setMinBudget(Integer minBudget) {
-        this.minBudget = minBudget;
-    }
-
-    public Integer getMaxBudget() {
-        return maxBudget;
-    }
-
-    public void setMaxBudget(Integer maxBudget) {
-        this.maxBudget = maxBudget;
-    }
 }
 
 

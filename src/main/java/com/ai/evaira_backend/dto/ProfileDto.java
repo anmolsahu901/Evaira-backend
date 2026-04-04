@@ -35,9 +35,7 @@ public class ProfileDto {
     private List<String> dislikedColors; //optional
 
     // Budget preference
-    private Integer minBudget;
-
-    private Integer maxBudget; // optional
+    private PriceBucket priceBucket;// optional
 
     public String getName() {
         return name;
@@ -135,20 +133,12 @@ public class ProfileDto {
         this.dislikedColors = dislikedColors;
     }
 
-    public Integer getMinBudget() {
-        return minBudget;
+    public PriceBucket getPriceBucket() {
+        return priceBucket;
     }
 
-    public void setMinBudget(Integer minBudget) {
-        this.minBudget = minBudget;
-    }
-
-    public Integer getMaxBudget() {
-        return maxBudget;
-    }
-
-    public void setMaxBudget(Integer maxBudget) {
-        this.maxBudget = maxBudget;
+    public void setPriceBucket(PriceBucket priceBucket) {
+        this.priceBucket = priceBucket;
     }
 }
 
