@@ -1,7 +1,8 @@
 package com.ai.evaira_backend.service;
 
 import com.ai.evaira_backend.dto.ProductDto;
-import com.ai.evaira_backend.dto.enums.ProductColor;
+import com.ai.evaira_backend.dto.enums.FitType;
+import com.ai.evaira_backend.dto.enums.PriceBucket;
 import com.ai.evaira_backend.entity.Product;
 import com.ai.evaira_backend.repository.ProductRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -54,12 +55,29 @@ public class ProductService {
         product.setSubCategory(dto.getSubCategory());
         product.setGender(dto.getGender());
         product.setPrimaryColor(dto.getPrimaryColor());
-        product.setFitType(dto.getFitType());
+
+        if(dto.getFitType().equals(FitType.STRAIGHT))
+            product.setFitType(FitType.RELAXED);
+        else
+            product.setFitType(dto.getFitType());
+
+        if(dto.getPrice()>=400 && dto.getPrice()<=800 )
+            product.setPriceBucket(PriceBucket.BUDGET);
+        else if(dto.getPrice()>=801 && dto.getPrice()<=1200 )
+            product.setPriceBucket(PriceBucket.VALUE);
+        if(dto.getPrice()>=1201 && dto.getPrice()<=2500 )
+            product.setPriceBucket(PriceBucket.MIDRANGE);
+        else if(dto.getPrice()>=2501  )
+            product.setPriceBucket(PriceBucket.PREMIUM);
+
+
+
+
         product.setFabric(dto.getFabric());
         product.setStyleType(dto.getStyleType());
         product.setSeason(dto.getSeason());
-        product.setPriceBucket(dto.getPriceBucket());
-        product.setColor(ProductColor.fromValue(dto.getPrimaryColor()));
+
+
         product.setImageUrl(dto.getImageUrl());
         product.setDeeplinkUrl(dto.getDeeplinkUrl());
         product.setRating(dto.getRating());

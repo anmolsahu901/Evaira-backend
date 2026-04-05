@@ -1,7 +1,8 @@
 package com.ai.evaira_backend.dto;
 
-import com.ai.evaira_backend.dto.enums.BudgetRange;
+import com.ai.evaira_backend.dto.enums.FitType;
 import com.ai.evaira_backend.dto.enums.OccasionTag;
+import com.ai.evaira_backend.dto.enums.PriceBucket;
 import com.ai.evaira_backend.dto.enums.StyleVibe;
 import lombok.Data;
 
@@ -23,11 +24,11 @@ public class ProductDto {
     private String category;
     private String subCategory;
     private String primaryColor;
-    private String fitType;
+    private FitType fitType;
     private String fabric;
     private String styleType;
     private String season;
-    private String priceBucket;
+    private PriceBucket priceBucket;
     private List<OccasionTag> occasionTags;
     private List<StyleVibe> styleVibe;
     private List<String> colorFamily;
@@ -137,11 +138,11 @@ public class ProductDto {
         this.primaryColor = primaryColor;
     }
 
-    public String getFitType() {
+    public FitType getFitType() {
         return fitType;
     }
 
-    public void setFitType(String fitType) {
+    public void setFitType(FitType fitType) {
         this.fitType = fitType;
     }
 
@@ -169,21 +170,11 @@ public class ProductDto {
         this.season = season;
     }
 
-    public BudgetRange getPriceBucket() {
-        if (priceBucket == null) return BudgetRange.MEDIUM;
-
-        String value = priceBucket.trim().toUpperCase();
-
-        switch (value) {
-            case "LOW": return BudgetRange.LOW;
-            case "MEDIUM": return BudgetRange.MEDIUM;
-            case "HIGH": return BudgetRange.HIGH;
-            default:
-                System.out.println(" Invalid priceBucket: " + value);
-                return BudgetRange.MEDIUM;
-        }
+    public PriceBucket getPriceBucket() {
+        return priceBucket;
     }
-    public void setPriceBucket(String priceBucket) {
+
+    public void setPriceBucket(PriceBucket priceBucket) {
         this.priceBucket = priceBucket;
     }
 

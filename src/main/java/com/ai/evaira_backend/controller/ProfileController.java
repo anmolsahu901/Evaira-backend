@@ -2,6 +2,7 @@ package com.ai.evaira_backend.controller;
 
 
 import com.ai.evaira_backend.dto.ProfileDto;
+import com.ai.evaira_backend.entity.Product;
 import com.ai.evaira_backend.entity.User;
 import com.ai.evaira_backend.repository.UserRepository;
 import com.ai.evaira_backend.security.SecurityUtil;
@@ -13,6 +14,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/profile")
@@ -37,5 +40,12 @@ public class ProfileController {
         profileService.saveProfile(user, dto);
         return ResponseEntity.ok("Profile created/updated");
     }
+
+    @PostMapping("tokenValidation")
+    public ResponseEntity<String> validateToken(){
+        return ResponseEntity.ok("ValidationSuccessfully");
+    }
+
+
 
 }

@@ -20,19 +20,6 @@ public class User {
     private Long id;
 
     private String email;
-    private String name;
-    private Integer age;
-    @Enumerated(EnumType.STRING)
-
-    private Gender gender;
-
-    private String location; // pincode
-
-    @Enumerated(EnumType.STRING)
-    private BodyType bodyType;
-
-    @Enumerated(EnumType.STRING)
-    private FaceShape faceShape;
 
     @Type(JsonType.class)
     @Column(columnDefinition = "jsonb")
@@ -46,23 +33,45 @@ public class User {
     @Column(columnDefinition = "jsonb")
     private List<OccasionTag> preferredOccasions = new ArrayList<>();
 
-    @Type(JsonType.class)
-    @Column(columnDefinition = "jsonb")
-    private List<OccasionTag> avoidOccasions; //optional
-
     // Color preferences
     @Type(JsonType.class)
     @Column(columnDefinition = "jsonb")
     private List<String> favoriteColors = new ArrayList<>();
 
+    @Enumerated(EnumType.STRING)
+    private PriceBucket priceBucket;
+
+    // unused properties
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+
+    private String location; // pincode
+
+    @Enumerated(EnumType.STRING)
+    private BodyType bodyType;
+
+    @Enumerated(EnumType.STRING)
+    private FaceShape faceShape;
+
     @Type(JsonType.class)
     @Column(columnDefinition = "jsonb")
     private List<String> dislikedColors; //optional
 
-    // Budget preference
-    private Integer minBudget;
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private List<OccasionTag> avoidOccasions; //optional
 
-    private Integer maxBudget; // optional
+    private String name;
+    private Integer age;
+
+
+    public PriceBucket getPriceBucket() {
+        return priceBucket;
+    }
+
+    public void setPriceBucket(PriceBucket priceBucket) {
+        this.priceBucket = priceBucket;
+    }
 
     public Long getId() {
         return id;
@@ -176,21 +185,7 @@ public class User {
         this.dislikedColors = dislikedColors;
     }
 
-    public Integer getMinBudget() {
-        return minBudget;
-    }
 
-    public void setMinBudget(Integer minBudget) {
-        this.minBudget = minBudget;
-    }
-
-    public Integer getMaxBudget() {
-        return maxBudget;
-    }
-
-    public void setMaxBudget(Integer maxBudget) {
-        this.maxBudget = maxBudget;
-    }
 }
 
 

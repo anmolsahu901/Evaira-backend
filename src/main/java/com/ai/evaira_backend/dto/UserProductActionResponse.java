@@ -2,6 +2,8 @@ package com.ai.evaira_backend.dto;
 
 
 
+import com.ai.evaira_backend.dto.enums.ProductActionType;
+
 import java.time.Instant;
 
 public class UserProductActionResponse {

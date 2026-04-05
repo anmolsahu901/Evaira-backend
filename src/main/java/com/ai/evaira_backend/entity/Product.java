@@ -1,8 +1,8 @@
 package com.ai.evaira_backend.entity;
 
-import com.ai.evaira_backend.dto.enums.BudgetRange;
+import com.ai.evaira_backend.dto.enums.FitType;
 import com.ai.evaira_backend.dto.enums.OccasionTag;
-import com.ai.evaira_backend.dto.enums.ProductColor;
+import com.ai.evaira_backend.dto.enums.PriceBucket;
 import com.ai.evaira_backend.dto.enums.StyleVibe;
 import com.vladmihalcea.hibernate.type.json.JsonType;
 import jakarta.persistence.*;
@@ -26,13 +26,68 @@ public class Product {
 
     private String title;
 
+    @Column(columnDefinition = "TEXT")
     private String description;
-
+    @Column(length = 500)
     private String imageUrl;
-
+    @Column(length = 500)
     private String deeplinkUrl;
 
     private Double price;
+    private Double rating;
+
+    private String gender;
+    private String category;
+    private String subCategory;
+    private String primaryColor;
+    private FitType fitType;
+    private String fabric;
+    private String styleType;
+    private String season;
+
+    @Enumerated(EnumType.STRING)
+    private PriceBucket priceBucket;
+
+
+
+    @Column(nullable = false)
+    private Long likesCount =0L;
+
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private List<OccasionTag> occasionTags = new ArrayList<>();
+
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private List<String> colorFamily = new ArrayList<>();
+
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private List<StyleVibe> styleVibe = new ArrayList<>();
+
+    public List<OccasionTag> getOccasionTags() {
+        return occasionTags;
+    }
+
+    public void setOccasionTags(List<OccasionTag> occasionTags) {
+        this.occasionTags = occasionTags;
+    }
+
+    public List<StyleVibe> getStyleVibe() {
+        return styleVibe;
+    }
+
+    public void setStyleVibe(List<StyleVibe> styleVibe) {
+        this.styleVibe = styleVibe;
+    }
+
+    public List<String> getColorFamily() {
+        return colorFamily;
+    }
+
+    public void setColorFamily(List<String> colorFamily) {
+        this.colorFamily = colorFamily;
+    }
 
     public Long getId() {
         return id;
@@ -130,11 +185,11 @@ public class Product {
         this.primaryColor = primaryColor;
     }
 
-    public String getFitType() {
+    public FitType getFitType() {
         return fitType;
     }
 
-    public void setFitType(String fitType) {
+    public void setFitType(FitType fitType) {
         this.fitType = fitType;
     }
 
@@ -162,27 +217,11 @@ public class Product {
         this.season = season;
     }
 
-    public List<String> getSizes() {
-        return sizes;
-    }
-
-    public void setSizes(List<String> sizes) {
-        this.sizes = sizes;
-    }
-
-    public ProductColor getColor() {
-        return color;
-    }
-
-    public void setColor(ProductColor color) {
-        this.color = color;
-    }
-
-    public BudgetRange getPriceBucket() {
+    public PriceBucket getPriceBucket() {
         return priceBucket;
     }
 
-    public void setPriceBucket(BudgetRange priceBucket) {
+    public void setPriceBucket(PriceBucket priceBucket) {
         this.priceBucket = priceBucket;
     }
 
@@ -193,72 +232,6 @@ public class Product {
     public void setLikesCount(Long likesCount) {
         this.likesCount = likesCount;
     }
-
-    public List<OccasionTag> getOccasionTags() {
-        return occasionTags;
-    }
-
-    public void setOccasionTags(List<OccasionTag> occasionTags) {
-        this.occasionTags = occasionTags;
-    }
-
-    public List<String> getColorFamily() {
-        return colorFamily;
-    }
-
-    public void setColorFamily(List<String> colorFamily) {
-        this.colorFamily = colorFamily;
-    }
-
-    public List<StyleVibe> getStyleVibe() {
-        return styleVibe;
-    }
-
-    public void setStyleVibe(List<StyleVibe> styleVibe) {
-        this.styleVibe = styleVibe;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
-
-    private Double rating;
-
-    private String gender;
-    private String category;
-    private String subCategory;
-    private String primaryColor;
-    private String fitType;
-    private String fabric;
-    private String styleType;
-    private String season;
-    private List<String> sizes;
-    @Enumerated(EnumType.STRING)
-    @Column(name = "color")
-    private ProductColor color;
-    @Enumerated(EnumType.STRING)
-    private BudgetRange priceBucket;
-    @Column(nullable = false)
-    private Long likesCount =0L;
-
-    @Type(JsonType.class)
-    @Column(columnDefinition = "jsonb")
-    private List<OccasionTag> occasionTags = new ArrayList<>();
-
-    @Type(JsonType.class)
-    @Column(columnDefinition = "jsonb")
-    private List<String> colorFamily = new ArrayList<>();
-
-    @Type(JsonType.class)
-    @Column(columnDefinition = "jsonb")
-    private List<StyleVibe> styleVibe = new ArrayList<>();
-
-    @Transient
-    private int score;
 }
 
 

@@ -9,4 +9,4 @@ public enum OccasionTag {
     PARTY,
     VACATION,
     FESTIVE
-    }
+}
