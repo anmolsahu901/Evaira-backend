@@ -1,6 +1,8 @@
 package com.ai.evaira_backend.dto;
 
 
+import com.ai.evaira_backend.dto.enums.ProductActionType;
+
 // request DTO from frontend
 public class UserProductActionRequest {
 

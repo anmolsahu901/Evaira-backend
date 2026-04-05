@@ -1,6 +1,6 @@
 package com.ai.evaira_backend.repository;
 
-import com.ai.evaira_backend.dto.ProductActionType;
+import com.ai.evaira_backend.dto.enums.ProductActionType;
 import com.ai.evaira_backend.entity.Product;
 import com.ai.evaira_backend.entity.UserProductAction;
 import com.ai.evaira_backend.entity.User;
@@ -10,6 +10,8 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.Optional;
+import org.springframework.data.domain.Pageable;
+
 
 public interface UserProductActionRepository extends JpaRepository<UserProductAction, Long> {
     //Get ALL actions this user has ever done on ANY products.
@@ -36,5 +38,16 @@ public interface UserProductActionRepository extends JpaRepository<UserProductAc
     @Query("SELECT upa.product FROM UserProductAction upa WHERE upa.user.id = :userId AND upa.actionType = :actionTypes")
     List<Product> findProductsByUserIdAndActionTypes(@Param("userId") Long userId, @Param("actionTypes") ProductActionType actionType);
 
+
+    @Query("""
+    SELECT a 
+    FROM UserProductAction a
+    WHERE a.user.id = :userId
+    ORDER BY a.createdAt DESC
+""")
+    List<UserProductAction> findRecentActions(
+            @Param("userId") Long userId,
+            Pageable pageable
+    );
 
 }

@@ -1,7 +1,6 @@
 package com.ai.evaira_backend.service;
 
-import com.ai.evaira_backend.controller.UserActivityController;
-import com.ai.evaira_backend.dto.ProductActionType;
+import com.ai.evaira_backend.dto.enums.ProductActionType;
 import com.ai.evaira_backend.dto.UserProductActionRequest;
 import com.ai.evaira_backend.dto.UserProductActionResponse;
 import com.ai.evaira_backend.entity.Product;

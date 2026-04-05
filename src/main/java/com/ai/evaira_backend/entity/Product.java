@@ -1,5 +1,6 @@
 package com.ai.evaira_backend.entity;
 
+import com.ai.evaira_backend.dto.enums.FitType;
 import com.ai.evaira_backend.dto.enums.OccasionTag;
 import com.ai.evaira_backend.dto.enums.PriceBucket;
 import com.ai.evaira_backend.dto.enums.StyleVibe;
@@ -38,7 +39,7 @@ public class Product {
     private String category;
     private String subCategory;
     private String primaryColor;
-    private String fitType;
+    private FitType fitType;
     private String fabric;
     private String styleType;
     private String season;
@@ -183,11 +184,11 @@ public class Product {
         this.primaryColor = primaryColor;
     }
 
-    public String getFitType() {
+    public FitType getFitType() {
         return fitType;
     }
 
-    public void setFitType(String fitType) {
+    public void setFitType(FitType fitType) {
         this.fitType = fitType;
     }
 

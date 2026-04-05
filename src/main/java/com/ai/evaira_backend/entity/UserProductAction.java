@@ -1,8 +1,15 @@
 package com.ai.evaira_backend.entity;
 
-import com.ai.evaira_backend.dto.ProductActionType;
+import com.ai.evaira_backend.dto.enums.FitType;
+import com.ai.evaira_backend.dto.enums.OccasionTag;
+import com.ai.evaira_backend.dto.enums.ProductActionType;
+import com.ai.evaira_backend.dto.enums.StyleVibe;
+import com.vladmihalcea.hibernate.type.json.JsonType;
 import jakarta.persistence.*;
+import org.hibernate.annotations.Type;
+
 import java.time.Instant;
+import java.util.List;
 
 @Entity
 @Table(name = "user_product_actions")
@@ -24,6 +31,17 @@ public class UserProductAction {
 
     @Column(nullable = false)
     private Instant createdAt = Instant.now();
+
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private List<StyleVibe> styleVibes;
+
+    @Enumerated(EnumType.STRING)
+    private FitType fitType;
+
+    @Type(JsonType.class)
+    @Column(columnDefinition = "jsonb")
+    private List<OccasionTag> occasionTags;
 
     public Long getId() {
         return id;
