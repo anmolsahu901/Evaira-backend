@@ -26,10 +26,11 @@ public class Product {
 
     private String title;
 
+    @Column(columnDefinition = "TEXT")
     private String description;
-
+    @Column(length = 500)
     private String imageUrl;
-
+    @Column(length = 500)
     private String deeplinkUrl;
 
     private Double price;
