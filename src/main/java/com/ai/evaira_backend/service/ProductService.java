@@ -5,8 +5,6 @@ import com.ai.evaira_backend.dto.enums.FitType;
 import com.ai.evaira_backend.dto.enums.PriceBucket;
 import com.ai.evaira_backend.entity.Product;
 import com.ai.evaira_backend.repository.ProductRepository;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -93,7 +91,7 @@ public class ProductService {
     }
 
     public List<Product> getAllFromDb() {
-        return productRepository.findAll();
+        return productRepository.findAllRandom();
     }
 
     public String getProductDeepLinkById(Long productId){
