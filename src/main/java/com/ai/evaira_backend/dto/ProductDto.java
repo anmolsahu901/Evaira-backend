@@ -19,7 +19,7 @@ public class ProductDto {
     private String deeplinkUrl;
     private Double price;
     private Double rating;
-    private Integer likesCount;
+    private Long likesCount = 0L;
     private String gender;
     private String category;
     private String subCategory;
@@ -98,11 +98,11 @@ public class ProductDto {
         this.rating = rating;
     }
 
-    public Integer getLikesCount() {
+    public long getLikesCount() {
         return likesCount;
     }
 
-    public void setLikesCount(Integer likesCount) {
+    public void setLikesCount(Long likesCount) {
         this.likesCount = likesCount;
     }
 

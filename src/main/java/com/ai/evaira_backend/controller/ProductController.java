@@ -30,21 +30,7 @@ public class ProductController {
         this.actionService = actionService;
     }
 
-// 1) Fetch from external API in controller, pass list to service to save
-//    @PostMapping("/importfromfakeStoreAPI")
-//    public ResponseEntity<List<Product>> importFromFakeStore() {
-//        log.info("Importing products");
-//        ProductDto[] externalArray =
-//                restTemplate.getForObject(FAKESTORE_URL, ProductDto[].class);
-//
-//        if (externalArray == null) {
-//            return ResponseEntity.ok(List.of());
-//        }
-//
-//        List<ProductDto> externalList = Arrays.asList(externalArray);
-//        List<Product> saved = productService.saveExternalProducts(externalList);
-//        return ResponseEntity.ok(saved);
-//    }
+
 
     @GetMapping("/  ")
     public ResponseEntity<List<Product>> getAll() {
@@ -59,17 +45,7 @@ public class ProductController {
 
     }
 
-    /**
-     * POST /api/products/recommend
-     * Accepts user preferences (UserRequest) and returns a list of recommended products.
-     */
-    @PostMapping("/recommend")
-    public ResponseEntity<List<Product>> getRecommendations(
-            @RequestBody User user) {
 
-//        List<Product> recommendations = recommendationServiceservice.recommend(request);
-        return ResponseEntity.ok(null);
-    }
 
 }
 

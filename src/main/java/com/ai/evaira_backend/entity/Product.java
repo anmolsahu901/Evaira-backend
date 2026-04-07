@@ -9,6 +9,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.Type;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +49,8 @@ public class Product {
     @Enumerated(EnumType.STRING)
     private PriceBucket priceBucket;
 
-
+    @Column(nullable = false)
+    private Instant createdAt = Instant.now();
 
     @Column(nullable = false)
     private Long likesCount =0L;
@@ -64,6 +66,14 @@ public class Product {
     @Type(JsonType.class)
     @Column(columnDefinition = "jsonb")
     private List<StyleVibe> styleVibe = new ArrayList<>();
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
+    }
 
     public List<OccasionTag> getOccasionTags() {
         return occasionTags;

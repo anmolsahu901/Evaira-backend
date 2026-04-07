@@ -1,6 +1,8 @@
 package com.ai.evaira_backend.service;
 
 
+import com.ai.evaira_backend.dto.ProductDto;
+import com.ai.evaira_backend.dto.ProductScore;
 import com.ai.evaira_backend.dto.enums.FitType;
 import com.ai.evaira_backend.dto.enums.OccasionTag;
 import com.ai.evaira_backend.dto.enums.ProductActionType;
@@ -10,25 +12,57 @@ import com.ai.evaira_backend.entity.User;
 import com.ai.evaira_backend.entity.UserProductAction;
 import com.ai.evaira_backend.repository.ProductRepository;
 import com.ai.evaira_backend.repository.UserProductActionRepository;
+import com.ai.evaira_backend.repository.UserRepository;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 @Service
 public class RecommendationService {
 
     private final UserProductActionRepository actionRepo;
+    private final UserRepository userRepository;
+    private final ProductRepository productRepository;
 
     Pageable pageable = PageRequest.of(0, 200);
 
-    public RecommendationService(UserProductActionRepository actionRepo) {
+    public RecommendationService(UserProductActionRepository actionRepo, UserRepository userRepository, ProductRepository productRepository) {
         this.actionRepo = actionRepo;
+        this.userRepository = userRepository;
+        this.productRepository = productRepository;
     }
+
+    // recommendation logic
+    public List<ProductDto> getRecommendedProducts(Long userId) {
+
+        User user = userRepository.findById(userId).orElseThrow();
+
+        List<Product> allProducts = productRepository.findAll();
+
+        List<ProductScore> scoredProducts = new ArrayList<>();
+
+        for (Product product : allProducts) {
+
+            double score = calculateScore(user, product);
+
+            scoredProducts.add(new ProductScore(product, score));
+        }
+
+        // 🔥 Sort by score
+        scoredProducts.sort((a, b) -> Double.compare(b.getScore(), a.getScore()));
+
+        // 🔥 Take top 20
+        return scoredProducts.stream()
+                .limit(20)
+                .map(ps -> convertToDto(ps.getProduct()))
+                .toList();
+    }
+
 
     // 🔥 MAIN METHOD
     public double calculateScore(User user, Product product) {
@@ -162,6 +196,63 @@ public class RecommendationService {
             case UNLIKE, UNSAVE -> -2;
         };
     }
+
+    private ProductDto convertToDto(Product product) {
+
+        ProductDto dto = new ProductDto();
+
+        dto.setExternalId(product.getExternalId());
+        dto.setTitle(product.getTitle());
+        dto.setDescription(product.getDescription());
+        dto.setImageUrl(product.getImageUrl());
+        dto.setDeeplinkUrl(product.getDeeplinkUrl());
+        dto.setPrice(product.getPrice());
+        dto.setRating(product.getRating());
+        dto.setLikesCount(product.getLikesCount());
+        dto.setGender(product.getGender());
+        dto.setCategory(product.getCategory());
+        dto.setSubCategory(product.getSubCategory());
+        dto.setPrimaryColor(product.getPrimaryColor());
+        dto.setFitType(product.getFitType());
+        dto.setFabric(product.getFabric());
+        dto.setStyleType(product.getStyleType());
+        dto.setSeason(product.getSeason());
+        dto.setPriceBucket(product.getPriceBucket());
+        dto.setOccasionTags(product.getOccasionTags());
+        dto.setStyleVibe(product.getStyleVibe());
+        dto.setColorFamily(product.getColorFamily());
+
+        return dto;
+    }
+
+    // new arrivals
+    public List<ProductDto> getNewArrivals() {
+        List<Product> products = productRepository.findAllByOrderByCreatedAtDesc(PageRequest.of(0, 20));
+
+        return products.stream()
+                .map(this::convertToDto)
+                .toList();
+    }
+
+    // trending products
+    public List<ProductDto> getTrendingProducts() {
+        List<Product> products = productRepository.findTrendingProducts();
+
+        return products.stream()
+                .map(this::convertToDto)
+                .toList();
+    }
+
+    // Seasonal Sale
+    public List<ProductDto> getSeasonalSale() {
+        return productRepository.findByPriceLessThan(1000.0,PageRequest.of(0, 20))
+                .stream()
+                .map(this::convertToDto)
+                .toList();
+    }
+
+
+
 }
     
 

@@ -70,19 +70,13 @@ public class ProductService {
 
 
 
-
         product.setFabric(dto.getFabric());
         product.setStyleType(dto.getStyleType());
         product.setSeason(dto.getSeason());
-
-
         product.setImageUrl(dto.getImageUrl());
         product.setDeeplinkUrl(dto.getDeeplinkUrl());
         product.setRating(dto.getRating());
-        product.setLikesCount(
-                (long) (dto.getLikesCount() != null ? dto.getLikesCount() : 0)
-        );
-
+        product.setLikesCount(dto.getLikesCount());
         product.setOccasionTags(dto.getOccasionTags());
         product.setColorFamily(dto.getColorFamily());
         product.setStyleVibe(dto.getStyleVibe());
@@ -99,5 +93,3 @@ public class ProductService {
                 .orElseThrow(() -> new RuntimeException("Product not found"));
     }
 }
-
-
