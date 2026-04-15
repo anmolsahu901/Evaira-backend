@@ -2,42 +2,44 @@ package com.ai.evaira_backend.dto;
 
 import java.util.List;
 
+import com.ai.evaira_backend.entity.Product;
+
 public class DiscoverResponse {
 
-    private List<ProductDto> recommended;
-    private List<ProductDto> trending;
-    private List<ProductDto> newArrivals;
-    private List<ProductDto> seasonalSale;
+    private List<Product> recommended;
+    private List<Product> trending;
+    private List<Product> newArrivals;
+    private List<Product> seasonalSale;
 
-    public List<ProductDto> getRecommended() {
+    public List<Product> getRecommended() {
         return recommended;
     }
 
-    public void setRecommended(List<ProductDto> recommended) {
+    public void setRecommended(List<Product> recommended) {
         this.recommended = recommended;
     }
 
-    public List<ProductDto> getTrending() {
+    public List<Product> getTrending() {
         return trending;
     }
 
-    public void setTrending(List<ProductDto> trending) {
+    public void setTrending(List<Product> trending) {
         this.trending = trending;
     }
 
-    public List<ProductDto> getNewArrivals() {
+    public List<Product> getNewArrivals() {
         return newArrivals;
     }
 
-    public void setNewArrivals(List<ProductDto> newArrivals) {
+    public void setNewArrivals(List<Product> newArrivals) {
         this.newArrivals = newArrivals;
     }
 
-    public List<ProductDto> getSeasonalSale() {
+    public List<Product> getSeasonalSale() {
         return seasonalSale;
     }
 
-    public void setSeasonalSale(List<ProductDto> seasonalSale) {
+    public void setSeasonalSale(List<Product> seasonalSale) {
         this.seasonalSale = seasonalSale;
     }
 // constructor, getters

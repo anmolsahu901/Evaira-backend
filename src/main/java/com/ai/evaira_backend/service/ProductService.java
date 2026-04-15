@@ -54,10 +54,10 @@ public class ProductService {
         product.setGender(dto.getGender());
         product.setPrimaryColor(dto.getPrimaryColor());
 
-        if(dto.getFitType().equals(FitType.STRAIGHT))
-            product.setFitType(FitType.RELAXED);
-        else
-            product.setFitType(dto.getFitType());
+//        if(dto.getFitType().equals(FitType.STRAIGHT))
+//            product.setFitType(FitType.RELAXED);
+//        else
+//            product.setFitType(dto.getFitType());
 
         if(dto.getPrice()>=400 && dto.getPrice()<=800 )
             product.setPriceBucket(PriceBucket.BUDGET);
@@ -69,7 +69,7 @@ public class ProductService {
             product.setPriceBucket(PriceBucket.PREMIUM);
 
 
-
+        product.setBrand(dto.getBrand());
         product.setFabric(dto.getFabric());
         product.setStyleType(dto.getStyleType());
         product.setSeason(dto.getSeason());

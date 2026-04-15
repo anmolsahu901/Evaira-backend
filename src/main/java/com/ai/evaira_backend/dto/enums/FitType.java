@@ -4,6 +4,5 @@ public enum FitType {
     SLIM,
     REGULAR,
     RELAXED,
-    OVERSIZED,
-    STRAIGHT
+    OVERSIZED
 }

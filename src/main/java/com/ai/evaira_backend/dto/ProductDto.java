@@ -12,8 +12,10 @@ import java.util.List;
 // For JSON from https://fakestoreapi.com/products
 public class ProductDto {
 
-    private String externalId;
+    private String externalId; // external id
+    private Long id; // product unique Id used in DB
     private String title;
+    private String brand;
     private String description;
     private String imageUrl;
     private String deeplinkUrl;
@@ -33,7 +35,6 @@ public class ProductDto {
     private List<StyleVibe> styleVibe;
     private List<String> colorFamily;
 
-
     public List<String> getColorFamily() {
         return colorFamily;
     }
@@ -48,6 +49,14 @@ public class ProductDto {
 
     public void setExternalId(String externalId) {
         this.externalId = externalId;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public String getTitle() {

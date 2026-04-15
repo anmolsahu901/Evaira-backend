@@ -13,19 +13,19 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Data
 @Entity
 @Table(name = "products")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;   // DB ID
+    private Long id; // DB ID
 
     @Column(nullable = false)
     private String externalId;
 
     private String title;
+    private String brand;
 
     @Column(columnDefinition = "TEXT")
     private String description;
@@ -53,7 +53,7 @@ public class Product {
     private Instant createdAt = Instant.now();
 
     @Column(nullable = false)
-    private Long likesCount =0L;
+    private Long likesCount = 0L;
 
     @Type(JsonType.class)
     @Column(columnDefinition = "jsonb")
@@ -66,6 +66,14 @@ public class Product {
     @Type(JsonType.class)
     @Column(columnDefinition = "jsonb")
     private List<StyleVibe> styleVibe = new ArrayList<>();
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
 
     public Instant getCreatedAt() {
         return createdAt;
@@ -243,5 +251,3 @@ public class Product {
         this.likesCount = likesCount;
     }
 }
-
-

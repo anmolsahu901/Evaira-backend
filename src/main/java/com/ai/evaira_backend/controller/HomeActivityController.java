@@ -14,14 +14,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/user/products")
-public class UserActivityController {
+public class HomeActivityController {
 
-    private static final Logger log = LoggerFactory.getLogger(UserActivityController.class);
+    private static final Logger log = LoggerFactory.getLogger(HomeActivityController.class);
 
     private final ProductService productService;
     private final UserProductActionService actionService;
 
-    public UserActivityController(ProductService productService, UserProductActionService actionService) {
+    public HomeActivityController(ProductService productService, UserProductActionService actionService) {
         this.productService = productService;
         this.actionService = actionService;
     }

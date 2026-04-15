@@ -13,6 +13,8 @@ import com.ai.evaira_backend.entity.UserProductAction;
 import com.ai.evaira_backend.repository.ProductRepository;
 import com.ai.evaira_backend.repository.UserProductActionRepository;
 import com.ai.evaira_backend.repository.UserRepository;
+
+import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -38,7 +40,7 @@ public class RecommendationService {
     }
 
     // recommendation logic
-    public List<ProductDto> getRecommendedProducts(Long userId) {
+    public List<Product> getRecommendedProducts(Long userId) {
 
         User user = userRepository.findById(userId).orElseThrow();
 
@@ -197,57 +199,64 @@ public class RecommendationService {
         };
     }
 
-    private ProductDto convertToDto(Product product) {
 
-        ProductDto dto = new ProductDto();
-
-        dto.setExternalId(product.getExternalId());
-        dto.setTitle(product.getTitle());
-        dto.setDescription(product.getDescription());
-        dto.setImageUrl(product.getImageUrl());
-        dto.setDeeplinkUrl(product.getDeeplinkUrl());
-        dto.setPrice(product.getPrice());
-        dto.setRating(product.getRating());
-        dto.setLikesCount(product.getLikesCount());
-        dto.setGender(product.getGender());
-        dto.setCategory(product.getCategory());
-        dto.setSubCategory(product.getSubCategory());
-        dto.setPrimaryColor(product.getPrimaryColor());
-        dto.setFitType(product.getFitType());
-        dto.setFabric(product.getFabric());
-        dto.setStyleType(product.getStyleType());
-        dto.setSeason(product.getSeason());
-        dto.setPriceBucket(product.getPriceBucket());
-        dto.setOccasionTags(product.getOccasionTags());
-        dto.setStyleVibe(product.getStyleVibe());
-        dto.setColorFamily(product.getColorFamily());
-
-        return dto;
-    }
+    
+private Product convertToDto(Product product) {
+    // ProductDto dto = new ProductDto();
+    // BeanUtils.copyProperties(product, dto);
+    return product;
+}
+//    private ProductDto convertToDto1(Product product) {
+//
+//        ProductDto dto = new ProductDto();
+//        dto.setId(product.getId());
+//        dto.setBrand(product.getBrand());
+//        dto.setExternalId(product.getExternalId());
+//        dto.setTitle(product.getTitle());
+//        dto.setDescription(product.getDescription());
+//        dto.setImageUrl(product.getImageUrl());
+//        dto.setDeeplinkUrl(product.getDeeplinkUrl());
+//        dto.setPrice(product.getPrice());
+//        dto.setRating(product.getRating());
+//        dto.setLikesCount(product.getLikesCount());
+//        dto.setGender(product.getGender());
+//        dto.setCategory(product.getCategory());
+//        dto.setSubCategory(product.getSubCategory());
+//        dto.setPrimaryColor(product.getPrimaryColor());
+//        dto.setFitType(product.getFitType());
+//        dto.setFabric(product.getFabric());
+//        dto.setStyleType(product.getStyleType());
+//        dto.setSeason(product.getSeason());
+//        dto.setPriceBucket(product.getPriceBucket());
+//        dto.setOccasionTags(product.getOccasionTags());
+//        dto.setStyleVibe(product.getStyleVibe());
+//        dto.setColorFamily(product.getColorFamily());
+//
+//        return dto;
+//    }
 
     // new arrivals
-    public List<ProductDto> getNewArrivals() {
+    public List<Product> getNewArrivals() {
         List<Product> products = productRepository.findAllByOrderByCreatedAtDesc(PageRequest.of(0, 20));
 
         return products.stream()
-                .map(this::convertToDto)
                 .toList();
     }
 
     // trending products
-    public List<ProductDto> getTrendingProducts() {
+    public List<Product> getTrendingProducts() {
         List<Product> products = productRepository.findTrendingProducts();
 
         return products.stream()
-                .map(this::convertToDto)
+                
                 .toList();
     }
 
     // Seasonal Sale
-    public List<ProductDto> getSeasonalSale() {
+    public List<Product> getSeasonalSale() {
         return productRepository.findByPriceLessThan(1000.0,PageRequest.of(0, 20))
                 .stream()
-                .map(this::convertToDto)
+            
                 .toList();
     }
 

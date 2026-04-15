@@ -29,21 +29,6 @@ public class ProfileController {
     @Autowired
     private UserProfileService profileService;
 
-//    @PostMapping("/create")
-//    public ResponseEntity<String> createProfile(
-//            @RequestHeader("Authorization") String authHeader,
-//            @RequestBody ProfileDto dto) {
-//
-//        String token = authHeader.replace("Bearer ", "");
-//        String email = jwtUtil.extractUsername(token); // subject = email
-//
-//        User user = userRepository.findByEmail(email)
-//                .orElseThrow(() -> new RuntimeException("User not found"));
-//
-//        profileService.saveProfile(user, dto);
-//
-//        return ResponseEntity.ok("Profile created/updated");
-//    }
 
     @PostMapping("/create")
     public ResponseEntity<String> createProfile(@RequestBody ProfileDto dto) {
@@ -62,6 +47,14 @@ public class ProfileController {
         return ResponseEntity.ok("ValidationSuccessfully");
     }
 
+
+    @GetMapping("/me")
+    public ResponseEntity<User> getMyProfile() {
+    Long userId = SecurityUtil.getCurrentUserId();
+    User user = userRepository.findById(userId)
+            .orElseThrow(() -> new RuntimeException("User not found"));
+    return ResponseEntity.ok(user);
+}
 
 
 }

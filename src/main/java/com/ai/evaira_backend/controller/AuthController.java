@@ -1,14 +1,13 @@
 package com.ai.evaira_backend.controller;
 
 
-import com.ai.evaira_backend.dto.ProfileDto;
+
 
 import com.ai.evaira_backend.entity.User;
 import com.ai.evaira_backend.repository.UserRepository;
 import com.ai.evaira_backend.service.EmailService;
 import com.ai.evaira_backend.service.OtpService;
 
-import com.ai.evaira_backend.service.UserProfileService;
 import com.ai.evaira_backend.utility.JwtUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

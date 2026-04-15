@@ -5,7 +5,6 @@ public enum PriceBucket {
     BUDGET(400,800),
     VALUE(800, 1200),
     MIDRANGE(1200, 2500),
-    MEDIUM(500,1500),
     PREMIUM(2500, 10000);
 
 

@@ -37,10 +37,10 @@ public class DiscoverController {
     @PostMapping("/getData")
     public ResponseEntity<DiscoverResponse> getRecommendations() {
         Long userId = SecurityUtil.getCurrentUserId();
-        List<ProductDto> recommendedProducts = recommendationService.getRecommendedProducts(userId);
-        List<ProductDto> newArrivalProducts = recommendationService.getNewArrivals();
-        List<ProductDto> trendingProducts = recommendationService.getTrendingProducts();
-        List<ProductDto> seasonalSaleProduct = recommendationService.getSeasonalSale();
+        List<Product> recommendedProducts = recommendationService.getRecommendedProducts(userId);
+        List<Product> newArrivalProducts = recommendationService.getNewArrivals();
+        List<Product> trendingProducts = recommendationService.getTrendingProducts();
+        List<Product> seasonalSaleProduct = recommendationService.getSeasonalSale();
 
         DiscoverResponse discoverResponse = new DiscoverResponse();
         discoverResponse.setRecommended(recommendedProducts);

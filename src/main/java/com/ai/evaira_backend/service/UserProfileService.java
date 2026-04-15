@@ -20,29 +20,29 @@ public class UserProfileService {
     public void saveProfile(User user, ProfileDto dto) {
 
         // Basic info
-        user.setName(dto.getName());
-        user.setAge(dto.getAge());
-        user.setGender(dto.getGender());
-        user.setLocation(dto.getLocation());
+        if (dto.getName() != null) user.setName(dto.getName());
+        if (dto.getAge() != null) user.setAge(dto.getAge());
+        if (dto.getGender() != null) user.setGender(dto.getGender());
+        if (dto.getLocation() != null) user.setLocation(dto.getLocation());
 
         // Body / face info
-        user.setBodyType(dto.getBodyType());
-        user.setFaceShape(dto.getFaceShape());
+        if (dto.getBodyType() != null) user.setBodyType(dto.getBodyType());
+        if (dto.getFaceShape() != null) user.setFaceShape(dto.getFaceShape());
 
         // Style preferences
-        user.setStyleVibes(dto.getStyleVibes());
-        user.setFitTypes(dto.getFitTypes());
+        if (dto.getStyleVibes() != null) user.setStyleVibes(dto.getStyleVibes());
+        if (dto.getFitTypes() != null) user.setFitTypes(dto.getFitTypes());
 
         // Occasion preferences
-        user.setPreferredOccasions(dto.getPreferredOccasions());
-        user.setAvoidOccasions(dto.getAvoidOccasions());
+        if (dto.getPreferredOccasions() != null) user.setPreferredOccasions(dto.getPreferredOccasions());
+        if (dto.getAvoidOccasions() != null) user.setAvoidOccasions(dto.getAvoidOccasions());
 
         // Color preferences
-        user.setFavoriteColors(dto.getFavoriteColors());
-        user.setDislikedColors(dto.getDislikedColors());
+        if (dto.getFavoriteColors() != null) user.setFavoriteColors(dto.getFavoriteColors());
+        if (dto.getDislikedColors() != null) user.setDislikedColors(dto.getDislikedColors());
 
         // Budget
-        user.setPriceBucket(dto.getPriceBucket());
+        if (dto.getPriceBucket() != null) user.setPriceBucket(dto.getPriceBucket());
 
         // Save user
         userRepository.save(user);
