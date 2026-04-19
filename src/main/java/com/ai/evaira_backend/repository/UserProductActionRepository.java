@@ -32,6 +32,8 @@ public interface UserProductActionRepository extends JpaRepository<UserProductAc
     @Query("SELECT upa FROM UserProductAction upa WHERE upa.user.id = :userId AND upa.actionType = :actionType")
     List<UserProductAction> findByUserIdAndActionType(@Param("userId") Long userId, @Param("actionType") ProductActionType actionType);
 
+    List<UserProductAction> findTop50ByUserIdAndActionTypeOrderByCreatedAtDesc(Long userId, ProductActionType actionType);
+
     @Query("SELECT upa FROM UserProductAction upa WHERE upa.user.id = :userId AND upa.product.externalId = :productId AND upa.actionType = :actionType")
     Optional<UserProductAction> findByUserIdAndProductIdAndActionType(@Param("userId") Long userId, @Param("productId") Long productId, @Param("actionType") ProductActionType actionType);
 

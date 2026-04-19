@@ -244,10 +244,22 @@ public class UserProductActionService {
     }
 
     public List<Product> getProductsByUserActions(Long userId,ProductActionType actionType) {
+        if (actionType == ProductActionType.SEEN) {
+            return actionRepository.findTop50ByUserIdAndActionTypeOrderByCreatedAtDesc(userId, actionType)
+                    .stream()
+                    .map(UserProductAction::getProduct)
+                    .toList();
+        }
         return actionRepository.findProductsByUserIdAndActionTypes(userId, actionType);
     }
 
     public List<UserProductActionResponse> getActionsForUser(Long userId, ProductActionType type) {
+        if (type == ProductActionType.SEEN) {
+            return actionRepository.findTop50ByUserIdAndActionTypeOrderByCreatedAtDesc(userId, type)
+                    .stream()
+                    .map(this::mapToResponseWithDeeplink)
+                    .toList();
+        }
         return actionRepository.findByUserIdAndActionType(userId, type)
                 .stream()
                 .map(this::mapToResponseWithDeeplink)

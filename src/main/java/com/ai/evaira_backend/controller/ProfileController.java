@@ -48,6 +48,7 @@ public class ProfileController {
     }
 
 
+    // used in profile screen to fetch data to showcase in user detaiils
     @GetMapping("/me")
     public ResponseEntity<User> getMyProfile() {
     Long userId = SecurityUtil.getCurrentUserId();

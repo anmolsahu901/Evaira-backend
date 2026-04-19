@@ -36,4 +36,9 @@ build/
 *.js
 node_modules/
 **/src/main/resources/**/*.js
+**/src/main/resources/*.json
 **/src/main/resources/**/node_modules/
+
+
+# log files
+*.log

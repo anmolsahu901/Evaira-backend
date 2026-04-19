@@ -30,7 +30,7 @@ public class ProductController {
         this.actionService = actionService;
     }
 
-
+    // these endpoint are used for admin only not for user
 
     @GetMapping("/getall")
     public ResponseEntity<List<Product>> getAll() {

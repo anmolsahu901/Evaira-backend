@@ -26,8 +26,8 @@ public class HomeActivityController {
         this.recommendationService = recommendationService;
     }
 
-    @GetMapping("/getAllProducts")
-    public ResponseEntity<List<Product>> getAll() {
+    @GetMapping("/getHomeFeedProducts")
+    public ResponseEntity<List<Product>> getHomeFeedProducts() {
         Long userId = SecurityUtil.getCurrentUserId();
         log.info("Fetching Smart Home Feed for user: {}", userId);
         return ResponseEntity.ok(recommendationService.getSmartHomeFeed(userId));

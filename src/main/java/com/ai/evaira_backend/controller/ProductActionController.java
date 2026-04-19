@@ -56,29 +56,11 @@ public class ProductActionController {
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/getWishlistData")
-    public ResponseEntity<List<Product>> basedOnUserActions( @RequestBody UserProductActionRequest request){
-        Long userId = SecurityUtil.getCurrentUserId();
 
 
-        return ResponseEntity.ok(actionService.getProductsByUserActions(userId,request.getActionType()));
-    }
 
-    /**
-     * Get liked/saved/open/shared actions for CURRENT user
-     * GET /api/actions/me?type=LIKE
-     * GET /api/actions/me?type=SAVE
-     */
-    @GetMapping("/me")
-    public ResponseEntity<List<UserProductActionResponse>> getActionsForMe(
-            @RequestParam ProductActionType actionType
-    ) {
-        Long userId = SecurityUtil.getCurrentUserId();
-        List<UserProductActionResponse> responses = actionService.getActionsForUser(userId, actionType);
 
-        return ResponseEntity.ok(responses);
-    }
-
+    // currently not in use
     /**
      * Check if CURRENT user did an action on a product (for icons)
      * GET /api/actions/me/product/{productId}?type=LIKE
@@ -94,16 +76,7 @@ public class ProductActionController {
         return response != null ? ResponseEntity.ok(response) : ResponseEntity.notFound().build();
     }
 
-    /**
-     * Get ALL actions for user (likes + saves + opens + shares)
-     * For user profile/activity tab
-     */
-    @GetMapping("/me/all")
-    public ResponseEntity<List<UserProductActionResponse>> getAllMyActions() {
-        Long userId = SecurityUtil.getCurrentUserId();
-        List<UserProductActionResponse> responses = actionService.getAllUserActions(userId);
-        return ResponseEntity.ok(responses);
-    }
+
 
 }
 
