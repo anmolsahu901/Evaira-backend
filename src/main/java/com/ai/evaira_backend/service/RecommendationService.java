@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class RecommendationService {
@@ -44,11 +46,17 @@ public class RecommendationService {
 
         User user = userRepository.findById(userId).orElseThrow();
 
+        List<Product> seenProducts = actionRepo.findProductsByUserIdAndActionTypes(userId, ProductActionType.SEEN);
+        Set<Long> seenProductIds = seenProducts.stream().map(Product::getId).collect(Collectors.toSet());
+
         List<Product> allProducts = productRepository.findAll();
 
         List<ProductScore> scoredProducts = new ArrayList<>();
 
         for (Product product : allProducts) {
+            if (seenProductIds.contains(product.getId())) {
+                continue;
+            }
 
             double score = calculateScore(user, product);
 
@@ -64,6 +72,66 @@ public class RecommendationService {
                 .map(ps -> convertToDto(ps.getProduct()))
                 .toList();
     }
+
+    public List<Product> getSmartHomeFeed(Long userId) {
+        User user = userRepository.findById(userId).orElseThrow();
+
+        // 1. Get seen products to exclude them
+        List<Product> seenProducts = actionRepo.findProductsByUserIdAndActionTypes(userId, ProductActionType.SEEN);
+        Set<Long> seenProductIds = seenProducts.stream().map(Product::getId).collect(Collectors.toSet());
+
+        // 2. Filter out seen products
+        List<Product> allProducts = productRepository.findAll();
+        List<Product> unseenProducts = new ArrayList<>();
+        for (Product product : allProducts) {
+            if (!seenProductIds.contains(product.getId())) {
+                unseenProducts.add(product);
+            }
+        }
+
+        // 3. Recommended (50% = 10 items)
+        List<ProductScore> scoredProducts = new ArrayList<>();
+        for (Product product : unseenProducts) {
+            double score = calculateScore(user, product);
+            scoredProducts.add(new ProductScore(product, score));
+        }
+        scoredProducts.sort((a, b) -> Double.compare(b.getScore(), a.getScore()));
+        
+        List<Product> recommended = scoredProducts.stream()
+                .limit(20)
+                .map(ProductScore::getProduct)
+                .toList();
+        
+        Set<Long> usedIds = recommended.stream().map(Product::getId).collect(Collectors.toSet());
+
+        // 4. New/Unseen (25% = 5 items)
+        List<Product> newArrivals = unseenProducts.stream()
+                .filter(p -> !usedIds.contains(p.getId()))
+                .sorted((a, b) -> b.getCreatedAt().compareTo(a.getCreatedAt()))
+                .limit(5)
+                .toList();
+
+        usedIds.addAll(newArrivals.stream().map(Product::getId).collect(Collectors.toSet()));
+
+        // 5. Random (25% = 5 items)
+        List<Product> remaining = unseenProducts.stream()
+                .filter(p -> !usedIds.contains(p.getId()))
+                .collect(Collectors.toList());
+        java.util.Collections.shuffle(remaining);
+        List<Product> randomProducts = remaining.stream().limit(5).toList();
+
+        // Combine them all
+        List<Product> smartFeed = new ArrayList<>();
+        smartFeed.addAll(recommended);
+        smartFeed.addAll(newArrivals);
+        smartFeed.addAll(randomProducts);
+
+        // Shuffle the feed so it's a nice mix
+        java.util.Collections.shuffle(smartFeed);
+
+        return smartFeed.stream().map(this::convertToDto).toList();
+    }
+
 
 
     // 🔥 MAIN METHOD
@@ -195,6 +263,7 @@ public class RecommendationService {
             case SHARE -> 5;
             case OPEN -> 1;
             case DISLIKE -> -3;
+            case SEEN -> 0;
             case UNLIKE, UNSAVE -> -2;
         };
     }

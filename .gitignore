@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Node.js and Frontend assets ###
+*.js
+node_modules/
+**/src/main/resources/**/*.js
+**/src/main/resources/**/node_modules/

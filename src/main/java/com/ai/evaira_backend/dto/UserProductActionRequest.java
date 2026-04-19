@@ -3,6 +3,8 @@ package com.ai.evaira_backend.dto;
 
 import com.ai.evaira_backend.dto.enums.ProductActionType;
 
+import java.util.List;
+
 // request DTO from frontend
 public class UserProductActionRequest {
 
@@ -12,6 +14,7 @@ public class UserProductActionRequest {
     // optional: you can pass userId here or get it from JWT/auth context
     private Long userId;
     private String metadata;
+    private List<Long> productIds;
     // getters & setters
 
 
@@ -45,5 +48,13 @@ public class UserProductActionRequest {
 
     public void setUserId(Long userId) {
         this.userId = userId;
+    }
+
+    public List<Long> getProductIds() {
+        return productIds;
+    }
+
+    public void setProductIds(List<Long> productIds) {
+        this.productIds = productIds;
     }
 }

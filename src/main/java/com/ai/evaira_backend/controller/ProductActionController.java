@@ -10,6 +10,9 @@ import com.ai.evaira_backend.entity.Product;
 import com.ai.evaira_backend.security.SecurityUtil;
 import com.ai.evaira_backend.service.UserProductActionService;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +22,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/actions")
 public class ProductActionController {
+
+    private static final Logger log = LoggerFactory.getLogger(ProductActionController.class);
 
     private final UserProductActionService actionService;
 
@@ -39,6 +44,15 @@ public class ProductActionController {
         request.setUserId(userId);
 
         actionService.performAction(request);
+        return ResponseEntity.ok().build();
+    }
+
+    @PostMapping("/bulk/seen")
+    public ResponseEntity<Void> performBulkAction(@RequestBody UserProductActionRequest request) {
+        Long userId = SecurityUtil.getCurrentUserId();
+        request.setUserId(userId);
+        log.info("Marking product SEEN for user : {}", userId.toString());
+        actionService.performBulkAction(request);
         return ResponseEntity.ok().build();
     }
 

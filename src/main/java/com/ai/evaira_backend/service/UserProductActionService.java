@@ -45,7 +45,7 @@ public class UserProductActionService {
 
         switch (type) {
             case LIKE -> {
-                log.info("like hit by user: {}",user.getEmail());
+                log.info("like hit by user : {} and productId: {}",user.getEmail(),product.getExternalId());
                 handleLike(user, product);
                 return null;
             }
@@ -79,7 +79,33 @@ public class UserProductActionService {
                 return null;
             }
 
+            case SEEN -> {
+                log.info("seen hit by user: {}",user.getEmail());
+                handleSeen(user, product);
+                return null;
+            }
+
             default -> throw new IllegalArgumentException("Unsupported action: " + type);
+        }
+    }
+
+    @Transactional
+    public void performBulkAction(UserProductActionRequest request) {
+        User user = userRepository.findById(request.getUserId())
+                .orElseThrow(() -> new IllegalArgumentException("User not found"));
+
+        if (request.getProductIds() == null || request.getProductIds().isEmpty()) {
+            return;
+        }
+
+        List<Product> products = productRepository.findAllById(request.getProductIds());
+        ProductActionType type = request.getActionType();
+
+        if (type == ProductActionType.SEEN) {
+            log.info("bulk seen hit by user: {}, count: {}", user.getEmail(), products.size());
+            handleBulkSeen(user, products);
+        } else {
+            throw new IllegalArgumentException("Unsupported bulk action: " + type);
         }
     }
 
@@ -191,6 +217,30 @@ public class UserProductActionService {
         action.setProduct(product);
         action.setActionType(ProductActionType.SHARE);
         actionRepository.save(action);
+    }
+
+    @Transactional
+    protected void handleSeen(User user, Product product) {
+        actionRepository.findByUserAndProductAndActionType(user, product, ProductActionType.SEEN)
+                .ifPresentOrElse(
+                        existing -> {
+                            existing.setCreatedAt(Instant.now());
+                            actionRepository.save(existing);
+                        },
+                        () -> {
+                            UserProductAction action = new UserProductAction();
+                            action.setUser(user);
+                            action.setProduct(product);
+                            action.setActionType(ProductActionType.SEEN);
+                            actionRepository.save(action);
+                        });
+    }
+
+    @Transactional
+    protected void handleBulkSeen(User user, List<Product> products) {
+        for (Product product : products) {
+            handleSeen(user, product);
+        }
     }
 
     public List<Product> getProductsByUserActions(Long userId,ProductActionType actionType) {

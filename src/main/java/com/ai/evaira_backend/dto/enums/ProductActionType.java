@@ -7,5 +7,6 @@ public enum ProductActionType {
     UNLIKE,
     SHARE,
     SAVE,// tap share
-    UNSAVE
+    UNSAVE,
+    SEEN
 }

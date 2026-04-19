@@ -2,7 +2,9 @@ package com.ai.evaira_backend.controller;
 
 import com.ai.evaira_backend.entity.Product;
 import com.ai.evaira_backend.service.ProductService;
+import com.ai.evaira_backend.service.RecommendationService;
 import com.ai.evaira_backend.service.UserProductActionService;
+import com.ai.evaira_backend.security.SecurityUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -18,18 +20,17 @@ public class HomeActivityController {
 
     private static final Logger log = LoggerFactory.getLogger(HomeActivityController.class);
 
-    private final ProductService productService;
-    private final UserProductActionService actionService;
+    private final RecommendationService recommendationService;
 
-    public HomeActivityController(ProductService productService, UserProductActionService actionService) {
-        this.productService = productService;
-        this.actionService = actionService;
+    public HomeActivityController(ProductService productService, UserProductActionService actionService, RecommendationService recommendationService) {
+        this.recommendationService = recommendationService;
     }
 
     @GetMapping("/getAllProducts")
     public ResponseEntity<List<Product>> getAll() {
-        log.info("fetching products from DB ");
-        return ResponseEntity.ok(productService.getAllFromDb());
+        Long userId = SecurityUtil.getCurrentUserId();
+        log.info("Fetching Smart Home Feed for user: {}", userId);
+        return ResponseEntity.ok(recommendationService.getSmartHomeFeed(userId));
     }
 
 
