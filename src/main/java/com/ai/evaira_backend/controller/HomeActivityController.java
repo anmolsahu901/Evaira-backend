@@ -21,16 +21,18 @@ public class HomeActivityController {
     private static final Logger log = LoggerFactory.getLogger(HomeActivityController.class);
 
     private final RecommendationService recommendationService;
+    private final ProductService productService;
 
     public HomeActivityController(ProductService productService, UserProductActionService actionService, RecommendationService recommendationService) {
         this.recommendationService = recommendationService;
+        this.productService = productService;
     }
 
     @GetMapping("/getHomeFeedProducts")
     public ResponseEntity<List<Product>> getHomeFeedProducts() {
         Long userId = SecurityUtil.getCurrentUserId();
         log.info("Fetching Smart Home Feed for user: {}", userId);
-        return ResponseEntity.ok(recommendationService.getSmartHomeFeed(userId));
+        return ResponseEntity.ok(productService.getAllFromDb());
     }
 
 
