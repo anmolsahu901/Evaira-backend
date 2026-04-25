@@ -31,7 +31,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**","/api/products/**").permitAll()  // Login/OTP public
+                        .requestMatchers("/api/auth/**","/api/products/**","/health/**").permitAll()  // Login/OTP public
                         .anyRequest().authenticated()                        // Everything else JWT!
                 )
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);  // Enable JWT!

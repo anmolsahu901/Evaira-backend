@@ -21,9 +21,11 @@ public class HomeActivityController {
     private static final Logger log = LoggerFactory.getLogger(HomeActivityController.class);
 
     private final RecommendationService recommendationService;
+    private final ProductService productService;
 
     public HomeActivityController(ProductService productService, UserProductActionService actionService, RecommendationService recommendationService) {
         this.recommendationService = recommendationService;
+        this.productService = productService;
     }
 
     @GetMapping("/getHomeFeedProducts")

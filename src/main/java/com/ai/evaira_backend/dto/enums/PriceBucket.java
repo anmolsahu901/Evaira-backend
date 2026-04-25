@@ -2,7 +2,7 @@ package com.ai.evaira_backend.dto.enums;
 
 
 public enum PriceBucket {
-    BUDGET(400,800),
+    BUDGET(100,800),
     VALUE(800, 1200),
     MIDRANGE(1200, 2500),
     PREMIUM(2500, 10000);
