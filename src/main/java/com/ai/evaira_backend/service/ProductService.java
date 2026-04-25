@@ -1,7 +1,6 @@
 package com.ai.evaira_backend.service;
 
 import com.ai.evaira_backend.dto.ProductDto;
-import com.ai.evaira_backend.dto.enums.FitType;
 import com.ai.evaira_backend.dto.enums.PriceBucket;
 import com.ai.evaira_backend.entity.Product;
 import com.ai.evaira_backend.repository.ProductRepository;
