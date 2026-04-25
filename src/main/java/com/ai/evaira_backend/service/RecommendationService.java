@@ -1,7 +1,6 @@
 package com.ai.evaira_backend.service;
 
 
-import com.ai.evaira_backend.dto.ProductDto;
 import com.ai.evaira_backend.dto.ProductScore;
 import com.ai.evaira_backend.dto.enums.FitType;
 import com.ai.evaira_backend.dto.enums.OccasionTag;
@@ -13,8 +12,6 @@ import com.ai.evaira_backend.entity.UserProductAction;
 import com.ai.evaira_backend.repository.ProductRepository;
 import com.ai.evaira_backend.repository.UserProductActionRepository;
 import com.ai.evaira_backend.repository.UserRepository;
-
-import org.springframework.beans.BeanUtils;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
