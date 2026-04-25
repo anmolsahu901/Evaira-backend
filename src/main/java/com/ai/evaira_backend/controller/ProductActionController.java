@@ -4,20 +4,13 @@ package com.ai.evaira_backend.controller;
 import com.ai.evaira_backend.dto.enums.ProductActionType;
 import com.ai.evaira_backend.dto.UserProductActionRequest;
 import com.ai.evaira_backend.dto.UserProductActionResponse;
-
-
-import com.ai.evaira_backend.entity.Product;
 import com.ai.evaira_backend.security.SecurityUtil;
 import com.ai.evaira_backend.service.UserProductActionService;
-
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/actions")
@@ -27,7 +20,7 @@ public class ProductActionController {
 
     private final UserProductActionService actionService;
 
-    @Autowired
+    
     public ProductActionController(UserProductActionService actionService) {
         this.actionService = actionService;
     }

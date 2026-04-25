@@ -52,13 +52,14 @@ public class RecommendationService {
         List<Product> allProducts = productRepository.findAll();
 
         List<ProductScore> scoredProducts = new ArrayList<>();
+        BehaviorProfile behaviorProfile = buildBehaviorProfile(userId);
 
         for (Product product : allProducts) {
             if (seenProductIds.contains(product.getId())) {
                 continue;
             }
 
-            double score = calculateScore(user, product);
+            double score = calculateScore(user, product, behaviorProfile);
 
             scoredProducts.add(new ProductScore(product, score));
         }
@@ -91,14 +92,16 @@ public class RecommendationService {
 
         // 3. Recommended (50% = 10 items)
         List<ProductScore> scoredProducts = new ArrayList<>();
+        BehaviorProfile behaviorProfile = buildBehaviorProfile(userId);
+        
         for (Product product : unseenProducts) {
-            double score = calculateScore(user, product);
+            double score = calculateScore(user, product, behaviorProfile);
             scoredProducts.add(new ProductScore(product, score));
         }
         scoredProducts.sort((a, b) -> Double.compare(b.getScore(), a.getScore()));
         
         List<Product> recommended = scoredProducts.stream()
-                .limit(20)
+                .limit(30)
                 .map(ProductScore::getProduct)
                 .toList();
         
@@ -108,7 +111,7 @@ public class RecommendationService {
         List<Product> newArrivals = unseenProducts.stream()
                 .filter(p -> !usedIds.contains(p.getId()))
                 .sorted((a, b) -> b.getCreatedAt().compareTo(a.getCreatedAt()))
-                .limit(5)
+                .limit(10)
                 .toList();
 
         usedIds.addAll(newArrivals.stream().map(Product::getId).collect(Collectors.toSet()));
@@ -118,7 +121,7 @@ public class RecommendationService {
                 .filter(p -> !usedIds.contains(p.getId()))
                 .collect(Collectors.toList());
         java.util.Collections.shuffle(remaining);
-        List<Product> randomProducts = remaining.stream().limit(5).toList();
+        List<Product> randomProducts = remaining.stream().limit(10).toList();
 
         // Combine them all
         List<Product> smartFeed = new ArrayList<>();
@@ -135,9 +138,9 @@ public class RecommendationService {
 
 
     // 🔥 MAIN METHOD
-    public double calculateScore(User user, Product product) {
+    public double calculateScore(User user, Product product, BehaviorProfile behaviorProfile) {
         double profileScore = calculateProfileScore(user, product);
-        double behaviorScore = calculateBehaviorScore(user, product);
+        double behaviorScore = calculateBehaviorScore(product, behaviorProfile);
 
         return profileScore + behaviorScore;
     }
@@ -192,44 +195,43 @@ public class RecommendationService {
         return score;
     }
 
-    private double calculateBehaviorScore(User user, Product product) {
-
-        // Fetch last 200 actions (limit for performance)
-        List<UserProductAction> actions =
-                actionRepo.findRecentActions(user.getId(),pageable);
-
+    private static class BehaviorProfile {
         Map<StyleVibe, Integer> styleScore = new HashMap<>();
         Map<FitType, Integer> fitScore = new HashMap<>();
         Map<OccasionTag, Integer> occasionScore = new HashMap<>();
+    }
+
+    private BehaviorProfile buildBehaviorProfile(Long userId) {
+        List<UserProductAction> actions = actionRepo.findRecentActions(userId, pageable);
+        BehaviorProfile profile = new BehaviorProfile();
 
         for (UserProductAction action : actions) {
-
             Product p = action.getProduct();
             int weight = getWeight(action.getActionType());
 
             // STYLE
             if (p.getStyleVibe() != null) {
                 for (StyleVibe vibe : p.getStyleVibe()) {
-                    styleScore.put(vibe,
-                            styleScore.getOrDefault(vibe, 0) + weight);
+                    profile.styleScore.put(vibe, profile.styleScore.getOrDefault(vibe, 0) + weight);
                 }
             }
 
             // FIT
             if (p.getFitType() != null) {
-                fitScore.put(p.getFitType(),
-                        fitScore.getOrDefault(p.getFitType(), 0) + weight);
+                profile.fitScore.put(p.getFitType(), profile.fitScore.getOrDefault(p.getFitType(), 0) + weight);
             }
 
             // OCCASION
             if (p.getOccasionTags() != null) {
                 for (OccasionTag tag : p.getOccasionTags()) {
-                    occasionScore.put(tag,
-                            occasionScore.getOrDefault(tag, 0) + weight);
+                    profile.occasionScore.put(tag, profile.occasionScore.getOrDefault(tag, 0) + weight);
                 }
             }
         }
+        return profile;
+    }
 
+    private double calculateBehaviorScore(Product product, BehaviorProfile profile) {
         double score = 0;
 
         // APPLY TO CURRENT PRODUCT
@@ -237,19 +239,19 @@ public class RecommendationService {
         // STYLE
         if (product.getStyleVibe() != null) {
             for (StyleVibe vibe : product.getStyleVibe()) {
-                score += styleScore.getOrDefault(vibe, 0);
+                score += profile.styleScore.getOrDefault(vibe, 0);
             }
         }
 
         // FIT
         if (product.getFitType() != null) {
-            score += fitScore.getOrDefault(product.getFitType(), 0);
+            score += profile.fitScore.getOrDefault(product.getFitType(), 0);
         }
 
         // OCCASION
         if (product.getOccasionTags() != null) {
             for (OccasionTag tag : product.getOccasionTags()) {
-                score += occasionScore.getOrDefault(tag, 0);
+                score += profile.occasionScore.getOrDefault(tag, 0);
             }
         }
 
