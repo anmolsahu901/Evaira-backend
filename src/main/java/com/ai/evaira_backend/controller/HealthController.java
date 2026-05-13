@@ -10,9 +10,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/health")
 public class HealthController {
 
-    @RequestMapping(value = "/checkup", method = RequestMethod.HEAD)
+    private final org.springframework.jdbc.core.JdbcTemplate jdbcTemplate;
+
+    public HealthController(org.springframework.jdbc.core.JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    @RequestMapping(value = "/checkup", method = {RequestMethod.GET, RequestMethod.HEAD})
     public ResponseEntity<String> healthCheck(){
-        return ResponseEntity.ok("Application is healthy");
+        try {
+            // Perform a lightweight query to ensure the DB connection is healthy
+            jdbcTemplate.execute("SELECT 1");
+            return ResponseEntity.ok("Application and Database are healthy");
+        } catch (Exception e) {
+            return ResponseEntity.status(503).body("Database connection is down");
+        }
     }
 
 }
