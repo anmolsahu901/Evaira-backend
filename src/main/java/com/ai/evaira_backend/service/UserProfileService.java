@@ -3,6 +3,7 @@ package com.ai.evaira_backend.service;
 import com.ai.evaira_backend.dto.ProfileDto;
 import com.ai.evaira_backend.entity.User;
 import com.ai.evaira_backend.repository.UserRepository;
+import com.ai.evaira_backend.repository.UserProductActionRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,9 @@ public class UserProfileService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private UserProductActionRepository userProductActionRepository;
 
 
     @Transactional
@@ -47,8 +51,14 @@ public class UserProfileService {
     }
 
     public User findUserByEmail(String email){
-       return userRepository.findByEmail(email)
+       return userRepository.findFirstByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found"));
+    }
+
+    @Transactional
+    public void deleteUserAccount(Long userId) {
+        userProductActionRepository.deleteByUserId(userId);
+        userRepository.deleteById(userId);
     }
 
 }

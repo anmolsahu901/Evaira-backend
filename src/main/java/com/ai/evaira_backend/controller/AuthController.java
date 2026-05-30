@@ -69,7 +69,7 @@ public class AuthController {
             return ResponseEntity.badRequest().body("Invalid OTP.");
         }
         log.info("inside verify OTP");
-        User user = userRepository.findByEmail(request.email).orElse(null);
+        User user = userRepository.findFirstByEmail(request.email).orElse(null);
         boolean isNew = false;
 
         if (user == null) {
