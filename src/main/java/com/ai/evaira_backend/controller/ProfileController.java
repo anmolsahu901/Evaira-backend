@@ -70,4 +70,19 @@ public class ProfileController {
         return ResponseEntity.ok("OK");
     }
 
+    @PostMapping("/push-token")
+    public ResponseEntity<String> updatePushToken(@RequestBody PushTokenRequest request) {
+        Long userId = SecurityUtil.getCurrentUserId();
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        user.setPushToken(request.getToken());
+        userRepository.save(user);
+        return ResponseEntity.ok("Push token updated successfully");
+    }
+
+    public static class PushTokenRequest {
+        private String token;
+        public String getToken() { return token; }
+        public void setToken(String token) { this.token = token; }
+    }
 }
