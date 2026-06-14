@@ -34,8 +34,12 @@ public class NotificationService {
             payload.put("data", data);
 
             HttpEntity<Map<String, Object>> request = new HttpEntity<>(payload, headers);
-            restTemplate.postForObject(EXPO_PUSH_URL, request, String.class);
-            System.out.println("[notifications] Sent successfully to token: " + expoPushToken);
+            String response = restTemplate.postForObject(
+                    EXPO_PUSH_URL,
+                    request,
+                    String.class);
+
+            System.out.println("[notifications] Expo Response: " + response);
         } catch (Exception e) {
             System.err.println("[notifications] Failed to send push notification to Expo: " + e.getMessage());
         }
