@@ -28,6 +28,7 @@ public class NotificationService {
             payload.put("title", title);
             payload.put("body", body);
             payload.put("sound", "default");
+            payload.put("channelId", "default");
 
             Map<String, String> data = new HashMap<>();
             data.put("screen", screen);
