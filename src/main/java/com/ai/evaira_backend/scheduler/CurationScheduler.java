@@ -19,8 +19,10 @@ public class CurationScheduler {
         this.notificationService = notificationService;
     }
 
-    // Runs every 5min
-    @Scheduled(cron = "0 */5 * * * ?")
+    // Runs at 9:00 AM, 12:00 PM (noon), and 7:00 PM (19:00) everyday
+    @Scheduled(cron = "0 0 9,12,19 * * ?", zone = "Asia/Kolkata")
+    // Runs at 11:30 PM (23:30) everyday
+    @Scheduled(cron = "0 30 23 * * ?", zone = "Asia/Kolkata")
     public void sendDailyCurationAlerts() {
         List<User> users = userRepository.findAll();
 
