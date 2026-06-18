@@ -11,6 +11,9 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.transaction.annotation.Transactional;
+
 
 
 public interface UserProductActionRepository extends JpaRepository<UserProductAction, Long> {
@@ -51,5 +54,10 @@ public interface UserProductActionRepository extends JpaRepository<UserProductAc
             @Param("userId") Long userId,
             Pageable pageable
     );
+
+    @Modifying
+    @Transactional
+    @Query("DELETE FROM UserProductAction upa WHERE upa.user.id = :userId")
+    void deleteByUserId(@Param("userId") Long userId);
 
 }

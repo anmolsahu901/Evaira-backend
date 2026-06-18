@@ -51,11 +51,38 @@ public class ProfileController {
     // used in profile screen to fetch data to showcase in user detaiils
     @GetMapping("/me")
     public ResponseEntity<User> getMyProfile() {
-    Long userId = SecurityUtil.getCurrentUserId();
-    User user = userRepository.findById(userId)
-            .orElseThrow(() -> new RuntimeException("User not found"));
-    return ResponseEntity.ok(user);
-}
+        Long userId = SecurityUtil.getCurrentUserId();
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        
+        // Return 404 if the styling profile is empty (onboarding not completed yet)
+        if (user.getStyleVibes() == null || user.getStyleVibes().isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        
+        return ResponseEntity.ok(user);
+    }
 
+    @DeleteMapping("/delete")
+    public ResponseEntity<String> deleteAccount() {
+        Long userId = SecurityUtil.getCurrentUserId();
+        profileService.deleteUserAccount(userId);
+        return ResponseEntity.ok("OK");
+    }
 
+    @PostMapping("/push-token")
+    public ResponseEntity<String> updatePushToken(@RequestBody PushTokenRequest request) {
+        Long userId = SecurityUtil.getCurrentUserId();
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        user.setPushToken(request.getToken());
+        userRepository.save(user);
+        return ResponseEntity.ok("Push token updated successfully");
+    }
+
+    public static class PushTokenRequest {
+        private String token;
+        public String getToken() { return token; }
+        public void setToken(String token) { this.token = token; }
+    }
 }

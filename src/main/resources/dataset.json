@@ -6923,13 +6923,13 @@
       "CASUAL_EVERYDAY"
     ],
     "priceBucket": "MIDRANGE",
-    "colorFamily": [
-      "multicolor"
-    ],
-    "styleVibe": [
-      "CLASSIC",
-      "TRENDY"
-    ],
-    "brand": "Diwas Manyavar"
+  "colorFamily": [
+  "multicolor"
+],
+  "styleVibe": [
+  "CLASSIC",
+  "TRENDY"
+],
+  "brand": "Diwas Manyavar"
   }
 ]

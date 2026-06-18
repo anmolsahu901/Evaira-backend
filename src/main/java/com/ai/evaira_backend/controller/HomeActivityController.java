@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import jakarta.servlet.http.HttpServletRequest;
 
 import java.util.List;
 
@@ -29,7 +30,14 @@ public class HomeActivityController {
     }
 
     @GetMapping("/getHomeFeedProducts")
-    public ResponseEntity<List<Product>> getHomeFeedProducts() {
+    public ResponseEntity<List<Product>> getHomeFeedProducts(HttpServletRequest request) {
+        String authHeader = request.getHeader("Authorization");
+        if (authHeader != null && authHeader.toLowerCase().startsWith("bearer ")) {
+            log.info("JWT Token: {}", authHeader.substring(7));
+        } else {
+            log.info("JWT Token: {}", authHeader);
+        }
+        
         Long userId = SecurityUtil.getCurrentUserId();
         log.info("Fetching Smart Home Feed for user: {}", userId);
         return ResponseEntity.ok(recommendationService.getSmartHomeFeed(userId));
