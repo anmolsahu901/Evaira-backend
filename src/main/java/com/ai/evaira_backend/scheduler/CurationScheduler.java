@@ -19,7 +19,8 @@ public class CurationScheduler {
         this.notificationService = notificationService;
     }
 
-    @Scheduled(cron = "0 */15 * * * ?")
+    @Scheduled(cron = "0 0 8,14,19,23 * * MON-FRI")
+    @Scheduled(cron = "0 0 11,16,23 * * SAT-SUN")
     public void sendDailyCurationAlerts() {
         List<User> users = userRepository.findAll();
 
